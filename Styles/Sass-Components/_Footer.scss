@@ -1,0 +1,22 @@
+/*
+==========================================================================
+  					  					  		 "Подвал"
+==========================================================================
+*/
+
+footer {
+	text-align: center;
+	margin-top: 100px;
+	background-color: black;
+	position: absolute;
+	width: 100%;
+
+  div {
+    padding-top: 9px;
+
+    p {
+      font-size: 20px;
+    	color: white;
+    }
+  }
+}

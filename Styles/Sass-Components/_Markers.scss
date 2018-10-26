@@ -1,0 +1,44 @@
+/*
+==========================================================================
+  					  					  			Пометки
+==========================================================================
+*/
+
+$size: 24px;
+
+em {
+	color: #191970;
+}
+
+.v {
+	font-size: $size;
+	color: #FF6347;
+	display: block;
+	text-align: center;
+	background-color: #F5DEB3;
+	padding: 10px;
+}
+
+.v2 {
+	font-size: $size;
+	color: green;
+}
+
+.v3 {
+	font-size: $size;
+	color: darkblue;
+}
+
+.v4 {
+	font-size: $size;
+	color: purple;
+}
+
+pre {
+	code {
+		strong {
+			font-size: 22px;
+			color: #228B22;
+		}
+	}
+}

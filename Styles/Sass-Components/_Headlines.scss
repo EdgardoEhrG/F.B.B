@@ -1,0 +1,36 @@
+/*
+==========================================================================
+  					  					  		 Заголовки
+==========================================================================
+*/
+
+h1, h2 {
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	font-family: Verdana serif;
+	border: 2px solid black;
+	margin: 30px;
+	border-radius: 30px;
+}
+
+h3 {
+	text-align: center;
+}
+
+h5 {
+	text-align: center;
+  background-color: #d4d4d4;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+	font-size: 20px;
+}
+
+.old {
+	background-color: orange;
+}
+
+.of {
+	background-color: #948d8d;
+}

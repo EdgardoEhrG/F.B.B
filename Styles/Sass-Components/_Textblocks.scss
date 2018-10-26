@@ -1,0 +1,27 @@
+/*
+==========================================================================
+ 							               Текстовые Блоки
+==========================================================================
+*/
+
+.textblock {
+	border: 2px solid grey;
+	border-radius: 12px;
+	padding: 18px;
+	margin: 10px;
+	margin-top: 10px;
+	background: #F5F5F5;
+	font-size: 21px;
+}
+
+#Comm, #Tag, #Tags, #Spi, #Tab, #Str, #Spe, #Aud, #Uni, #Sob, #Mim, #For, #Met, #Ele, #Sbr, #Into,
+#Sel, #Raz, #Col, #Gra, #Fon, #Par, #Pse, #Psee, #Pra ,#Fun ,#Ven, #Flex, #Ada, #Per, #Tra, #Ani, #Tri, #Pod,
+#Con,#Typ, #Pre, #Ope, #Log, #Mod, #Usl, #Swi, #Cyc, #Met1, #Mas, #Oth, #Dom1, #Obj, #Met2, #Vyv,
+#Pov, #Obe, #Rab, #Svo, #Sty, #jQ, #Sel, #Sob, #Loc, #Vlo, #Pri, #Ras, #Zap, #Com, #Pol, #Hta, #Soz, #Vvo, #Baz,
+#Gor, #Isp, #Zap, #Zav, #The, #Mat, #Pla, #Otp, #Otk, #Vet, #Sli, #Ust, #Ko, #Lan, #Opt, #Oso,
+#Eta, #Oby, #Sta, #Aut, #Auk, #Pla, #Biz, #Pos, #Wiki, #Comp, #Pro, #Nach, #ZU, #Sle, #Typ, #Win, #Aj, #Gen,
+#XML, #Ser, #Coo, #EJS, #Mik, #Sem, #Prop, #Can, #Prot, #Inc, #Nas, #Nav, #Reg, #Date, #Http, #Req, #But,
+#Fil, #Imp, #Eac, #Off, #ES, #Sin, #Red, #Ses, #Cl, #Constr, #Stat, #Abs, #Inter, #Trei, #Mag, #Err, #Isk,
+#Sess, #LocalS, #Jsx, #Ind, #Map, #Rea, #Media, #Prom, #His, #Dir, #Sod, #Upr, #Rou, #Bab, #Mix, #Get {
+	display: none;
+}
