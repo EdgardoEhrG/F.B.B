@@ -86,8 +86,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-      70%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
+      74%
     </div>
       </div>
   </div>
@@ -526,8 +526,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 44%;">
-      44%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 54%;">
+      54%
     </div>
       </div>
   </div>

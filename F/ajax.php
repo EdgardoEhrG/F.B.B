@@ -113,13 +113,13 @@
 <!-- Buttons -->
 
 <button class="button5" id="ReqB">XMLHttpRequest</button>
-<button class="button5" id="PromB">Promise</button>
 <button class="button5" id="AjB">$.ajax()</button>
 <button class="button5" id="ParB">Параметры</button>
 <button class="button5" id="SerB">Сериализация данных</button>
 <button class="button5" id="XMLB">XML</button>
 <button class="button5" id="SodB">Загрузка содержимого</button>
 <button class="button5" id="GetB">GET-запрос</button>
+<button class="button5" id="PromB">Promise</button>
 <button class="button5" id="AxiB">Axios</button>
 
 <!-- The Article -->
@@ -250,52 +250,6 @@
           request.send(json);<br />
         </strong>
       </code>
-  </p>
-</div>
-
-<!-- The Article -->
-
-<div class="textblock" id="Prom">
-  <p>
-    <em>============================ Promise:</em><br />
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Оборачивание асинхронной операции в один объект.<br />
-
-<code>
-<pre>
-<strong>
-  function post(url, requestuestBody) {
-    return new Promise(function(succeed, fail) {
-      var request = new XMLHttpRequest();
-      request.open("POST", url, true);
-      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      request.addEventListener("load", function(){
-        if (request.status < 400) {
-          succeed(request.responseText);
-        } else {
-          fail(new Error("Request failed:" + request.statusText));
-        }
-      });
-      request.addEventListener("error", function(){
-        fail(new Error("Network error"));
-      });
-    });
-  }
-
-  /* Использование */
-
-  object;
-
-  var params = "name=" + object.name + "&age=" + object.age;
-
-  post(".php", params).then(function(text){
-    console.log(text);
-  }, function(error){
-    console.log(error);
-  });
-</strong>
-</pre>
-</code>
-
   </p>
 </div>
 
@@ -459,6 +413,52 @@ $.get('.php', function(data){
   $('селектор').empty().append("тег" + data.event + "тег тег" + data.date + "тег");
 }, 'json');
 
+</strong>
+</pre>
+</code>
+
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Prom">
+  <p>
+    <em>============================ Promise:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Оборачивание асинхронной операции в один объект.<br />
+
+<code>
+<pre>
+<strong>
+  function post(url, requestuestBody) {
+    return new Promise(function(succeed, fail) {
+      var request = new XMLHttpRequest();
+      request.open("POST", url, true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      request.addEventListener("load", function(){
+        if (request.status < 400) {
+          succeed(request.responseText);
+        } else {
+          fail(new Error("Request failed:" + request.statusText));
+        }
+      });
+      request.addEventListener("error", function(){
+        fail(new Error("Network error"));
+      });
+    });
+  }
+
+  /* Использование */
+
+  object;
+
+  var params = "name=" + object.name + "&age=" + object.age;
+
+  post(".php", params).then(function(text){
+    console.log(text);
+  }, function(error){
+    console.log(error);
+  });
 </strong>
 </pre>
 </code>

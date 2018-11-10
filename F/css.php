@@ -963,7 +963,7 @@
       <span class="v2"><strong>flex</strong></span> - соотношение размера элемента (число).<br />
       <span class="v2"><strong>align-items</strong></span> - выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении <a href="https://webref.ru/css/align-items" class="btn btn-primary" role="button">+</a><br />
       <span class="v2"><strong>align-content</strong></span> - тип выравнивания строк внутри флекс-контейнера по поперечной оси при наличии свободного пространства. <a href="https://webref.ru/css/align-content" class="btn btn-primary" role="button">+</a><br />
-      <span class="v2"><strong>align-self</strong></span> - выравнивает флекс-элементы текущей строки, переписывая значение предыдущего свойства <a href="https://webref.ru/css/align-self" class="btn btn-primary" role="button">+</a><br />
+      <span class="v2"><strong>align-self</strong></span> - выравнивает флекс-элемент текущей строки, переписывая значение предыдущего свойства <a href="https://webref.ru/css/align-self" class="btn btn-primary" role="button">+</a><br />
       <span class="v2"><strong>flex-direction</strong></span> - задаёт направление основных осей в контейнере и тем самым определяет положение флексов в контейнере <a href="https://webref.ru/css/flex-direction" class="btn btn-primary" role="button">+</a><br />
       <span class="v2"><strong>order</strong></span> - порядок вывода флексов внутри флекс-контейнера <a href="https://webref.ru/css/order" class="btn btn-primary" role="button">+</a><br />
       <span class="v2"><strong>flex-basis</strong></span> - определяет основу флекса, которая является начальным размером элемента <a href="https://webref.ru/css/flex-basis" class="btn btn-primary" role="button">+</a><br />
@@ -972,6 +972,15 @@
       <span class="v2"><strong>flex-wrap</strong></span> - указывает, следует ли флексам располагаться в одну строку или можно занять несколько строк. Если перенос строк допускается, то свойство также позволяет контролировать направление, в котором выкладываются строки <a href="https://webref.ru/css/flex-wrap" class="btn btn-primary" role="button">+</a><br />
       <span class="v2"><strong>justify-content</strong></span> - определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера <a href="https://webref.ru/css/justify-content" class="btn btn-primary" role="button">+</a><br />
   </p>
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> Свойства <strong>float</strong>, <strong>clear</strong>, <strong>vertical-align</strong> не оказывают влияния на fkex-контейнер.<br>
+</div>
+
+<div class="alert alert-danger" role="alert">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Псевдоэлементы <strong>::first-line</strong> и <strong>::first-letter</strong> не применяются к flex-контейнерам.<br>
+</div>
+
 </div>
 
 <!-- The Article -->

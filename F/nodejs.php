@@ -177,6 +177,10 @@
 
               <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Особенности:<br />
               - Недоступна работа с DOM, BOM.<br />
+              <br>
+
+              <i class="fa fa-minus-square" aria-hidden="true"></i> Недостатки:<br>
+              - Не годится для app, которые будут использовать CPU в больших объемах.<br>
             </p>
           </div>
         <div class="modal-footer">
@@ -193,6 +197,11 @@
 <button class="button5" id="NachB">Начало работы с Node.js</button>
 <button class="button5" id="SerB">Server.js</button>
 <button class="button5" id="ModB">Модули</button>
+<button class="button5" id="PathB">Path</button>
+<button class="button5" id="OsB">OS</button>
+<button class="button5" id="FileB">File System</button>
+<button class="button5" id="SobB">События</button>
+
 
 <!-- Article -->
 
@@ -204,7 +213,7 @@
       2. <strong>npm init</strong> - создание и инициализация <strong>package.json</strong>.<br />
       3. В свойстве <strong>main</strong> указывается Node.js какой файл следует использовать, когда необходимо запустить App.
       Обычно это <strong>Server.js</strong>.<br />
-      4. С помощью Express.js создается каркас приложения.<br />
+      4. С помощью Express.js создается каркас приложения (не обязательно).<br />
       5. Запуск сервера.<br />
   </p>
 
@@ -250,36 +259,77 @@ http.createServer(function(request, response){
 <pre>
 <strong>
 
-// Time.js
+1. moduleA.js
 
-var currentDate = new Date();
+let s = 10;
 
-module.export.date = currentDate;
+module.exports = s;
 
-module.export.getMess = function (n) {
-  var h = currentDate.getHours();
-  if (h > 16) {
-    return "Bonsoir, " + n;
-  else if (h < 10) {
-    return "Bonjour, " + n;
-  else {
-    return "Bonjour, " + n;
-      }
-    }
-  }
-}
+2. moduleB.js
 
-// App.js
+const mA = require('./имя_модуля.js');
 
-var time = require("./Time.js");
-
-console.log(time.date);
-console.log(time.getMess("name"));
+console.log(m.s); //10
 
 </strong>
 </pre>
 </code>
 
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Path">
+  <p>
+    <em>============================ Модуль работы с путями:</em><br />
+      <code>
+        <strong>
+          const path = require('path');
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Os">
+  <p>
+    <em>============================ Модуль работы с ОС:</em><br />
+      <code>
+        <strong>
+          const os = require('os');<br />
+          <br />
+
+          // Память<br />
+          os.totalmem() - вся память.<br />
+          os.freemem() - доступная память.<br />
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="File">
+  <p>
+    <em>============================ Модуль работы с файловой системой:</em><br />
+      <code>
+        <strong>
+          const fs = require('fs');<br />
+          <br />
+
+          fs.readdirSync('./') - имеющиеся файлы в текущей директории.<br />
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Sob">
+  <p>
+    <em>============================ Модуль событий:</em><br />
   </p>
 </div>
 

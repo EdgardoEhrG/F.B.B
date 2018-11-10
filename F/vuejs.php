@@ -127,6 +127,8 @@
 <!-- Buttons -->
 
 <button class="button" id="CompB">Vue-компоненты</button>
+<button class="button" id="SloB">Слоты</button>
+<button class="button" id="MixB">Миксины</button>
 <button class="button" id="PropB">Привязка данных</button>
 <button class="button" id="FilB">Фильтры</button>
 <button class="button" id="DirB">Директивы</button>
@@ -135,6 +137,7 @@
 <button class="button" id="UprB">Управление элементами</button>
 <button class="button" id="UslB">Условный рендеринг</button>
 <button class="button" id="CycB">Цикловой рендеринг</button>
+<button class="button" id="LifB">Жизненный цикл</button>
 <button class="button" id="RouB">Роутинг</button>
 
 <!-- The Article -->
@@ -189,11 +192,55 @@
 
 <!-- The Article -->
 
+<div class="textblock" id="Slo">
+  <p>
+    <em>============================ Слоты:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Для разного содержимого компонента (слотов может быть несколько).<br>
+      <br>
+      <code>
+        <strong>
+          // Дочерний компонент (разметка)<br>
+          div<br>
+          &nbsp;slot(name="subcomponent")<br><br>
+
+          // Родительский компонент<br>
+          div<br>
+          &nbsp;дочерний_компонент<br>
+          &nbsp;&nbsp;разметка(slot="subcomponent")
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Mix">
+  <p>
+    <em>============================ Миксины:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Используются, чтобы не дублировать логику компонента.<br>
+      <br>
+      <code>
+        <strong>
+          1. Логика выносится в отдельный файл (.js)<br>
+          <br>
+
+          2. import имя from './.js';<br>
+          <br>
+
+          3. В логике компонента добавить:<br>
+          mixins: [ имя_импорта ];
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
 <div class="textblock" id="Prop">
   <p>
     <em>============================ Привязка данных:</em><br />
       <span class="v"><strong># Декларативные подход</strong></span><br />
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Интерполяция (вставка данных / JS-выражений + можно указывать несколько блоков):<br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Интерполяция (вставка данных / JS-выражений (+ вызов функций, тернарные выражения, использование методов) + можно указывать несколько блоков):<br />
       <code>
         <strong>
           data () {<br />
@@ -220,7 +267,7 @@
           div<br />
             &nbsp;p {{ num }}<br /><br />
 
-          // JS<br />
+          // JS (+ валидация)<br />
           props: {<br />
             &nbsp;num: {type: Number, required: true}<br />
           }<br />
@@ -229,7 +276,7 @@
   </p>
 
 <div class="alert alert-info" role="alert">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>{type: Number, required: true}</strong> - валидация передаваемых данных. Возможные типы - String, Number, Boolean, Object, Array, Function. Последнее свойство - обязательное наличие.<br />
+  <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>{type: Number, required: true, default: 1}</strong> - валидация передаваемых данных. Возможные типы - String, Number, Boolean, Object, Array, Function. Второе свойство - обязательное наличие. Последнее - значение по умолчанию.<br />
 </div>
 
   <p>
@@ -303,9 +350,15 @@
           }<br /><br />
 
           // Использование фильтра<br />
-          p {{ свойство | lowercase }}
+          p {{ свойство | lowercase }}<br />
+          <br />
+
+          // Глобальный фильтр (index.js)<br />
+          Vue.filter('имя', (value) => {<br />
+            &nbsp;return value.метод();<br />
+          });<br />
         </strong>
-      </code>
+      </code><br />
   </p>
 
 <div class="alert alert-info" role="alert">
@@ -331,11 +384,57 @@
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Модификаторы:<br />
       <strong>.number</strong> - конвертация значения в число.<br />
       <strong>.trim</strong> - обрезание начальных и конечных пробелов.<br />
+      <strong>.lazy</strong> - обработка после потери фокуса.<br>
       <br />
 
       <span class="v"><strong># Сокращения</strong></span><br />
       <span class="v3"><strong>v-on:событие="метод" => @событие="метод"</strong></span> - сокращение обработчика события.<br />
       <span class="v3"><strong>v-bind:атрибут="свойство" => :атрибут="свойство"</strong></span> - сокращение директивы.<br />
+      <br>
+
+      <span class="v"><strong># Своя директива</strong></span><br />
+      <code>
+        <strong>
+          // Color.js - файл директивы<br>
+          export default {<br>
+            &nbsp;bind(el, bindings, vnode) {<br>
+              &nbsp;&nbsp;el.style.color = green;<br>
+            &nbsp;}<br>
+          }<br><br>
+
+          // -------- Параметры в директиве<br>
+          v-colored="'green'"<br>
+          ...<br>
+          el.style.color = bindings.value;<br><br>
+
+          // -------- Несколько параметров<br>
+          v-colored:color="'значение'"<br>
+          ...<br>
+          const arg = bindings.arg;<br>
+          el.style[arg] = bindings.value;<br><br>
+
+          // main.js - главный файл Vue-приложения<br>
+          import ColorD from './directives/Color.js';<br>
+          Vue.directive('имя_директивы', ColorD);<br><br>
+
+          // Использование<br>
+          h2(v-colored)
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># Жизненный цикл директивы</strong></span><br />
+      <span class="v3"><strong>bind()</strong></span> - инициализация директивы.<br />
+      <span class="v3"><strong>inserted()</strong></span> - директива в DOM-дереве.<br />
+      <span class="v3"><strong>update()</strong></span> - изменение в DOM-дереве.<br />
+      <span class="v3"><strong>componentUpdated()</strong></span> - обновление компонента.<br />
+      <span class="v3"><strong>unbind()</strong></span> - удаление директивы.<br />
+      <br>
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Размещение событий директивы в:<br>
+      <code>
+        <strong>
+          directives: {}
+        </strong>
+      </code>
   </p>
 </div>
 
@@ -345,7 +444,11 @@
   <p>
     <em>============================ Обработка событий:</em><br />
       <span class="v3"><strong>v-on:событие="method_1"</strong></span> - можно также вставлять JS-выражения.<br />
+      <span class="v3"><strong>@событие.prevent</strong></span> - отменяет стандартное поведение элемента.<br />
+      <span class="v3"><strong>@событие.stop</strong></span> - останавливает распространение события.<br />
+      <span class="v3"><strong>@keyup.enter</strong></span> - для событий клавиатуры можно писать клавишу.<br />
       <br />
+
       <code>
         <strong>
           data () {<br />
@@ -363,6 +466,17 @@
           div<br />
             &nbsp;p {{ counter }}<br />
             &nbsp;button(@click="method1(2)")<br />
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># Шина событий</strong></span><br />
+      <code>
+        <strong>
+          // Дочерний компонент (в функции события)<br />
+          this.$emit('название_события', this.передаваемое_свойство);<br />
+          <br />
+
+          //Родительский компонент()
         </strong>
       </code>
 </div>
@@ -450,9 +564,53 @@
 
 <!-- The Article -->
 
+<div class="textblock" id="Lif">
+  <p>
+    <em>============================ Жизненный цикл:</em><br />
+        <code>
+          <strong>
+              имя_цикла() {<br />
+                &nbsp;console.log('...');<br />
+              }<br />
+          </strong>
+        </code><br />
+
+        <span class="v3"><strong>beforeCreate</strong></span> - до создания Vue-приложения.<br />
+        <span class="v3"><strong>created</strong></span> - Vue-приложение создано.<br />
+        <span class="v3"><strong>beforeMount</strong></span> - до рендера.<br />
+        <span class="v3"><strong>mounted</strong></span> - компонент отрендерен и добавлен в DOM-дерево.<br />
+        <span class="v3"><strong>beforeUpdate</strong></span> - до изменения данных.<br />
+        <span class="v3"><strong>updated</strong></span> - данные изменены.<br />
+        <span class="v3"><strong>beforeDestroy</strong></span> - до удаления компонента из DOM-дерева.<br />
+        <span class="v3"><strong>destroyed</strong></span> - компонент удален.<br />
+  </p>
+</div>
+
+<!-- The Article -->
+
 <div class="textblock" id="Rou">
   <p>
     <em>============================ Роутинг:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Переход на страницы без перезагрузки.<br>
+      <br>
+
+      <code>
+        <strong>
+          1. Тело Роута:<br>
+          export default new VueRouter({<br>
+            &nbsp;routes: [<br>
+            &nbsp;&nbsp;{ path: '', component: имя_компонента }  &nbsp;&nbsp;// path - за какой путь отвечает роут, а component - что отображать<br>
+            &nbsp;],<br>
+            &nbsp;mode: 'history'  &nbsp;&nbsp;// убирает # из адресной строки<br>
+          });<br><br>
+
+          2. Отображение одного компонента в другом:<br>
+          router-view<br><br>
+
+          3. Создание навигации:<br>
+          router-link(to="путь" tag="a")  // "/" - ведет на главную, tag - на что будет заменен роут<br>
+        </strong>
+      </code>
   </p>
 </div>
 

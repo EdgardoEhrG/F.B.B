@@ -285,6 +285,9 @@
 
 <!-- Buttons -->
 <button class="button5" id="ESB">ES6</button>
+<button class="button5" id="ES7B">ES7</button>
+<button class="button5" id="ES8B">ES8</button>
+<button class="button5" id="ES9B">ES9</button>
 <button class="button5" id="BabB">Babel</button>
 
 <!-- The Article -->
@@ -298,39 +301,168 @@
       <span class="v"><strong># Переменные</strong></span><br />
       <span class="v3"><strong>let имя = значение;</strong></span> - позволяет избежать повторного определения переменной, так как с <strong>var</strong>
       можно определять 2 и более раз.<br />
-      <br />
+    </p>
 
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Область видимости - блок кода.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Нельзя использовать до обьявления.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Для каждой итерации цикла - своя переменная.<br>
+</div>
+
+    <p>
       <span class="v"><strong># Константы</strong></span><br />
       <span class="v3"><strong>const имя = значение;</strong></span> - значение постоянное и его нельзя изменить.<br />
-      <br />
+    </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Нельзя использовать до обьявления.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если присвоить константе обьект / массив, то его значения свойств / элементов менять можно.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Обязательно должна быть инициализирована.<br>
+</div>
+
+      <span class="v"><strong># Шаблон строки</strong></span><br />
+      <code>
+          <strong>
+            function print(arg) {<br />
+              &nbsp;console.log(`Text ${arg}`);<br />
+            }<br />
+          </strong>
+      </code>
+    </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>${}</strong> - может принимать выражения или строковые методы.<br>
+</div>
+
+    <p>
+      <span class="v"><strong># Spread-оператор (разворачивание)</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Помещает элементы одного массива в другой. Можно также размернуть массив в функции (как аргументы).<br>
+      <code>
+        <strong>
+          let arr1 = [1, 2, 3, 4];<br />
+          let arr2 = [5, 6, 7, 8];<br />
+          let arrRes = [12, 14, ... arr1, 75, ... arr2];<br />
+        </strong>
+      </code><br />
 
       <span class="v"><strong># Импорт / Экспорт файлов</strong></span><br />
       <code>
         <strong>
-          import {s} from '../.js';<br /><br />
+          import s from '../.js';<br /><br />
 
           // ----------------------<br /><br />
 
-          export default {s};<br />
+          export default s;<br />
+          <br>
+
+          1. export default может быть только один.<br>
+          2. import { s as имя } - переименование.<br>
+          3. import { * as имя } - превращает в объект.<br>
         </strong>
-      </code><br /><br />
+      </code><br />
+
+      <span class="v"><strong># Цикл for...of</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Упрощенный доступ к элементу массива:<br>
+      <code>
+        <strong>
+          let arr = [1, 2, 3, 4, 5, 6, 7, 8];<br /><br />
+
+          for (let element of arr) {<br />
+            &nbsp;console.log(elemement)<br />
+          }<br />
+        </strong>
+      </code><br />
+
+      <span class="v"><strong># Цикл forEach</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Упрощенный доступ к элементу массива:<br>
+      <code>
+        <strong>
+          let arr = [1, 2, 3, 4, 5, 6, 7, 8];<br />
+          let sum = 0;<br /><br />
+
+          arr.forEach((num) => sum += num);<br />
+        </strong>
+      </code><br />
+
+      <span class="v"><strong># Параметры по умолчанию</strong></span><br />
+      <code>
+        <strong>
+          function add(x = 5, y = 6) {<br />
+            &nbsp;console.log(x + y);<br />
+          }<br /><br />
+
+          add(); //11<br />
+          add(8, 6); //14<br />
+        </strong>
+      </code><br />
+
+      <span class="v"><strong># Неизвестное число параметров</strong></span><br />
+      <code>
+        <strong>
+          function add(... values) {<br />
+            &nbsp;let sum = 0;<br />
+            &nbsp;values.forEach((value) => {<br />
+              &nbsp;&nbsp;return sum += value;<br />
+              &nbsp;});<br />
+          }<br /><br />
+
+          add(18, 16, 8, 4);<br />
+        </strong>
+      </code><br />
 
       <span class="v"><strong># Arrow functions</strong></span><br />
       <code>
         <strong>
           let f = (параметры) => действия;<br />
+          <br>
+
+          // ------------------------------------------------ Самовызывающаяся AF<br>
+          (() => ...)();<br />
+          <br>
+
+          // ------------------------------------------------ Контекст<br>
+          <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Предотвращение ссылания на объект window:<br>
+          let person = {<br />
+            &nbsp;n: 'name',<br />
+            &nbsp;greet() {<br />
+              &nbsp;&nbsp;setTimeout(() => {<br />
+                &nbsp;&nbsp;&nbsp;console.log(this.n);<br />
+              &nbsp;&nbsp;}, 2000);<br />
+              &nbsp;}<br />
+          }
         </strong>
       </code>
   </p>
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> Если 1 аргумент - скобки можно опустить.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если набор выражение, то обязательно использовать фигурные скобки.<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если нет аргументов - пустые скобки.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если набор выражений, то обязательно использовать фигурные скобки.<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Объект возвращается в виде <strong>({...})</strong>.<br />
 </div>
 
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Нет свойства <strong>.prototype</strong><br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Нельзя использовать как конструктор.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Нельзя использовать методы <strong>.bind()</strong>, <strong>.call()</strong>, <strong>.apply()</strong><br>
+</div>
+
   <p>
-    <span class="v"><strong># Декомпозиция</strong></span><br />
+    <span class="v"><strong># Объекты</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Если у переменной, которая присваивается свойству одинаковое имя, то можно написать только свойство (без значения).<br>
+    <code>
+      <strong>
+        let obj = {<br />
+          &nbsp;n: 'text',<br />
+          &nbsp;method() {<br />
+            &nbsp;&nbsp;console.log(this.n);<br />
+            &nbsp;}<br />
+        }<br />
+      </strong>
+    </code>
+    <br>
+
+    <span class="v"><strong># Деструктуризация</strong></span><br />
     <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Извлечение из объекта / массива отдельных значений в переменные.<br />
     <br />
     <code>
@@ -344,12 +476,39 @@
 
         let {name, age} = user;<br />
         console.log(name); //Tom<br />
+        <br /><br>
+
+        let {name, age, company="Google"} = user;  // Если свойства нет то значение по умолчанию<br />        console.log(company); //Google<br />
         <br />
 
         // Использование других имен для переменных<br />
-        let {name: Usname, age: Ageman} = user;
-      </strong>
+        let {name: Usname, age: Ageman} = user;<br>
+        <br>
+
+        // ------------------------------------------------ Поиск элемента в Object<br>
+        <br>
+        const obj = {<br>
+          &nbsp;rap: 'Lamar',<br>
+          &nbsp;country: 'Bryan',<br>
+          &nbsp;hipHop: 'Lamar'<br>
+        }<br><br>
+
+        const res = Object.entries(obj).filter(([, value]) => value === 'Lamar');  //Оставит только те элементы у которых значение "Lamar"      </strong>
     </code><br /><br />
+
+    <code>
+      <strong>
+        // ------------------------------------------------ Вложенный Object<br />
+        let obj = {<br />
+          &nbsp;n: 'name',<br />
+          &nbsp;sub: {<br />
+            &nbsp;&nbsp;s: 'text'<br />
+          &nbsp;}<br />
+        }<br /><br />
+
+        let { sub: { s } } = obj;<br />
+      </strong>
+    </code><br />
 
     <code>
       <strong>
@@ -359,7 +518,13 @@
         let [a, b, c] = arr;<br />
         <br />
 
-        // ------------------------------------------------ Array + Object<br />
+        // ------------------------------------------------ Array in Array<br />
+        <br>
+        let arr = [[1, 2], [3, 4]];<br>
+        let [[x, y], [a, b]] = arr;<br>
+        <br>
+
+        // ------------------------------------------------ Array + Object (+ использование "пропустить")<br />
         <br />
 
         let arr = [<br />
@@ -411,42 +576,91 @@
 
         let tom = new m('Tom', 47);<br /><br />
 
-        // ------------------------------------------------ Наследование<br />
-        <code>
-          <strong>
-            class P {<br />
-              &nbsp;constructor(n, a) {<br />
-                &nbsp;&nbsp;this.n = n;<br />
-                &nbsp;&nbsp;this.a = a;<br />
-              &nbsp;}<br /><br />
+        // ------------------------------------------------ Наследование
+        <br />
+          class P {<br />
+            &nbsp;constructor(n, a) {<br />
+              &nbsp;&nbsp;this.n = n;<br />
+              &nbsp;&nbsp;this.a = a;<br />
+            &nbsp;}<br /><br />
 
-              &nbsp;disp() {<br />
-                &nbsp;&nbsp;console.log(this.n, this.a);<br />
-              &nbsp;}<br />
-            }<br /><br />
+            &nbsp;disp() {<br />
+              &nbsp;&nbsp;console.log(this.n, this.a);<br />
+            &nbsp;}<br />
+          }<br /><br />
 
-            class Emp extends P {<br />
-              &nbsp;constructor(n, a, c) {<br />
-                &nbsp;&nbsp;super(n, a) {<br />
-                  &nbsp;&nbsp;&nbsp;this.c = c;<br />
-                &nbsp;&nbsp;}<br /><br />
+          class Emp extends P {<br />
+            &nbsp;constructor(n, a, c) {<br />
+              &nbsp;&nbsp;super(n, a) {<br />
+                &nbsp;&nbsp;&nbsp;this.c = c;<br />
+              &nbsp;&nbsp;}<br /><br />
 
-                &nbsp;&nbsp;disp() {<br />
-                  &nbsp;&nbsp;&nbsp;super.disp();<br />
-                  &nbsp;&nbsp;&nbsp;console.log("Emp", this.c) {<br />
-                  &nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;}<br />
-              &nbsp;}<br />
-            }<br /><br />
+              &nbsp;&nbsp;disp() {<br />
+                &nbsp;&nbsp;&nbsp;super.disp();<br />
+                &nbsp;&nbsp;&nbsp;console.log("Emp", this.c) {<br />
+                &nbsp;&nbsp;&nbsp;}<br />
+              &nbsp;&nbsp;}<br />
+            &nbsp;}<br />
+          }<br /><br />
 
-            let Bing = new Emp("Ding", 36, "6");<br />
-            Bing.disp();
-          </strong>
-        </code>
-      </strong>
-    </code>
+          let Bing = new Emp("Ding", 36, "6");<br />
+          Bing.disp();<br>
+          <br>
+
+          // ------------------------------------------------ Геттер<br>
+          get _имя() {<br>
+            &nbsp;return this.property === условие (тернарный оператор);<br>
+          }<br><br>
+
+          // ------------------------------------------------ Сеттер<br>
+          set _имя(value) {<br>
+            &nbsp;if (value!== undefined && typeof value == 'тип') {<br>
+              &nbsp;&nbsp;this.property = value;<br>
+              &nbsp;} else {<br>
+                &nbsp;&nbsp;console.log('error');<br>
+              &nbsp;}<br>
+          }
+        </strong>
+      </code>
   </p>
 
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>экземпляр instanceof класс</strong> - проверка на принадлежность к классу.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если у подкласса нет конструктора - он воспользуется родительским.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если у подкласса есть род. конструктор, то свойства должны передаваться как аргумент, иначе будет <strong>undefined</strong>.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>super.метод()</strong> - вызов родительского метода.<br>
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Нельзя создавать properties вне конструктора.<br>
+</div>
+
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="ES9">
+  <p>
+    <em>============================ ES9:</em><br />
+      <span class="v"><strong># Класс</strong></span><br />
+      <code>
+        <strong>
+          // ------------------------------------------------ Свойства + методы (AF):<br>
+          <br>
+
+          class Имя {<br>
+            &nbsp;property = значение;<br><br>
+
+            &nbsp;метод = () => {<br>
+              &nbsp;&nbsp;this.property = новое_значение;<br>
+            &nbsp;}<br>
+          }<br><br>
+
+          // ------------------------------------------------ Статическое свойство:<br>
+          static property = value;<br>
+        </strong>
+      </code>
+  </p>
 </div>
 
 <!-- The Article -->
@@ -665,6 +879,7 @@
     <span class="v3"><strong>.trim()</strong></span> - удаление начальных и конечных пробелов в строке.<br />
     <span class="v3"><strong>.concat()</strong></span> - объединение строк.<br />
     <span class="v3"><strong>.replace()</strong></span> - замена одной подстроки на другую (2 аргумента - что и на что).<br />
+    <span class="v3"><strong>.repeat()</strong></span> - повторяет строку столько раз, сколько нужно (исп. к самой строке и принимает число).<br />
   </p>
 </div>
 
@@ -1369,12 +1584,13 @@
       <span class="v3"><strong>m.length = 8;</strong></span> - задание длины массива.<br />
   </p>
 
-<div class="alert alert-danger" role="alert">
-  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Значения, которые не попали в новую заданную длину массива будут утеряны (короткий массив). А
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Значения, которые не попали в новую заданную длину массива будут утеряны (короткий массив). А
   новые незаполненные элементы получают статус <strong>undefined</strong> (длинный массив).<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Если в массиве есть пропущенные индексы, то при выводе появятся лишние запятые.<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Массив - тоже объект, при копировании будет скопирована ссылка на его адрес в памяти.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Строка тоже является массивом.
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Строка тоже является массивом.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Методы обхода каждого элемента массива (<strong>.map()</strong>, <strong>.reduce()</strong> и другие) можно объединять в цепочку.<br>
 </div>
 
 <div class="alert alert-danger" role="alert">

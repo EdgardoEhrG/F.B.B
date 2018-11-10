@@ -105,6 +105,7 @@
               <i class="fa fa-plus-circle" aria-hidden="true"></i> Достоинства:<br />
               - React при изменениях DOM-дерева старается использовать минимально возможные воздействия. Использует
               виртуальный DOM (где меняет, добавляет, удаляет элементы), чтобы в реальный DOM за раз добавить все изменения.<br />
+              - Создает легковесные объекты.<br>
               <br />
 
               <i class="fa fa-minus-square" aria-hidden="true"></i> Недостатки:<br />
@@ -156,12 +157,8 @@
         <strong>
           'use strict';<br /><br />
 
-          import React from 'react';<br />
+          import React, { Component } from 'react';<br />
           import ReactDOM from 'react-dom';<br />
-          <br />
-
-          import createReactClass from 'create-react-class';<br />
-          import PropTypes from 'prop-types';<br />
           <br />
 
           import './style.css'; //импорт стилей для компонентов<br />
@@ -170,11 +167,6 @@
 
       <a href="https://reactjs.org/docs/add-react-to-an-existing-app.html" class="btn btn-primary" role="button">Подключение</a><br />
   </p>
-
-<div class="alert alert-info" role="alert">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> Для работы с React.js понадобятся - <strong>react, react-dom, babel-core, babel-loader, babel-preset-es2015, babel-preset-react, create-react-class, json-loader, prop-types</strong>.
-  Также - <strong>webpack, .babelrc</strong>
-</div>
 
 </div>
 
@@ -200,11 +192,14 @@
 <code>
 <pre>
 <strong>
-class HelloMessage extends React.Component {
+import React, { Component } from 'react';
+
+class HelloMessage extends Component {
+  const { name } = this.props;
   render() {
     return (
       &lt;div&gt;
-        Hello {this.props.name}
+        Hello {name}
       &lt;/div&gt;
     );
   }
@@ -212,125 +207,11 @@ class HelloMessage extends React.Component {
 
 ReactDOM.render(
   &lt;HelloMessage name="Taylor" /&gt;,
-  mountNode
+  document.getElementById('root')
 );
 </strong>
 </pre>
 </code>
-<br /><br />
-
-      <span class="v"><strong># Компонент с состоянием</strong></span><br />
-
-<code>
-<pre>
-<strong>
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
-}
-
-tick() {
-  this.setState(prevState => ({
-    seconds: prevState.seconds + 1
-  }));
-}
-
-componentDidMount() {
-  this.interval = setInterval(() => this.tick(), 1000);
-}
-
-componentWillUnmount() {
-  clearInterval(this.interval);
-}
-
-render() {
-  return (
-    &lt;div&gt;
-      Seconds: {this.state.seconds}
-    &lt;/div&gt;
-  );
-}
-}
-
-ReactDOM.render(&lt;Timer /&gt;, mountNode);
-</strong>
-</pre>
-</code>
-
-      <span class="v"><strong># Mini App</strong></span><br />
-
-<code>
-<pre>
-<strong>
-  class TodoApp extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { items: [], text: '' };
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    render() {
-      return (
-        &lt;div&gt;
-          &lt;h3&gt;TODO&lt;/h3&gt;
-          &lt;TodoList items={this.state.items} /&gt;
-          &lt;form onSubmit={this.handleSubmit}&gt;
-            &lt;label htmlFor="new-todo"&gt;
-              What needs to be done?
-            &lt;/label&gt;
-            &lt;input
-              id="new-todo"
-              onChange={this.handleChange}
-              value={this.state.text}
-            /&gt;
-            &lt;button&gt;
-              Add #{this.state.items.length + 1}
-            &lt;/button&gt;
-          &lt;/form&gt;
-        &lt;/div&gt;
-      );
-    }
-
-    handleChange(e) {
-      this.setState({ text: e.target.value });
-    }
-
-    handleSubmit(e) {
-      e.preventDefault();
-      if (!this.state.text.length) {
-        return;
-      }
-      const newItem = {
-        text: this.state.text,
-        id: Date.now()
-      };
-      this.setState(prevState => ({
-        items: prevState.items.concat(newItem),
-        text: ''
-      }));
-    }
-  }
-
-  class TodoList extends React.Component {
-    render() {
-      return (
-        &lt;ul&gt;
-          {this.props.items.map(item => (
-            &lt;li key={item.id}>{item.text}&lt;/li&gt;
-          ))}
-        &lt;/ul&gt;
-      );
-    }
-  }
-
-  ReactDOM.render(&lt;TodoApp />, mountNode);
-</strong>
-</pre>
-</code>
-
-
   </p>
 </div>
 
@@ -340,11 +221,11 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
   <p>
     <em>============================ JSX:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Способ описания визуального кода посредством комбинации JS и XML. В <strong>{}</strong>
-      можно размещать JS-код. Расширение файлов - <strong>.jsx</strong><br />
-
+      можно размещать JS-код. Атрибуты пишутся в стиле camelCase. Расширение файлов - <strong>.jsx</strong><br />
 
       <span class="v3"><strong>className={'класс1 ' + 'класс2'}</strong></span> - добавление нескольких классов.<br />
       <span class="v3"><strong>условие ? действие : действие2</strong></span> - в JSX нельзя использовать <strong>if / else</strong>, только тернарный оператор.<br />
+      <span class="v3"><strong>htmlFor</strong></span> - вместо атрибута <strong>for</strong><br>
   </p>
 </div>
 
@@ -356,7 +237,9 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Создание компонента (React-элемент):<br />
       <code>
         <strong>
-          var App = createReactClass({<br /><br />
+          import React, { Component } from 'react';<br /><br />
+
+          export default class App extends Component{<br /><br />
 
             /* Props */<br /><br />
 
@@ -366,14 +249,14 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
 
             /* Events */<br /><br />
 
-            &nbsp;render: function() {<br />
+            &nbsp;render() {<br />
               &nbsp;&nbsp;return(<br />
               &nbsp;&nbsp;&nbsp;&lt;div className="..."&gt;<br />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br />
               &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
               &nbsp;&nbsp;);<br />
               &nbsp;}<br />
-            });
+            }
           </strong>
         </code><br /><br />
 
@@ -381,7 +264,7 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
         <code>
           <strong>
             function имя() {<br />
-              &nbsp;return разметка;<br />
+              &nbsp;return (разметка);<br />
             }
           </strong>
         </code><br /><br />
@@ -389,9 +272,9 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
         <span class="v"><strong># ES6</strong></span><br />
         <code>
           <strong>
-            class имя extends React.Component {<br />
+            export default class имя extends React.Component {<br />
               &nbsp;render() {<br />
-                &nbsp;&nbsp;return разметка;<br />
+                &nbsp;&nbsp;return (разметка);<br />
               &nbsp;}<br />
             }
           </strong>
@@ -401,8 +284,10 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
         <code>
           <strong>
             let имя =() => {<br />
-              &nbsp;return разметка;<br />
-            }
+              &nbsp;return (разметка);<br />
+            }<br><br>
+
+            export default имя;
           </strong>
         </code>
 
@@ -426,7 +311,9 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
 </div>
 
 <div class="alert alert-info">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> 1 компонент может содержать другие компоненты (вложенность компонентов - родитель / дочерний элемент).
+  <i class="fa fa-info-circle" aria-hidden="true"></i> 1 компонент может содержать другие компоненты (вложенность компонентов - родитель / дочерний элемент).<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> В каждом компоненте должен быть импорт библиотеки React.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Имя компонента должно начинаться с заглавной буквы.<br>
 </div>
 
 </div>
@@ -443,14 +330,14 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
       <span class="v"><strong># Создание свойства</strong></span><br />
       <code>
         <strong>
-          var s = [{свойство: значение}, {свойство: значение}];<br />
+          const text = "text";<br />
         </strong>
       </code>
   </p>
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> В свойство можно передать любой JS-примитив, объект, переменную
-   и даже выражение.<br />
+   и даже выражение или массив.<br />
    <i class="fa fa-chevron-right" aria-hidden="true"></i> Значение свойства должно быть в <strong>{}</strong>.<br />
    <i class="fa fa-chevron-right" aria-hidden="true"></i> Значения доступны через <strong>this.props.имя_свойства</strong>.<br />
    <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>this.props</strong> исп. только для чтения и не могут быть динамически изменены.<br />
@@ -464,19 +351,19 @@ ReactDOM.render(&lt;Timer /&gt;, mountNode);
 <code>
 <pre>
 <strong>
-import PropTypes from 'prop-types';
 
+// Родительский компонент
+&lt;Component name="Jensen" /&gt;
+
+//Дочерний компонент + извлечение props'а
 class Greeting extends React.Component {
+  const { name } = this.props;
   render() {
     return (
-      &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+      &lt;h1&gt;Hello, {name}&lt;/h1&gt;
     );
   }
 }
-
-Greeting.propTypes = {
-  name: PropTypes.string
-};
 </strong>
 </pre>
 </code><br /><br />
@@ -496,9 +383,10 @@ Greeting.propTypes = {
     <code>
       <strong>
         class имя extends React.Component {<br />
+          const { property } = this.props;<br>
           &nbsp;render() {<br />
             &nbsp;&nbsp;return тег<br />
-              &nbsp;&nbsp;&nbsp;тег Text: {this.props.имя_свойства} тег<br />
+              &nbsp;&nbsp;&nbsp;тег Text: {property} тег<br />
             &nbsp;&nbsp;тег;<br />
           &nbsp;}<br />
         }
@@ -512,8 +400,8 @@ Greeting.propTypes = {
       <strong>
         имя.defaultProps = { свойство: "значение" };
       </strong>
-    </code>
-
+    </code><br>
+    <br>
 
     <span class="v"><strong># Использование</strong></span><br />
     <code>
@@ -528,9 +416,7 @@ Greeting.propTypes = {
   </p>
 
 <div class="alert alert-info" role="alert">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> Разметка обернута внутри <strong>return</strong>, так как он
-  всегда должен возвращать DOM-узел (что угодно, обернутое в родительский тег).<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> У родительского элемента есть атрибут "ключ" - для ReactJS
+  <i class="fa fa-info-circle" aria-hidden="true"></i> У родительского элемента есть атрибут "ключ" - для ReactJS
   необходима уникальность, чтобы все механизмы работали корректно. По "ключу" ReactJS будет понимать с каким именно
   дочерним узлом работает и к какому родителю он принадлежит.
 </div>
@@ -553,13 +439,22 @@ class имя extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      свойство: "значение"
+      property: "значение"
     };
   }
   render() {
-    return тег { this.state.имя_свойства };
+    const { property } = this.state;
+    return тег { property };
   }
 }
+
+// ES7+
+
+state = {
+  property: value
+}
+
+Извлечение - const { stateProps } = this.state;
 
 </strong>
 </pre>
@@ -576,7 +471,7 @@ class имя extends React.Component {
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> Изменение state вызывает повторный render компонента.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> setState() не изменяет this.state немедленно, а создает очередь изменений состояния. Доступ к this.Stateпосле вызова метода,
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> setState() не изменяет this.state немедленно, а создает очередь изменений состояния. Доступ к this.State после вызова метода,
   потенциально может вернуть имеющееся значение (бывшее).<br />
 </div>
 

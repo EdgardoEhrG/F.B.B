@@ -148,6 +148,7 @@
   <p>
     <em>============================ Команды:</em><br />
       <span class="v2"><strong>doctype html</strong></span> - объявление доктайпа.<br />
+      <span class="v2"><strong>doctype strict</strong></span> - строгий режим кода разметки (XHTML).<br>
       <span class="v2"><strong>тег</strong></span> - создание тега.<br />
       <span class="v2"><strong>тег содержимое</strong></span> - наполнение элемента.<br />
       <span class="v2"><strong>тег(атрибут='')</strong></span> - добавление атрибутов.<br />

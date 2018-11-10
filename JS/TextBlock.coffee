@@ -607,3 +607,39 @@ $(document).ready ->
   $('#GetB').click ->
     $('div.textblock').css("display", "none")
     $('#Get').fadeIn(400)
+
+  $('#LifB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Lif').fadeIn(400)
+
+  $('#SloB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Slo').fadeIn(400)
+
+  $('#AxiB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Axi').fadeIn(400)
+
+  $('#PathB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Path').fadeIn(400)
+
+  $('#OsB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Os').fadeIn(400)
+
+  $('#FileB').click ->
+    $('div.textblock').css("display", "none")
+    $('#File').fadeIn(400)
+
+  $('#ES7B').click ->
+    $('div.textblock').css("display", "none")
+    $('#ES7').fadeIn(400)
+
+  $('#ES8B').click ->
+    $('div.textblock').css("display", "none")
+    $('#ES8').fadeIn(400)
+
+  $('#ES9B').click ->
+    $('div.textblock').css("display", "none")
+    $('#ES9').fadeIn(400)
