@@ -162,6 +162,9 @@
           <br />
 
           import './style.css'; //импорт стилей для компонентов<br />
+          <br>
+
+          import imgName from './.png'; //импорт изображения<br>
         </strong>
       </code><br />
 
@@ -227,6 +230,32 @@ ReactDOM.render(
       <span class="v3"><strong>условие ? действие : действие2</strong></span> - в JSX нельзя использовать <strong>if / else</strong>, только тернарный оператор.<br />
       <span class="v3"><strong>htmlFor</strong></span> - вместо атрибута <strong>for</strong><br>
   </p>
+
+  <p>
+      <span class="v"><strong># Массив элементов</strong></span><br />
+      <code>
+        <strong>
+          const List = ({ массив }) => {<br />
+            &nbsp;const elements = массив.map((item) => {<br />
+              &nbsp;&nbsp;return (<br />
+                &nbsp;&nbsp;&nbsp;&lt;li key={item.id}&gt;&lt;/li &gt;<br />
+              &nbsp;&nbsp;);<br />
+            &nbsp;});<br />
+            &nbsp;return (<br />
+            &nbsp;&nbsp;&lt;ul&gt; { elements } &lt;/ul&gt;<br />
+            &nbsp;)<br />
+          }
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> У родительского элемента есть атрибут "ключ" - для ReactJS
+  необходима уникальность, чтобы все механизмы работали корректно. По "ключу" ReactJS будет понимать с каким именно
+  дочерним узлом работает и к какому родителю он принадлежит.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> React использует ключи, чтобы сравнивать элементы при обновлении данных / состояния.<br>
+</div>
+
 </div>
 
 <!-- The Article -->
@@ -270,6 +299,7 @@ ReactDOM.render(
         </code><br /><br />
 
         <span class="v"><strong># ES6</strong></span><br />
+        <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Только класс имеет state и ЖЦ.<br>
         <code>
           <strong>
             export default class имя extends React.Component {<br />
@@ -289,9 +319,15 @@ ReactDOM.render(
 
             export default имя;
           </strong>
+        </code><br><br>
+
+        <span class="v"><strong># Фрагмент</strong></span><br />
+        <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Обертка для нескольких элементов, чтобы не создавать лишний блок и не вносить изменения в DOM.<br>
+        <code>
+          <strong>
+            &lt;React.Fragment&gt; элементы &lt;/React.Fragment&gt;
+          </strong>
         </code>
-
-
   </p>
 
   <p>
@@ -314,6 +350,13 @@ ReactDOM.render(
   <i class="fa fa-info-circle" aria-hidden="true"></i> 1 компонент может содержать другие компоненты (вложенность компонентов - родитель / дочерний элемент).<br>
   <i class="fa fa-chevron-right" aria-hidden="true"></i> В каждом компоненте должен быть импорт библиотеки React.<br>
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Имя компонента должно начинаться с заглавной буквы.<br>
+</div>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Для данных из API:<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Компонент не должен знать откуда именно берутся данные (упрощает тестирование / поддержку кода).<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Обновлять данные в конструкторе, в <strong>.then</strong> - обновление state.<br>
+
 </div>
 
 </div>
@@ -411,16 +454,7 @@ class Greeting extends React.Component {
         )
       </strong>
     </code>
-
-
   </p>
-
-<div class="alert alert-info" role="alert">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> У родительского элемента есть атрибут "ключ" - для ReactJS
-  необходима уникальность, чтобы все механизмы работали корректно. По "ключу" ReactJS будет понимать с каким именно
-  дочерним узлом работает и к какому родителю он принадлежит.
-</div>
-
 </div>
 
 <!-- The Article -->
@@ -473,11 +507,13 @@ state = {
   <i class="fa fa-info-circle" aria-hidden="true"></i> Изменение state вызывает повторный render компонента.<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> setState() не изменяет this.state немедленно, а создает очередь изменений состояния. Доступ к this.State после вызова метода,
   потенциально может вернуть имеющееся значение (бывшее).<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> React игнорирует значение <strong>null</strong>.<br>
 </div>
 
 <div class="alert alert-danger" role="alert">
-  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> setState нельзя вызывать в render.<br />
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> setState нельзя вызывать в render. Также setState не должен менять текущий state.<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Вызов setState родителя перерисует все дочерние элементы.<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Методы, которые меняют массив - использовать нельзя. Можно лишь создать новый и присвоить его.<br>
 </div>
 
 </div>
@@ -502,6 +538,12 @@ state = {
           имя_функции() {<br />
             &nbsp;let переменная = (this.state.свойство === "значение") ? "1_значение" : "2_значение";<br />
             &nbsp;this.setState({свойство: переменная});<br />
+          }<br />
+          <br />
+
+          // -------------------------------- Или (ES6+, без конструктора и без привязки)<br>
+          имя_функции = () => {<br />
+            &nbsp;...<br />
           }
         </strong>
       </code><br /><br />
@@ -512,8 +554,12 @@ state = {
           тег onClick={this.имя_функции} className={this.state.свойство}
         </strong>
       </code>
-
   </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Любой компонент может генерить свои события. Достаточно передать callback как props, затем вызвать ее из компонента, когда наступило событие.<br>
+</div>
+
 </div>
 
 <!-- The Article -->

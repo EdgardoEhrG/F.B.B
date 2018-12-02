@@ -120,6 +120,7 @@
 <button class="button5" id="SodB">Загрузка содержимого</button>
 <button class="button5" id="GetB">GET-запрос</button>
 <button class="button5" id="PromB">Promise</button>
+<button class="button5" id="FetB">Fetch API</button>
 <button class="button5" id="AxiB">Axios</button>
 
 <!-- The Article -->
@@ -464,6 +465,52 @@ $.get('.php', function(data){
 </code>
 
   </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Fet">
+  <p>
+    <em>============================ Fetch API:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Общение с сервером на основе promise.<br>
+      <code>
+        <strong>
+          fetch('url')<br>
+            &nbsp;.then((res) => {<br>
+              &nbsp;&nbsp;return res.json();  &nbsp;&nbsp;// Парсинг данных<br>
+            &nbsp;})<br>
+            &nbsp;.then((data) => {<br>
+              &nbsp;&nbsp;console.log(data);  &nbsp;&nbsp;// Получение данных<br>
+            &nbsp;})<br>
+            &nbsp;.catch((err) => {<br>
+              &nbsp;&nbsp;console.error(err);  &nbsp;&nbsp;// Отлавливание ошибок<br>
+            &nbsp;});<br>
+            <br>
+
+            // -------------------------------- Асинхронный вариант (обертка)<br>
+            const getResource = async (url) => {<br>
+              &nbsp;const res = await fetch(url);<br>
+              &nbsp;if (!res.ok) {<br>
+                &nbsp;&nbsp;throw new Error(`Could not fetch ${url}, received ${res.status}`);<br>
+              &nbsp;}<br>
+              &nbsp;const body = await res.json();<br>
+              &nbsp;return body;<br>
+            }
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>res.ok</strong> содержит <strong>true</strong>, если <strong>res.status</strong> содержит один из ОК-статусов (200-299)<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Код, который работает с API лучше изолировать в отдельный класс (как service).<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Модель данных API должна быть отделена от модели данных приложения.<br>
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>fetch()</strong> отклоняет promise, если произошла ошибка сети.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Код с <strong>await</strong> может выбросить ошибку.<br>
+</div>
+
 </div>
 
 <!-- The Article -->

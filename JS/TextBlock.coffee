@@ -643,3 +643,23 @@ $(document).ready ->
   $('#ES9B').click ->
     $('div.textblock').css("display", "none")
     $('#ES9').fadeIn(400)
+
+  $('#FetB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Fet').fadeIn(400)
+
+  $('#ResB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Res').fadeIn(400)
+
+  $('#VxB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Vx').fadeIn(400)
+
+  $('#ActB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Act').fadeIn(400)
+
+  $('#MutB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Mut').fadeIn(400)

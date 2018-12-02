@@ -108,6 +108,176 @@
   </div>
 </div>
 
+<hr />
+
+<!-- Buttons -->
+
+<button class="button5" id="VxB">Vuex</button>
+<button class="button5" id="StaB">State</button>
+<button class="button5" id="GetB">Getters</button>
+<button class="button5" id="MutB">Mutations</button>
+<button class="button5" id="ActB">Actions</button>
+<button class="button5" id="ModB">Модули</button>
+
+<!-- The Article -->
+
+<div class="textblock" id="Vx">
+  <p>
+    <em>============================ О Vuex:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Установка и подключение:<br>
+      <code>
+        <strong>
+          1. npm install vuex<br>
+          <br>
+
+          2. Создать папку store и файл index.js<br>
+          <br>
+
+          3. В файле:<br>
+          import Vue from 'vue'<br>
+          import Vuex from 'vuex'<br>
+          Vue.use(Vuex)<br><br>
+
+          export default new Vuex.Store({<br>
+            &nbsp;...<br>
+          })<br>
+          <br>
+
+          4. В главном файле:<br>
+          import store from './store' + добавить store в Vue
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Sta">
+  <p>
+    <em>============================ State:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Состояние.<br>
+      <code>
+        <strong>
+          state: {<br>
+            &nbsp;property: value<br>
+          }<br><br>
+
+          // Получить значение (рекомендуется использовать геттеры)<br>
+          computed: {<br>
+            &nbsp;name () {<br>
+              &nbsp;&nbsp;return this.$store.state.property<br>
+            &nbsp;}<br>
+          }
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Get">
+  <p>
+    <em>============================ Getters:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Доступ к данным / модифицированные данные:<br>
+      <code>
+        <strong>
+          getters: {<br>
+            &nbsp;name (state) {<br>
+              &nbsp;&nbsp;return state.property // Вернуть все данные (или можно изменить)<br>
+            &nbsp;}<br>
+          }<br><br>
+
+          // Получение (в computed)<br>
+          this.$store.getters.name
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Mut">
+  <p>
+    <em>============================ Mutations:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Изменение state.<br>
+      <code>
+        <strong>
+          mutations: {<br>
+            &nbsp;name (state, payload) {<br>
+              &nbsp;&nbsp;state.property = payload<br>
+            &nbsp;}<br>
+          }<br><br>
+
+          // Использование<br>
+          this.$store.commit('name', payload)
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>payload</strong> - можно передать только 1 параметр, если их несколько, то он должен быть объектом.<br>
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> В мутацию нельзя передавать асинхронный код / обращение к API.<br>
+</div>
+
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Act">
+  <p>
+    <em>============================ Actions:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Подходит, для действий с API, действия с задержкой.<br>
+      <code>
+          <strong>
+            actions: {<br>
+              &nbsp;имя_функции ({commit}, payload) {<br>
+                &nbsp;&nbsp;setTimeout(() => {<br>
+                  &nbsp;&nbsp;&nbsp;commit('имя_мутации', payload);<br>
+                &nbsp;&nbsp;}, 1000)<br>
+              &nbsp;}<br>
+            }<br><br>
+
+            // Использование<br>
+            this.$store.dispatch('имя_функции', payload)
+          </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Mod">
+  <p>
+    <em>============================ Модули:</em><br />
+      <code>
+        <strong>
+          1. Создать отдельный файл (модуль) в папке store.<br>
+          <br>
+
+          2. Содержимое модуля:<br>
+          export default {<br>
+            &nbsp;state: {},<br>
+            &nbsp;mutations: {},<br>
+            &nbsp;actions: {},<br>
+            &nbsp;getters: {}<br>
+          }<br>
+          <br>
+
+          3. Главный файл stor'а:<br>
+          import имя_модуля from './.js'<br>
+          <br>
+
+          modules: {<br>
+            &nbsp;имя_модуля<br>
+          }
+        </strong>
+      </code>
+  </p>
+</div>
+
   </div>
 </div>
 

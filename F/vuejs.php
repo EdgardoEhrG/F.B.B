@@ -138,7 +138,8 @@
 <button class="button" id="UslB">Условный рендеринг</button>
 <button class="button" id="CycB">Цикловой рендеринг</button>
 <button class="button" id="LifB">Жизненный цикл</button>
-<button class="button" id="RouB">Роутинг</button>
+<button class="button" id="RouB">vue-router</button>
+<button class="button" id="ResB">vue-resource</button>
 
 <!-- The Article -->
 
@@ -609,6 +610,122 @@
 
           3. Создание навигации:<br>
           router-link(to="путь" tag="a")  // "/" - ведет на главную, tag - на что будет заменен роут<br>
+          <br>
+
+          4. Динамический роут (роут одного элемента):<br>
+          Разметка - :to=`/item/${id}`<br>
+          Роут - path: '/item/:id'<br>
+          // Извлечение параметра - this.$route.params['id']<br>
+          <br>
+
+          5. Программная навигация:<br>
+          К событию - this.$router.push('/') - перейти к главной (или к любому другому указанному пути)<br>
+          <br>
+
+          6. Вложенный роут:<br>
+          Роут - children: [<br>
+            &nbsp;&nbsp;{ path: 'путь', component: имя_компонента }<br>
+          ]<br>
+          Разметка - router-link(tag="a" to="родительский_путь + путь")<br>
+          router-view // Для отображения вложенного пути<br>
+          <br>
+
+          7. Передача параметров:<br>
+          :to="{name: 'имя_пути', params: {id: id}, query: {name: 's', year: 2016}}"<br>
+          // Извлечение (можно через computed) {{ $route.query.name }}<br>
+          <br>
+
+          8. Хэш и скролл:<br>
+          К роуту - hash: '#id_элемента'<br>
+          Далее (после mode: 'history') - scrollBehavior (to, from, saved) {<br>
+            &nbsp;if (to.hash) {<br>
+              &nbsp;&nbsp;return { selector: to.hash }<br>
+            &nbsp;}<br>
+            &nbsp;if (savedPosition) {<br>
+              &nbsp;&nbsp;return savedPosition<br>
+            &nbsp;}<br>
+            &nbsp;return {<br>
+              &nbsp;&nbsp;x: 0,<br>
+              &nbsp;&nbsp;y: 0<br>
+            &nbsp;}<br>
+          }<br><br>
+
+          9. Перенаправление:<br>
+          redirect: 'путь'<br>
+          <br>
+
+          10. Страница 404:<br>
+          {<br>
+            &nbsp;path: '*',  // Для остальных незарегистрированных путей<br>
+            &nbsp;component: errorPage<br>
+          }<br>
+          <br>
+
+          11. Защита роутов:<br>
+          К роуту - beforeEnter (to, from, next) {<br>
+            &nbsp;if (условие) {<br>
+              &nbsp;&nbsp;next(true)<br>
+            &nbsp;} else {<br>
+              &nbsp;&nbsp;next(false) // Переход не будет осуществлен<br>
+            &nbsp;}<br>
+          }<br>
+          <br>
+
+          12. Подтсверждение перехода (в компоненте):<br>
+          beforeRouteEnter(to, from, next) {<br>
+            &nbsp;...<br>
+          }<br><br>
+
+          beforeRouteLeave(to, from, next) {<br>
+            &nbsp;if (условие) {<br>
+              &nbsp;&nbsp;next(t/f)<br>
+            &nbsp;}<br>
+          }<br>
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Res">
+  <p>
+    <em>============================ Работа с API:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> npm install vue-resource<br>
+      <br>
+
+      <code>
+        <strong>
+          1. Поключение:<br>
+          import VueResource from 'vue-resource'<br>
+          Vue.use(VueResource)<br>
+          <br>
+
+          2. Создание POST-запроса (отправка данных):<br>
+          // К форме (функция)<br>
+          const obj {<br>
+            &nbsp;// Свойства для отправки<br>
+          }<br><br>
+
+          this.$http.post('url', obj)<br>
+            &nbsp;.then(res => {<br>
+              &nbsp;&nbsp;return res.json()<br>
+            &nbsp;})<br>
+            &nbsp;.then(res => {<br>
+              &nbsp;&nbsp;console.log(res)<br>
+            &nbsp;})<br>
+            <br>
+
+            3. Создание GET-запроса (получение данных):<br>
+            this.$http.get('url')<br>
+              &nbsp;.then(res => {<br>
+                &nbsp;&nbsp;return res.json()<br>
+              &nbsp;})<br>
+              &nbsp;.then(body => {<br>
+                &nbsp;&nbsp;запись в property<br>
+              &nbsp;})<br>
+              <br>
+
         </strong>
       </code>
   </p>

@@ -447,7 +447,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Модульный сбощик (Webpack)</h5>
+    <h5>Модульный сбощик (webpack)</h5>
     <p>
       <a href="F/webpack.php" class="thumbnail">
        <img src="Images/wp.jpg" width="343px" height="360px" />
@@ -643,6 +643,20 @@
     <p>
       <a href="F/expressjs.php" class="thumbnail">
        <img src="Images/Express.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+      10%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>MVC (SailsJS)</h5>
+    <p>
+      <a href="F/sailsjs.php" class="thumbnail">
+       <img src="Images/Sails.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
