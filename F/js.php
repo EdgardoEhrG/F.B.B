@@ -272,6 +272,25 @@
   </div>
 </div>
 
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="heading7">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+        Случайное число
+      </a>
+    </h4>
+  </div>
+    <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+      <div class="panel-body">
+        <code>
+          <strong>
+            Math.ceil(Math.random() * 1000)
+          </strong>
+        </code>
+      </div>
+  </div>
+</div>
+
 </div>
   <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
@@ -635,6 +654,57 @@
   <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Нельзя создавать properties вне конструктора.<br>
 </div>
 
+  <p>
+    <span class="v"><strong># Символы</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Уникальное и неизменное значение. Каждый символ уникален и создать 2 одинаковых символа не получится.<br>
+      <br>
+
+      <code>
+        <strong>
+          let symbol = Symbol('n');<br>
+          <br>
+
+          // Использование<br>
+          let user = {<br>
+            &nbsp;userName: 'John',<br>
+            &nbsp;[Symbol.for('codeName')]: '123',<br>
+            &nbsp;[Symbol.for('method_1')]: () { ... },<br>
+            &nbsp;codeName: '321'<br>
+          }<br><br>
+
+          let codeName = user[Symbol.for('codeName')]; // Доступ<br><br>
+          
+          Object.getOwnPropertySymbols(obj) - просмотр всех символов объекта.
+        </strong>
+      </code><br>
+      <br>
+
+      <span class="v"><strong># Итераторы / Генераторы</strong></span><br />
+  </p>
+
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="ES7">
+  <p>
+    <em>============================ ECMAScrip7:</em><br />
+      <span class="v"><strong># Операторы</strong></span><br />
+      <span class="v3"><strong>**</strong></span> - возведение в степень.<br />
+      <br>
+      <span class="v"><strong># Массивы</strong></span><br />
+      <span class="v3"><strong>массив.includes(значение)</strong></span> - выясняет, имеется ли в массиве некий элемент.<br />
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="ES8">
+  <p>
+    <em>============================ ECMAScrip8:</em><br />
+      <span class="v"><strong># Объекты</strong></span><br />
+      <span class="v3"><strong>Object.values(объект)</strong></span> - возвращает все значения свойств объекта.<br />
+  </p>
 </div>
 
 <!-- The Article -->

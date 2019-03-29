@@ -187,6 +187,8 @@
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> <strong>scoped</strong> - означает, что стили будут применяться только к этому компоненту и недоступны глобально.<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Компонент всегда должен быть обернут в <strong>div</strong><br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Имена компонентов должны состоять из нескольких слов.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>Base</strong> - многоразовый компонент, <strong>The</strong> - единственный компонент.<br>
 </div>
 
 </div>
@@ -542,7 +544,7 @@
         <strong>
           // Разметка<br />
           ul<br />
-            &nbsp;li(v-for="key in items") {{ item }}<br /><br />
+            &nbsp;li(v-for="item in items" key="item.id") {{ item }}<br /><br />
 
           // JS<br />
           data () {<br />
@@ -559,6 +561,10 @@
   <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>{{ key, index in items }}</strong> - получение индекса элемента (к индексу должна быть прибавлена 1).<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>{{ key.property }}</strong> - получение свойства (если объект).<br />
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Изменение массива / объекта будет вызывать повторный рендеринг.<br />
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Нельзя использовать одновременно на компоненте с <strong>v-if</strong> (Только разделение - контейнер + условие, компонент + цикл).<br>
 </div>
 
 </div>

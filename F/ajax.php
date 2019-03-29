@@ -464,6 +464,10 @@ $.get('.php', function(data){
 </pre>
 </code>
 
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Дополнения:<br>
+      <span class="v3"><strong>Promise.all()</strong></span> - принимает массив функций и вызывает их (дожидается, пока все не выполнятся).<br />
+      <span class="v3"><strong>.race</strong></span> - кто первый сработает.<br />
+
   </p>
 </div>
 

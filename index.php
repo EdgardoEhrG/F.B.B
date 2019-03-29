@@ -20,7 +20,7 @@
 
 <!-- Project "Ariba" -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
-<script src="JS/Ariba.min.js" defer></script>
+<!--<script src="./JS/Ariba.js" defer></script> -->
 
 </head>
 
