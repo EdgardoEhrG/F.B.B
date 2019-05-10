@@ -2294,7 +2294,7 @@
       <span class="v3"><strong>.blur()</strong></span> - потеря фокуса.<br />
       <span class="v3"><strong>.checked</strong></span> - выделение флажка / переключателя.<br />
       <span class="v3"><strong>.src = ".png"</strong></span> - замена изображения.<br />
-      <span class="v3"><strong>.innerHTML = "содержимое";</strong></span> - вствка содержимого.<br />
+      <span class="v3"><strong>.innerHTML = "содержимое";</strong></span> - вставка содержимого.<br />
       <span class="v3"><strong>.innerText</strong></span> - получение / вставка текстового содержимого.<br />
       <span class="v3"><strong>.appendChild()</strong></span> - добавление дочернего элемента.<br />
       <span class="v3"><strong>.insertBefore()</strong></span> - добавление элемента перед указанным (1 - перед чем, 2 - что).<br />

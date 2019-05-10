@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8" />
 
-<title>Ruby</title>
+<title>Docker</title>
 
-<link rel="shortcut icon" href="../Images/I/ruby.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../Images/I/Docker.png" type="image/x-icon">
 
 <?php require_once('..\Links.html'); ?>
 
@@ -23,7 +23,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-        <a class="navbar-brand"><i class="fa fa-diamond colored" aria-hidden="true"></i> Ruby</a>
+        <a class="navbar-brand">Docker</a>
     </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -45,7 +45,7 @@
 
 <div class="panel panel-warning" id="DS">
   <div class="panel-heading">
-    <h3 class="panel-title">ВЯП</h3>
+    <h3 class="panel-title">Container</h3>
   </div>
     <div class="panel-body">
 
@@ -67,11 +67,11 @@
       <div class="modal-body">
         <p>
           <span class="v"><strong># Технологии</strong></span><br />
-          <a href="https://ru.wikipedia.org/wiki/Ruby">* Ruby</a><br />
+          <a href="https://en.wikipedia.org/wiki/Docker_(software)">* Docker</a><br />
           <br />
 
           <span class="v"><strong># Документация</strong></span><br />
-          <a href="https://www.ruby-lang.org/ru/about/">* Ruby Docs</a><br />
+          <a href="https://www.docker.com/">* Docker Docs</a><br />
         </p>
       </div>
       <div class="modal-footer">

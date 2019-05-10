@@ -167,7 +167,16 @@
             &nbsp;name () {<br>
               &nbsp;&nbsp;return this.$store.state.property<br>
             &nbsp;}<br>
-          }
+          }<br>
+          <br>
+
+          // Упрощенный доступ:<br>
+          import { mapState } from 'vuex';<br>
+          <br>
+
+          computed: {<br>
+            &nbsp;...mapState(['user', 'products'])<br>
+          }<br>
         </strong>
       </code>
   </p>
@@ -188,7 +197,19 @@
           }<br><br>
 
           // Получение (в computed)<br>
-          this.$store.getters.name
+          this.$store.getters.name<br>
+          <br>
+
+          // Упрощенный доступ:<br>
+          import { mapGetters } from 'vuex';<br>
+          <br>
+
+          computed: {<br>
+            &nbsp;...mapGetters(['имя_геттера'])<br>
+          }<br>
+          <br>
+
+          p {{ имя_геттера }}
         </strong>
       </code>
   </p>

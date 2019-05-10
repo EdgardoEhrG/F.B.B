@@ -453,6 +453,23 @@ class Greeting extends React.Component {
           <имя имя_свойства="значение" />
         )
       </strong>
+    </code><br>
+    <br>
+
+    <span class="v"><strong># Валидация Props</strong></span><br />
+    <code>
+      <strong>
+          npm install --save-dev prop-types<br />
+          <br />
+
+          import PropTypes from 'prop-types';<br />
+          <br />
+
+          // После класса<br />
+          Имя_класса.propTypes = {<br />
+            имя_props: PropTypes.тип.isRequired // Последнее - обязательный ли пропс<br />
+          }<br />
+      </strong>
     </code>
   </p>
 </div>

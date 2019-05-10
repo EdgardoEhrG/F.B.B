@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8" />
 
-<title>Ruby on Rails</title>
+<title>GraphQL</title>
 
-<link rel="shortcut icon" href="../Images/I/ror.png" type="image/x-icon">
+<link rel="shortcut icon" href="../Images/I/GraphQL.png" type="image/x-icon">
 
 <?php require_once('..\Links.html'); ?>
 
@@ -23,11 +23,11 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-      <a class="navbar-brand">Ruby on Rails</a>
+        <a class="navbar-brand">GraphQL</a>
     </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="../backend.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
+          <li class="active"><a href="../frontend.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
 
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -45,7 +45,7 @@
 
 <div class="panel panel-warning" id="DS">
   <div class="panel-heading">
-    <h3 class="panel-title">Фреймворк для Web-приложений</h3>
+    <h3 class="panel-title">API Queries</h3>
   </div>
     <div class="panel-body">
 
@@ -67,11 +67,11 @@
       <div class="modal-body">
         <p>
           <span class="v"><strong># Технологии</strong></span><br />
-          <a href="https://ru.wikipedia.org/wiki/Ruby_on_Rails">* Ruby on Rails</a><br />
+          <a href="https://en.wikipedia.org/wiki/GraphQL">* GraphQL</a><br />
           <br />
 
           <span class="v"><strong># Документация</strong></span><br />
-          <a href="http://rubyonrails.org/">* Ruby on Rails Docs</a><br />
+          <a href="https://graphql.org/learn/">* GraphQL Docs</a>
         </p>
       </div>
       <div class="modal-footer">

@@ -243,6 +243,27 @@
         </strong>
       </code></p><br /><br />
 
+      Обратное вложение:<br>
+      <code>
+        <strong>
+          .class-a {<br>
+            &nbsp;property: value;<br>
+            <br>
+
+            &nbsp;.class-b & {<br>
+              &nbsp;&nbsp;property: value;<br>
+            &nbsp;}<br>
+          }<br>
+          <br>
+
+          // После компиляции:<br>
+          .class-a { property: value; }<br>
+          <br>
+
+          .class-b .class-a { property: value; }<br>
+        </strong>
+      </code><br>
+
       Вложенное свойство:<br />
       <code>
         <strong>
@@ -250,6 +271,18 @@
             &nbsp;size: ;<br />
             &nbsp;style: ;<br />
           }<br />
+        </strong>
+      </code><br />
+
+      Вложенное @media:<br />
+      <code>
+        <strong>
+          .class {<br />
+            &nbsp;property: value;<br />
+            <br />
+
+            &nbsp;@media screen and (max-width: 1280px) { property: value; }<br />
+          }
         </strong>
       </code><br />
 

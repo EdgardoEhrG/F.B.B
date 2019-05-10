@@ -86,8 +86,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
-      74%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 78%;">
+      78%
     </div>
       </div>
   </div>
@@ -142,6 +142,20 @@
       </div>
   </div>
 
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Компоненты (Materialize)</h5>
+    <p>
+      <a href="F/materialize.php" class="thumbnail">
+       <img src="Images/Materialize.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
 </div>
 
 <hr />
@@ -149,20 +163,6 @@
 <!-- T. Blocks -->
 
 <div class="container" id="D">
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">JS-библиотека (jQuery)</h5>
-    <p>
-      <a href="F/jq.php" class="thumbnail">
-       <img src="Images/JQ.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-      50%
-    </div>
-      </div>
-  </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
     <h5>Неполный reload (Ajax)</h5>
@@ -193,43 +193,15 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">Пакетный менеджер (Bower)</h5>
+    <h5>API Query (GraphQL)</h5>
     <p>
-      <a href="F/bower.php" class="thumbnail">
-       <img src="Images/Bower.png" width="343px" height="360px" />
+      <a href="F/graphql.php" class="thumbnail">
+       <img src="Images/GraphQL.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-      90%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Препроцессор CSS (Less)</h5>
-    <p>
-      <a href="F/less.php" class="thumbnail">
-       <img src="Images/L.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
-      48%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">Сборщик I (Grunt)</h5>
-    <p>
-      <a href="F/grunt.php" class="thumbnail">
-       <img src="Images/Gr.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 36%;">
-      36%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
     </div>
       </div>
   </div>
@@ -266,6 +238,42 @@
       <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
       12%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Препроцессор HTML (Pug)</h5>
+    <p>
+      <a href="F/pug.php" class="thumbnail">
+       <img src="Images/Pug.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
+      66%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">Препроцессор CSS (Less)</h5>
+    <p>
+      <a href="F/less.php" class="thumbnail">
+       <img src="Images/L.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
+      48%
     </div>
       </div>
   </div>
@@ -327,15 +335,51 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">SynSugar (CoffeeScript)</h5>
+    <h5>Препроцессор CSS (Stylus)</h5>
     <p>
-      <a href="F/coffeescript.php" class="thumbnail">
-       <img src="Images/CS.png" width="343px" height="360px" />
+      <a href="F/stylus.php" class="thumbnail">
+       <img src="Images/Sty.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-      10%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
+      48%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">JS-библиотека (jQuery)</h5>
+    <p>
+      <a href="F/jq.php" class="thumbnail">
+       <img src="Images/JQ.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+      50%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">Модули (RequireJS)</h5>
+    <p>
+      <a href="F/requirejs.php" class="thumbnail">
+       <img src="Images/Req.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
     </div>
       </div>
   </div>
@@ -345,34 +389,6 @@
     <p>
       <a href="F/d3js.php" class="thumbnail">
        <img src="Images/d3.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">JS-Фреймворк (BackboneJS)</h5>
-    <p>
-      <a href="F/backbonejs.php" class="thumbnail">
-       <img src="Images/Back.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">JS-Фреймворк (EmberJS)</h5>
-    <p>
-      <a href="F/emberjs.php" class="thumbnail">
-       <img src="Images/Emb.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
@@ -405,29 +421,51 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>JS-Фреймворк (ReactJS)</h5>
+    <h5 class="old">SynSugar (CoffeeScript)</h5>
     <p>
-      <a href="F/reactjs.php" class="thumbnail">
-       <img src="Images/R.png" width="343px" height="360px" />
+      <a href="F/coffeescript.php" class="thumbnail">
+       <img src="Images/CS.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 28%;">
-      28%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+      10%
     </div>
       </div>
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">React-данные (ReduxJS)</h5>
+    <h5>Типизация / ООП (TypeScript)</h5>
     <p>
-      <a href="F/reduxjs.php" class="thumbnail">
-       <img src="Images/Redux.png" width="343px" height="360px" />
+      <a href="F/typescript.php" class="thumbnail">
+       <img src="Images/TS.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 56%;">
+      56%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">Сборщик I (Grunt)</h5>
+    <p>
+      <a href="F/grunt.php" class="thumbnail">
+       <img src="Images/Gr.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 36%;">
+      36%
     </div>
       </div>
   </div>
@@ -468,16 +506,30 @@
 
 <div class="container" id="D">
 
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Типизация / ООП (TypeScript)</h5>
+<div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">JS-Фреймворк (BackboneJS)</h5>
     <p>
-      <a href="F/typescript.php" class="thumbnail">
-       <img src="Images/TS.png" width="343px" height="360px" />
+      <a href="F/backbonejs.php" class="thumbnail">
+       <img src="Images/Back.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 56%;">
-      56%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">JS-Фреймворк (EmberJS)</h5>
+    <p>
+      <a href="F/emberjs.php" class="thumbnail">
+       <img src="Images/Emb.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
     </div>
       </div>
   </div>
@@ -492,6 +544,156 @@
       <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
       1%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>JS-Фреймворк (ReactJS)</h5>
+    <p>
+      <a href="F/reactjs.php" class="thumbnail">
+       <img src="Images/R.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 38%;">
+      38%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="of">React-данные (ReduxJS)</h5>
+    <p>
+      <a href="F/reduxjs.php" class="thumbnail">
+       <img src="Images/Redux.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="of">React SSR</h5>
+    <p>
+      <a href="F/next.php" class="thumbnail">
+       <img src="Images/Next.png" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="of">Генератор статики (Gatsby)</h5>
+    <p>
+      <a href="F/gatsby.php" class="thumbnail">
+       <img src="Images/Gatsby.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>JS-Фреймворк (VueJS)</h5>
+    <p>
+      <a href="F/vuejs.php" class="thumbnail">
+       <img src="Images/VueJS.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 64%;">
+      64%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="of">Vue-данные (Vuex)</h5>
+    <p>
+      <a href="F/vuex.php" class="thumbnail">
+       <img src="Images/Vuex.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+      75%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="of">Vue-SSR (Nuxt)</h5>
+    <p>
+      <a href="F/nuxt.php" class="thumbnail">
+       <img src="Images/Nuxt.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+      30%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="of">Генератор статики (Gridsome)</h5>
+    <p>
+      <a href="F/gridsome.php" class="thumbnail">
+       <img src="Images/Gridsome.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5 class="old">Пакетный менеджер (Bower)</h5>
+    <p>
+      <a href="F/bower.php" class="thumbnail">
+       <img src="Images/Bower.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+      90%
     </div>
       </div>
   </div>
@@ -519,62 +721,6 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>JS-Фреймворк (VueJS)</h5>
-    <p>
-      <a href="F/vuejs.php" class="thumbnail">
-       <img src="Images/VueJS.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 54%;">
-      54%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Vue-данные (Vuex)</h5>
-    <p>
-      <a href="F/vuex.php" class="thumbnail">
-       <img src="Images/Vuex.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Vue-SSR (Nuxt)</h5>
-    <p>
-      <a href="F/nuxt.php" class="thumbnail">
-       <img src="Images/Nuxt.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">Модули (RequireJS)</h5>
-    <p>
-      <a href="F/requirejs.php" class="thumbnail">
-       <img src="Images/Req.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
     <h5>Тестирование (JasmineJS)</h5>
     <p>
       <a href="F/jasminejs.php" class="thumbnail">
@@ -584,84 +730,6 @@
       <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
       1%
-    </div>
-      </div>
-  </div>
-
-</div>
-
-<hr />
-
-<!-- T. Blocks -->
-
-<div class="container" id="D">
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Серверный JS (Node.js)</h5>
-    <p>
-      <a href="F/nodejs.php" class="thumbnail">
-       <img src="Images/N.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 4%;">
-      4%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Препроцессор HTML (Pug)</h5>
-    <p>
-      <a href="F/pug.php" class="thumbnail">
-       <img src="Images/Pug.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
-      48%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Препроцессор CSS (Stylus)</h5>
-    <p>
-      <a href="F/stylus.php" class="thumbnail">
-       <img src="Images/Sty.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 28%;">
-      28%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>App-каркас (ExpressJS)</h5>
-    <p>
-      <a href="F/expressjs.php" class="thumbnail">
-       <img src="Images/Express.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-      10%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>MVC (SailsJS)</h5>
-    <p>
-      <a href="F/sailsjs.php" class="thumbnail">
-       <img src="Images/Sails.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-      10%
     </div>
       </div>
   </div>
@@ -688,8 +756,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-      10%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
     </div>
       </div>
   </div>
@@ -722,6 +790,56 @@
       </div>
   </div>
 
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Тестирование (JestJS)</h5>
+    <p>
+      <a href="F/jest.php" class="thumbnail">
+       <img src="Images/Jest.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+</div>
+
+<hr />
+
+<!-- T. Blocks -->
+
+<div class="container" id="D">
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Серверный JS (Node.js)</h5>
+    <p>
+      <a href="F/nodejs.php" class="thumbnail">
+       <img src="Images/N.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 14%;">
+      14%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>App-каркас (ExpressJS)</h5>
+    <p>
+      <a href="F/expressjs.php" class="thumbnail">
+       <img src="Images/Express.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+      10%
+    </div>
+      </div>
+  </div>
+
 </div>
 
 <hr />
@@ -734,7 +852,21 @@
     <h5>FullStack-фреймворк (MeteorJS)</h5>
     <p>
       <a href="F/meteorjs.php" class="thumbnail">
-       <img src="Images/Me.png" width="343px" height="360px" />
+        <img src="Images/Me.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>MVC (SailsJS)</h5>
+    <p>
+      <a href="F/sailsjs.php" class="thumbnail">
+        <img src="Images/Sails.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">

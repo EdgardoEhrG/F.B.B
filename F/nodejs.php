@@ -177,6 +177,7 @@
 
               <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Особенности:<br />
               - Недоступна работа с DOM, BOM.<br />
+              - Использует модульную систему (require).<br>
               <br>
 
               <i class="fa fa-minus-square" aria-hidden="true"></i> Недостатки:<br>
@@ -222,6 +223,18 @@
   <strong>npm install -g nodemon</strong> - установка пакета.<br />
   <strong>nodemon Server.js</strong> - слежение за серверным файлом и автоматическая перезагрузка сервера при изменениях.
 </div>
+
+  <p>
+    <span class="v"><strong># Многопоточность</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Свойство платформы, способной обрабатывать процесс, состоящий из нескольких потоков, выполняющиеся параллельно (без порядка по времени).<br>
+  </p>
+
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Ограничения:</strong><br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Организация взаимодействия потоков.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Конкуренция за ресурсы / взаимные блокировки.<br>
+</div>
+
 </div>
 
 <!-- The Article -->
@@ -255,6 +268,9 @@ http.createServer(function(request, response){
   <p>
     <em>============================ Модули:</em><br />
 
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Подключаемые модули кэшируются.<br>
+      <br>
+
 <code>
 <pre>
 <strong>
@@ -269,13 +285,21 @@ module.exports = s;
 
 const mA = require('./имя_модуля.js');
 
-console.log(m.s); //10
+console.log(mA.s); //10
 
 </strong>
 </pre>
 </code>
 
   </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Функции базовых модулей асинхронны - не блокируют поток.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Любой JS-файл является модулем.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> При повторном подключении модуля, Node.js проверяет, подключался ли модуль ранее - если да, то возвращается ссылка на уже существующий модуль.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Переменные объявленные внутри модуля - локальны для него.<br>
+</div>
+
 </div>
 
 <!-- The Article -->
@@ -330,7 +354,44 @@ console.log(m.s); //10
 <div class="textblock" id="Sob">
   <p>
     <em>============================ Модуль событий:</em><br />
+      <code>
+        <strong>
+          const EventEmitter = require('event');<br>
+          const emitter = new EventEmitter();<br>
+          <br>
+
+          emitter.emit('имя_события', { arg }); // Поднятие события + передача аргументов (опционально)<br>
+          <br>
+
+          <span class="v"><strong># Регистрация события</strong></span><br />
+          emitter.on('имя_события', function(arg) { ... } );<br>
+          emitter.addListener('имя_события', function(arg) { ... } )<br>
+          emitter.once('имя_события', function(arg) { ... } ) - обработчик сработает только 1 раз и затем будет удален<br>
+          <br>
+
+          <span class="v"><strong># Асинхронный вызов</strong></span><br />
+          emitter.on('имя_события', function(arg) { setImmediate(() => {...}); } );<br>
+          <br>
+
+          <span class="v"><strong># Удаление обработчика</strong></span><br />
+          emitter.removeListener('имя_события', function() { ... })<br>
+          emitter.removeAllListeners('имя_события') - удаление всех обработчиков события<br>
+          <br>
+
+          <span class="v"><strong># Доп. инф.</strong></span><br />
+          emitter.listenerCount('имя_события') - количество обработчиков.
+        </strong>
+      </code>
   </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Обработчики, которые установлены на определенное событие, вызываеются синхронно (по очереди).<br>
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> На одно событие можно установить только 10 обработчиков события, иначе - засорение памяти.<br>
+</div>
+
 </div>
 
   </div>

@@ -59,8 +59,8 @@
    <img src="Images/Fr.jpg" />
   </a>
   <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 34%;">
-      34%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 44%;">
+      44%
     </div>
   </div>
 </div>

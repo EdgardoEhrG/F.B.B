@@ -93,28 +93,6 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Менеджер пакетов (Composer)</h5>
-    <p>
-      <a href="B/composer.php" class="thumbnail">
-       <img src="Images/Composer.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-</div>
-
-<hr />
-
-<!-- T. Blocks -->
-
-<div class="container" id="D">
-
-  <div class="col-6 col-sm-6 col-lg-4">
     <h5>PHP-фреймворк (Laravel)</h5>
     <p>
       <a href="B/laravel.php" class="thumbnail">
@@ -147,6 +125,20 @@
     <p>
       <a href="B/zend.php" class="thumbnail">
        <img src="Images/Zend.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Менеджер пакетов (Composer)</h5>
+    <p>
+      <a href="B/composer.php" class="thumbnail">
+       <img src="Images/Composer.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
@@ -206,6 +198,20 @@
       </div>
   </div>
 
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Cloud Base (Firebase)</h5>
+    <p>
+      <a href="B/firebase.php" class="thumbnail">
+       <img src="Images/Firebase.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+      </div>
+  </div>
+
 </div>
 
 <hr />
@@ -251,29 +257,15 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>ЯП (Ruby)</h5>
+    <h5>HeightLoad (GoLang)</h5>
     <p>
-      <a href="B/ruby.php" class="thumbnail">
-       <img src="Images/Ru.png" width="343px" height="360px" />
+      <a href="B/go.php" class="thumbnail">
+       <img src="Images/Go.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Ruby-фреймворк (Ruby on Rails)</h5>
-    <p>
-      <a href="B/rubyonrails.php" class="thumbnail">
-       <img src="Images/RoR.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
+      12%
     </div>
       </div>
   </div>
@@ -287,15 +279,15 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>HeightLoad (GoLang)</h5>
+    <h5>App Container</h5>
     <p>
-      <a href="B/go.php" class="thumbnail">
-       <img src="Images/Go.png" width="343px" height="360px" />
+      <a href="B/docker.php" class="thumbnail">
+       <img src="Images/Docker.png" width="343px" height="360px" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
-      12%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
     </div>
       </div>
   </div>

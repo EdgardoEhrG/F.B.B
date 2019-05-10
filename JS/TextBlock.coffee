@@ -663,3 +663,31 @@ $(document).ready ->
   $('#MutB').click ->
     $('div.textblock').css("display", "none")
     $('#Mut').fadeIn(400)
+
+  $('#NuB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Nu').fadeIn(400)
+
+  $('#PaB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Pa').fadeIn(400)
+
+  $('#CoB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Co').fadeIn(400)
+
+  $('#LaB').click ->
+    $('div.textblock').css("display", "none")
+    $('#La').fadeIn(400)
+
+  $('#PlB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Pl').fadeIn(400)
+
+  $('#ConfB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Conf').fadeIn(400)
+
+  $('#MidB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Mid').fadeIn(400)
