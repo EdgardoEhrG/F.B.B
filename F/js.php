@@ -673,7 +673,7 @@
           }<br><br>
 
           let codeName = user[Symbol.for('codeName')]; // Доступ<br><br>
-          
+
           Object.getOwnPropertySymbols(obj) - просмотр всех символов объекта.
         </strong>
       </code><br>
@@ -1155,12 +1155,12 @@
     <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Оператор <strong>?</strong> - исп. для укорачивания кода с условием (выполняется позже большинства других (позже сравнений)):<br />
     <code>
       <strong>
-        (условие) ? действие 1: действие 2;</strong>
+        (условие) ? действие 1 : действие 2;</strong>
       </code><br /><br />
 
         <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Несколько условий:<br />
         <code>
-          <strong>(условие) ? действие 1: (условие 2) ? действие 2: действие 3;
+          <strong>(условие) ? действие 1 : (условие 2) ? действие 2 : действие 3;
       </strong>
     </code>
   </p>

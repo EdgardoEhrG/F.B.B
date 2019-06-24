@@ -115,7 +115,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Компоненты (Bootstrap)</h5>
+    <h5>Компоненты</h5>
     <p>
       <a href="F/bootstrap.php" class="thumbnail">
        <img src="Images/B.png" width="343px" height="360px" />
@@ -129,7 +129,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Компоненты (Semantic UI)</h5>
+    <h5>Компоненты</h5>
     <p>
       <a href="F/sui.php" class="thumbnail">
        <img src="Images/Sema.jpg" width="343px" height="360px" />
@@ -165,7 +165,7 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Неполный reload (Ajax)</h5>
+    <h5>Неполный reload</h5>
     <p>
       <a href="F/ajax.php" class="thumbnail">
        <img src="Images/Aj.png" width="343px" height="360px" />
@@ -357,7 +357,7 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">JS-библиотека (jQuery)</h5>
+    <h5 class="old">JS-библиотека</h5>
     <p>
       <a href="F/jq.php" class="thumbnail">
        <img src="Images/JQ.png" width="343px" height="360px" />
@@ -371,7 +371,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="old">Модули (RequireJS)</h5>
+    <h5 class="old">Модули</h5>
     <p>
       <a href="F/requirejs.php" class="thumbnail">
        <img src="Images/Req.png" width="343px" height="360px" />
@@ -380,6 +380,20 @@
       <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
       1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Графики</h5>
+    <p>
+      <a href="https://www.chartjs.org/" class="thumbnail">
+       <img src="Images/chart.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+      100%
     </div>
       </div>
   </div>
@@ -408,6 +422,34 @@
       <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
       1%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Время (MomentJS)</h5>
+    <p>
+      <a href="https://momentjs.com/" class="thumbnail">
+       <img src="Images/moment.jpg" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+      100%
+    </div>
+      </div>
+  </div>
+
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h5>Большие числа (BigNumberJS)</h5>
+    <p>
+      <a href="https://github.com/MikeMcl/bignumber.js/" class="thumbnail">
+       <img src="Images/bignumber.png" width="343px" height="360px" />
+      </a>
+    </p>
+      <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+      100%
     </div>
       </div>
   </div>
@@ -656,8 +698,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-      30%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+      45%
     </div>
       </div>
   </div>
@@ -670,8 +712,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+      55%
     </div>
       </div>
   </div>

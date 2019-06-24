@@ -177,7 +177,8 @@
     <em>============================ EJS:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Шаблонизатор.<br /><br />
 
-      <strong>npm install ejs</strong> - установка шаблонизатора.
+      <strong>npm install ejs</strong> - установка шаблонизатора.<br>
+      <br>
   </p>
 
 <div class="alert alert-info" role="alert">

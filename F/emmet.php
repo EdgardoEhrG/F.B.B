@@ -45,7 +45,7 @@
 
 <div class="panel panel-warning" id="DS">
   <div class="panel-heading">
-    <h3 class="panel-title">Препроцессор HTML</h3>
+    <h3 class="panel-title">Плагин для ускорения написания HTML-кода</h3>
   </div>
     <div class="panel-body">
 

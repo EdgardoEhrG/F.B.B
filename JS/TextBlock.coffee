@@ -691,3 +691,27 @@ $(document).ready ->
   $('#MidB').click ->
     $('div.textblock').css("display", "none")
     $('#Mid').fadeIn(400)
+
+  $('#HoB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Ho').fadeIn(400)
+
+  $('#ReB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Re').fadeIn(400)
+
+  $('#HocB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Hoc').fadeIn(400)
+
+  $('#GriB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Gri').fadeIn(400)
+
+  $('#QueB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Que').fadeIn(400)
+
+  $('#TemB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Tem').fadeIn(400)

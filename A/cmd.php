@@ -27,7 +27,7 @@
   </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-       <li class="active"><a href="../add.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
+       <li class="active"><a href="../other.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
 
         <form class="navbar-form navbar-left" role="search">
          <div class="form-group">
@@ -162,6 +162,7 @@
       <strong>F7</strong> - диалоговое окно, содержащее историю команд.<br />
       <strong>F5</strong> - вывод последних веденых команд.<br />
       <strong>F3</strong> - вывод последней команды.<br />
+      <strong>Tab</strong> - подсказка пути (буква - ориентир).<br>
   </p>
 </div>
 

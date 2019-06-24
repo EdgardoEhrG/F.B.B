@@ -177,7 +177,7 @@
 
               <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Особенности:<br />
               - Недоступна работа с DOM, BOM.<br />
-              - Использует модульную систему (require).<br>
+              - Использует модульную систему (RequireJS).<br>
               <br>
 
               <i class="fa fa-minus-square" aria-hidden="true"></i> Недостатки:<br>

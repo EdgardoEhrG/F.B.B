@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 
-<title>Add</title>
+<title>Other</title>
 
 <link rel="shortcut icon" href="Images/I/bookshelf.png" type="image/x-icon">
 
@@ -28,7 +28,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-            <a class="navbar-brand">Add</a>
+            <a class="navbar-brand">Other</a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -107,22 +107,22 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+      2%
     </div>
       </div>
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Web Hack</h5>
+    <h5>Web Hackin'</h5>
     <p>
       <a href="A/webhack.php" class="thumbnail">
        <img src="Images/WH.png" class="DSH" />
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+      2%
     </div>
       </div>
   </div>

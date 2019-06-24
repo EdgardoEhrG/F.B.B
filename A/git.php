@@ -27,7 +27,7 @@
   </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../add.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
+        <li class="active"><a href="../other.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
 
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -194,7 +194,9 @@
     <em>============================ Конфликты:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Конфликт при слиянии:<br />
       - Возникает при разнице в 2-х файлах или при редактировании в нескольких ветках + в главной.<br />
-      <span class="v"><strong>Решение</strong></span><br />
+      <br>
+
+      <span class="v"><strong># Решение</strong></span><br />
       1) <strong>Merge</strong> => <strong>abort Merge</strong> - отменить слияние.<br />
       2) Двойное нажатие на выделенный красным файл <strong>=> Conflict Solver (окно конфликта, в котором показан код) => в середине
       результирующий код => редактирование => Save => Stage => Commit</strong>.<br /><br />

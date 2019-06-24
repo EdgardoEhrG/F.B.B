@@ -146,6 +146,11 @@
 <button class="button" id="StaB">State</button>
 <button class="button" id="SobB">События</button>
 <button class="button" id="CycB">Жизненный цикл компонента</button>
+<button class="button" id="HoB">Хуки</button>
+<button class="button" id="ReB">Рендеринг</button>
+<button class="button" id="HocB">HOC</button>
+<button class="button" id="ConB">Контекст</button>
+<button class="button" id="RouB">Роутинг</button>
 
 <!-- The Article -->
 
@@ -595,8 +600,9 @@ state = {
       <span class="v3"><strong>componentWillUnmount()</strong></span> - вызывается перед удалением компонента из DOM (для удаления используемых ресурсов).<br />
       <span class="v3"><strong>shouldComponentUpdate()</strong></span> - вызывается каждый раз при обновлении объектов props / state (для оптимизации приложения).<br />
       <span class="v3"><strong>componentWillUpdate()</strong></span> - вызывается перед обновлением компонента.<br />
-      <span class="v3"><strong>componentDidUpdate()</strong></span> - вызывается после обновления компонента.<br />
+      <span class="v3"><strong>componentDidUpdate()</strong></span> - вызывается после обновления свойств компонента (обязательная проверка prevProps).<br />
       <span class="v3"><strong>componentWillReceiveProps()</strong></span> - вызывается при обновлении props.<br />
+      <span class="v3"><strong>componentDidCatch()</strong></span> - отлавливание ошибки в компоненте (используется для рендера компонента ошибки, но не обрабатывает ошибки в событиях / асинхронном коде).<br />
       <br />
 
       <code>
@@ -650,6 +656,107 @@ class Clock extends React.Component {
 </pre>
 </code>
 
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Ho">
+  <p>
+    <em>============================ React-Хуки:</em><br />
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Re">
+  <p>
+    <em>============================ Рендеринг:</em><br />
+      <span class="v"><strong># Рендер-функция</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент принимает функцию, которая рендерит часть компонента или весь компонент целиком.<br>
+      <br>
+
+      <code>
+        <strong>
+          &lt;Component<br>
+            &nbsp;renderItem={() => разметка} /&gt;<br>
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># Children (#Слот)</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент может принимать целый JSX-элемент:<br>
+
+      <code>
+        <strong>
+            &lt;Component props&gt;<br>
+              &nbsp;Вложенный_компонент<br>
+            &lt;/Component&gt;<br>
+            <br>
+
+            // Компонент-родитель (отрисовка вложенного компонента):<br>
+            тег { this.props.children }<br>
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># Клонирование</strong></span><br />
+      <span class="v3"><strong>React.cloneElement(child, { obj })</strong></span> - создается клон компонента.<br />
+
+
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Hoc">
+  <p>
+    <em>============================ HOC:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент высшего порядка. Одна функция поверх другой - первая принимает параметры компонента, вторая - сам компонент.<br>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Con">
+  <p>
+    <em>============================ Context API:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Решает проблему с пробрасыванием props от верхнего компонента к нижнему.<br>
+      <br>
+      <span class="v3"><strong>const { Provider, Consumer } = React.createContext()</strong></span> - создание контекста (вынести в отдельный файл и экспортировать).<br />
+      <br>
+
+      <code>
+        <strong>
+          // App.jsx<br>
+          1. import Provider'а и сервиса<br>
+          2. Оборачивание элементов + передача Provider'у value={ сервис }<br>
+          <br>
+
+          // Контейнер
+          1. import Consumer'а<br>
+          &lt;Consumer&gt;<br>
+            &nbsp;{<br>
+              &nbsp;&nbsp;({ методы }) => {<br>
+                &nbsp;&nbsp;&nbsp;return (<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;разметка<br>
+                &nbsp;&nbsp;&nbsp;)<br>
+              &nbsp;&nbsp;}<br>
+            &nbsp;}<br>
+          &lt;/Consumer&gt;<br>
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> HOC может преобразовывать props перед тем как передавать их компоненту.<br>
+</div>
+
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Rou">
+  <p>
+    <em>============================ Роутинг:</em><br />
   </p>
 </div>
 

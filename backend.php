@@ -51,7 +51,7 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Взаимодействие с сервером (PHP)</h5>
+    <h5>Серверные скрипты</h5>
     <p>
       <a href="B/php.php" class="thumbnail">
        <img src="Images/php.png" width="343px" height="360px" />
@@ -65,7 +65,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>PHP-фреймворк (Codeigniter)</h5>
+    <h5>PHP-фреймворк</h5>
     <p>
       <a href="B/codeigniter.php" class="thumbnail">
        <img src="Images/codeigniter.png" width="343px" height="360px" />
@@ -79,7 +79,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>PHP-фреймворк (Yii)</h5>
+    <h5>PHP-фреймворк</h5>
     <p>
       <a href="B/yii.php" class="thumbnail">
        <img src="Images/Yii.png" width="343px" height="360px" />
@@ -107,7 +107,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>PHP-фреймворк (Symfony)</h5>
+    <h5>PHP-фреймворк</h5>
     <p>
       <a href="B/symfony.php" class="thumbnail">
        <img src="Images/Sy.png" width="343px" height="360px" />
@@ -121,7 +121,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>PHP-фреймворк (Zend)</h5>
+    <h5>PHP-фреймворк</h5>
     <p>
       <a href="B/zend.php" class="thumbnail">
        <img src="Images/Zend.png" width="343px" height="360px" />
@@ -135,7 +135,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Менеджер пакетов (Composer)</h5>
+    <h5>Менеджер пакетов</h5>
     <p>
       <a href="B/composer.php" class="thumbnail">
        <img src="Images/Composer.png" width="343px" height="360px" />
@@ -157,7 +157,7 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Базы данных (MySQL)</h5>
+    <h5>Базы данных</h5>
     <p>
       <a href="B/mysql.php" class="thumbnail">
        <img src="Images/M.png" width="343px" height="360px" />
@@ -235,7 +235,7 @@
   </div>
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Сайтостроение (Django)</h5>
+    <h5 class="of">Сайтостроение</h5>
     <p>
       <a href="B/django.php" class="thumbnail">
        <img src="Images/Dj.png" width="343px" height="360px" />
@@ -257,7 +257,7 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>HeightLoad (GoLang)</h5>
+    <h5>HeightLoad (Go)</h5>
     <p>
       <a href="B/go.php" class="thumbnail">
        <img src="Images/Go.png" width="343px" height="360px" />
@@ -279,7 +279,7 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>App Container</h5>
+    <h5>App Container (Docker)</h5>
     <p>
       <a href="B/docker.php" class="thumbnail">
        <img src="Images/Docker.png" width="343px" height="360px" />

@@ -27,7 +27,7 @@
     </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="../add.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
+          <li class="active"><a href="../other.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
 
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -67,6 +67,7 @@
       <div class="modal-body">
         <p>
           <span class="v"><strong># Технологии</strong></span><br />
+          <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE_%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%B0">* Правило ограничения домена</a><br />
           <br />
 
           <span class="v"><strong># Элементы</strong></span><br />
@@ -74,7 +75,6 @@
           <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">* Протоколы</a><br />
           <a href="https://ru.wikipedia.org/wiki/IP-%D0%B0%D0%B4%D1%80%D0%B5%D1%81">* IP-адрес</a><br />
           <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F">* Доменное имя</a><br />
-          <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE_%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%B0">* Правило ограничения домена</a><br />
         </p>
       </div>
       <div class="modal-footer">
@@ -140,7 +140,7 @@
     <span class="v3"><strong>CONNECT</strong></span> - для использования с прокси-сервером.<br />
     <br />
 
-    <span class="v"><strong># Группы статусов кодов</strong></span><br />
+    <span class="v"><strong># Группы статус-кодов</strong></span><br />
     <strong>1xx</strong> - информация.<br />
     <strong>2xx</strong> - успешное завершение.<br />
     <strong>3xx</strong> - перенаправление.<br />

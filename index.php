@@ -77,7 +77,7 @@
 </div>
 
 <div class="col-lg-4">
-  <a href="add.php" class="thumbnail">
+  <a href="other.php" class="thumbnail">
    <img src="Images/IT.jpg"/>
   </a>
   <div class="progress">

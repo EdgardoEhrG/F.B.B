@@ -27,7 +27,7 @@
     </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="../add.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
+          <li class="active"><a href="../other.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
 
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -69,7 +69,7 @@
           <span class="v"><strong># Технологии</strong></span><br />
           <br />
 
-          <span class="v"><strong># Элементы</strong></span><br />
+          <span class="v"><strong># Подходы</strong></span><br />
           <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%8D%D0%BA%D0%B4%D0%BE%D1%80">* Back door</a><br />
           <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%B0%D0%BA%D0%B0_%D0%BF%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0">* Man in the middle</a><br />
         </p>

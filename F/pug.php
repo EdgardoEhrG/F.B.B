@@ -66,12 +66,8 @@
       </div>
       <div class="modal-body">
         <p>
-          <span class="v"><strong># Технологии</strong></span><br />
-          <a href="https://habrahabr.ru/post/278109/">* Jade</a><br />
-          <br />
-
           <span class="v"><strong># Документация</strong></span><br />
-          <a href="http://jsman.ru/jade/">* Jade Docs</a>
+          <a href="https://pugjs.org/api/getting-started.html">* Pug Docs</a>
         </p>
       </div>
       <div class="modal-footer">

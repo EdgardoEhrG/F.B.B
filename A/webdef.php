@@ -27,7 +27,7 @@
   </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../add.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
+        <li class="active"><a href="../other.php"><i class="fa fa-undo" aria-hidden="true"></i> Back</a></li>
 
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -68,6 +68,7 @@
         <p>
           <span class="v"><strong># Технологии</strong></span><br />
           <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD">* Межсетевой экран</a><br />
+          <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%84%D0%B0%D0%B9%D1%80%D0%B2%D0%BE%D0%BB">* Персональный файрвол</a><br>
           <br />
 
           <span class="v"><strong># Элементы</strong></span><br />
