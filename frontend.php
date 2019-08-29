@@ -72,8 +72,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 78%;">
-      78%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+      80%
     </div>
       </div>
   </div>
@@ -108,8 +108,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-      75%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+      85%
     </div>
       </div>
   </div>
@@ -172,8 +172,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-      40%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+      55%
     </div>
       </div>
   </div>
@@ -222,8 +222,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 8%;">
-      8%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+      10%
     </div>
       </div>
   </div>
@@ -250,8 +250,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-      66%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+      70%
     </div>
       </div>
   </div>
@@ -286,50 +286,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-      66%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Библиотека Sass (Compass)</h5>
-    <p>
-      <a href="F/compass.php" class="thumbnail">
-       <img src="Images/compass.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Библиотека Sass (Bourbon)</h5>
-    <p>
-      <a href="F/bourbon.php" class="thumbnail">
-       <img src="Images/bourbon.png" width="343px" height="362px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Библиотека Sass (Susy)</h5>
-    <p>
-      <a href="F/susy.php" class="thumbnail">
-       <img src="Images/Susy.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+      80%
     </div>
       </div>
   </div>
@@ -506,8 +464,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 36%;">
-      36%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+      45%
     </div>
       </div>
   </div>
@@ -520,8 +478,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-      45%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+      55%
     </div>
       </div>
   </div>
@@ -606,8 +564,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 38%;">
-      38%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+      55%
     </div>
       </div>
   </div>
@@ -670,8 +628,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 64%;">
-      64%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+      70%
     </div>
       </div>
   </div>
@@ -698,8 +656,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-      45%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+      55%
     </div>
       </div>
   </div>
@@ -712,8 +670,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
-      55%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+      45%
     </div>
       </div>
   </div>
@@ -862,8 +820,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 14%;">
-      14%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+      15%
     </div>
       </div>
   </div>

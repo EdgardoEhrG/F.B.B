@@ -164,6 +164,15 @@
       </code><br />
       <br />
 
+      <span class="v"><strong># Глобальный компонент</strong></span><br />
+      <code>
+        <strong>
+          // В main.js<br>
+          import Component from '@/components/component.vue';
+          Vue.component('Component', Component);
+        </strong>
+      </code>
+
       <span class="v"><strong># Шаблоны (component)</strong></span><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Расширение компонентов - <strong>.vue</strong><br />
       <code>
@@ -209,7 +218,9 @@
           // Родительский компонент<br>
           div<br>
           &nbsp;дочерний_компонент<br>
-          &nbsp;&nbsp;разметка(slot="subcomponent")
+          &nbsp;&nbsp;div(slot="subcomponent")<br>
+          &nbsp;&nbsp;&nbsp;template<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;разметка<br>
         </strong>
       </code>
   </p>
@@ -619,6 +630,10 @@
           router-link(to="путь" tag="a")  // "/" - ведет на главную, tag - на что будет заменен роут<br>
           <br>
 
+          3.1 Другой вариант роутинга:<br>
+          router-link(:to="{ name: "имя_пути" }")<br>
+          <br>
+
           4. Динамический роут (роут одного элемента):<br>
           Разметка - :to=`/item/${id}`<br>
           Роут - path: '/item/:id'<br>
@@ -640,6 +655,20 @@
           7. Передача параметров:<br>
           :to="{name: 'имя_пути', params: {id: id}, query: {name: 's', year: 2016}}"<br>
           // Извлечение (можно через computed) {{ $route.query.name }}<br>
+          <br>
+
+          7.1 Параметры как props ($route.params будут передаваться как props компоненту и его можно не писать):<br>
+          {<br>
+            &nbsp;path: ...,<br>
+            &nbsp;name: ...,<br> &nbsp;&nbsp;//имя пути<br>
+            &nbsp;component: Component,<br>
+            &nbsp;props: true<br>
+          }<br>
+          <br>
+
+          // Компонент:<br>
+          p {{ userName }}<br>
+          props: ['userName']<br>
           <br>
 
           8. Хэш и скролл:<br>
@@ -674,6 +703,7 @@
               &nbsp;&nbsp;next(true)<br>
             &nbsp;} else {<br>
               &nbsp;&nbsp;next(false) // Переход не будет осуществлен<br>
+              &nbsp;&nbsp;next({ name: 'имя_пути' }) // Переход в другой путь<br>
             &nbsp;}<br>
           }<br>
           <br>
@@ -684,8 +714,11 @@
           }<br><br>
 
           beforeRouteLeave(to, from, next) {<br>
-            &nbsp;if (условие) {<br>
-              &nbsp;&nbsp;next(t/f)<br>
+            &nbsp;const answer = window.confirm('?');<br>
+            &nbsp;if (answer) {<br>
+              &nbsp;&nbsp;next()<br>
+            &nbsp;} else {<br>
+              &nbsp;&nbsp;next(false)<br>
             &nbsp;}<br>
           }<br>
         </strong>

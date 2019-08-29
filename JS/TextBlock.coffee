@@ -715,3 +715,7 @@ $(document).ready ->
   $('#TemB').click ->
     $('div.textblock').css("display", "none")
     $('#Tem').fadeIn(400)
+
+  $('#LisB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Lis').fadeIn(400)

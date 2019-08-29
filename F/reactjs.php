@@ -462,6 +462,9 @@ class Greeting extends React.Component {
     <br>
 
     <span class="v"><strong># Валидация Props</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Если у компонента есть значение по умолчанию, ставить <strong>isRequired</strong> не нужно.<br>
+    <br>
+
     <code>
       <strong>
           npm install --save-dev prop-types<br />
@@ -470,10 +473,35 @@ class Greeting extends React.Component {
           import PropTypes from 'prop-types';<br />
           <br />
 
-          // После класса<br />
+          // После класса:<br />
           Имя_класса.propTypes = {<br />
             имя_props: PropTypes.тип.isRequired // Последнее - обязательный ли пропс<br />
           }<br />
+          <br />
+
+          // Внутри класса:<br>
+          static propTypes = {<br>
+            &nbsp;props: PropTypes.тип.isRequired<br>
+          }<br>
+      </strong>
+    </code><br>
+
+    <span class="v"><strong># defaultProps</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Значения по умолчанию.<br>
+    <br>
+
+    <code>
+      <strong>
+        // После компонента и до экспорта:<br>
+        Имя_компонента.defaultProps = {<br>
+          &nbsp;props: value;<br>
+        }<br>
+        <br>
+
+        // Внутри компонента до рендера:<br>
+        static defaultProps = {<br>
+          &nbsp;props: value;<br>
+        }<br>
       </strong>
     </code>
   </p>
@@ -711,6 +739,14 @@ class Clock extends React.Component {
   <p>
     <em>============================ HOC:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент высшего порядка. Одна функция поверх другой - первая принимает параметры компонента, вторая - сам компонент.<br>
+      <br>
+
+      <code>
+        <strong>
+          // Пример HOC (математический - функция принимает часть аргументов и возвращает новую функцию с меньшим числом аргументов):<br>
+          const add = (a) => (b) => return a + b;
+        </strong>
+      </code>
   </p>
 </div>
 
@@ -719,7 +755,8 @@ class Clock extends React.Component {
 <div class="textblock" id="Con">
   <p>
     <em>============================ Context API:</em><br />
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Решает проблему с пробрасыванием props от верхнего компонента к нижнему.<br>
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Решает проблему с пробрасыванием props от верхнего компонента к нижнему. Подходит для смены языка / темы. Значение в Context API можно обновлять как любое другое свойство
+      компонента.<br>
       <br>
       <span class="v3"><strong>const { Provider, Consumer } = React.createContext()</strong></span> - создание контекста (вынести в отдельный файл и экспортировать).<br />
       <br>
@@ -731,8 +768,9 @@ class Clock extends React.Component {
           2. Оборачивание элементов + передача Provider'у value={ сервис }<br>
           <br>
 
-          // Контейнер
+          // Контейнер<br>
           1. import Consumer'а<br>
+          <br>
           &lt;Consumer&gt;<br>
             &nbsp;{<br>
               &nbsp;&nbsp;({ методы }) => {<br>
@@ -742,6 +780,21 @@ class Clock extends React.Component {
               &nbsp;&nbsp;}<br>
             &nbsp;}<br>
           &lt;/Consumer&gt;<br>
+        </strong>
+      </code>
+      <br>
+
+      <span class="v"><strong># Обновление контекста</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Отслеживание изменений (какие props изменились):<br>
+      <br>
+
+      <code>
+        <strong>
+          componentDidUpdate (prevProps) {<br>
+            &nbsp;if (this.props.property !== prevProps.property) {<br>
+              &nbsp;...<br>
+            &nbsp;}<br>
+          }<br>
         </strong>
       </code>
   </p>
@@ -757,6 +810,83 @@ class Clock extends React.Component {
 <div class="textblock" id="Rou">
   <p>
     <em>============================ Роутинг:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> <strong>npm install --save-dev react-router-dom</strong><br>
+      <br>
+
+      <code>
+        <strong>
+          import { BrowserRouter as Router, Route } from 'react-router-dom';<br>
+          <br>
+
+          // app.jsx<br>
+          &lt;Router&gt;<br>
+            &nbsp;&lt;Route path="/" component={component} /&gt;<br>
+          &lt;/Router&gt;<br>
+          <br>
+
+          <span class="v"><strong># Ссылка</strong></span><br />
+          import { Link } from 'react-router-dom';<br>
+          <br>
+
+          &lt;Link to="путь"&gt;Text&lt;/Link&gt;<br>
+          <br>
+
+          <span class="v"><strong># Рендеринг</strong></span><br />
+          // При переходе будет отрендерен компонент.<br>
+          &nbsp;&lt;Route path="/" render={() => Имя_компонента} /&gt;<br>
+          <br>
+
+          <span class="v"><strong># Соответсвие пути</strong></span><br />
+          exact={true} - сравнение на полное соответствие пути.<br>
+          <br>
+
+          <span class="v"><strong># Динамический роутинг</strong></span><br />
+          &lt;Route path="/путь/:id" component={component} /&gt;<br>
+          const id = this.props.match.params.id; // Извлечение id из url, должно происходить в componentDidMount<br>
+          <br>
+
+          <span class="v"><strong># Использование withRouter</strong></span><br />
+          <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> HOC, который передает компоненту объекты react-router.<br>
+          import { withRouter } from 'react-router-dom';<br>
+          <br>
+
+          const myComponent = ({ match, location, history }) => {<br>
+            &nbsp;return (<br>
+              &nbsp;&nbsp;&lt;Button<br>
+                &nbsp;&nbsp;&nbsp;onClick={() => history.push('/путь')}<br>
+              &nbsp;&nbsp;&gt;<br>
+                &nbsp;&nbsp;&nbsp;Click<br>
+              &nbsp;&nbsp;&lt;/Button&gt;<br>
+            &nbsp;);<br>
+          };<br>
+          <br>
+
+          export default withRouter(MyComponent);<br>
+          <br>
+
+          <span class="v"><strong># Переадресация</strong></span><br />
+          import { Redirect } from 'react-router-dom';<br>
+          <br>
+
+          if (условие) {<br>
+            &nbsp;return &lt;Redirect to="путь" /&gt;<br>
+          }<br>
+          <br>
+
+          <span class="v"><strong># Обработка несуществующих адресов</strong></span><br />
+          import { Switch, Redirect } from 'react-router-dom';<br>
+          <br>
+
+          &lt;Switch&gt;<br>
+            &nbsp;&lt;Route path="путь" /&gt;<br>
+            &nbsp;&lt;Redirect to="/" /&gt;<br>
+            &nbsp;&lt;Route component={ErrorComponent} /&gt;<br>
+          &lt;/Switch&gt;<br>
+          <br>
+
+          // Если ни один из роутов не сработает - переадресация на главную / или отображение компонента ошибки
+        </strong>
+      </code>
   </p>
 </div>
 

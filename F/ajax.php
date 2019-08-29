@@ -117,8 +117,6 @@
 <button class="button5" id="ParB">Параметры</button>
 <button class="button5" id="SerB">Сериализация данных</button>
 <button class="button5" id="XMLB">XML</button>
-<button class="button5" id="SodB">Загрузка содержимого</button>
-<button class="button5" id="GetB">GET-запрос</button>
 <button class="button5" id="PromB">Promise</button>
 <button class="button5" id="FetB">Fetch API</button>
 <button class="button5" id="AxiB">Axios</button>
@@ -360,109 +358,28 @@
 
 <!-- The Article -->
 
-<div class="textblock" id="Sod">
-  <p>
-    <em>============================ Загрузка содержимого:</em><br />
-      <code>
-        <strong>
-          $('селектор').load('file.php');<br />
-          <br />
-
-          ...<br />
-          <br />
-
-          &lt;?php<br />
-            &nbsp;echo "text";    &nbsp;&nbsp;&nbsp;&nbsp;//Загружает содержимое в элемент разметки<br />
-          ?&gt;
-        </strong>
-      </code>
-  </p>
-</div>
-
-<!-- The Article -->
-
-<div class="textblock" id="Get">
-  <p>
-    <em>============================ GET-запрос:</em><br />
-
-<code>
-<pre>
-<strong>
-
-$.get('.php', function(data){
-  $('селектор').html(data);
-  console.log('Данные загружены');
-});
-
-/* ---- Передача данных ---- */
-
-$.get('.php', {id: "1"});
-
-// PHP
-
-$id = $_GET['id'];
-
-/* ---- Использование типа данных ---- */
-
-// PHP
-
-echo json_encode(array("event" => "text", "date" => "text"));
-
-// JS
-
-$.get('.php', function(data){
-  $('селектор').empty().append("тег" + data.event + "тег тег" + data.date + "тег");
-}, 'json');
-
-</strong>
-</pre>
-</code>
-
-  </p>
-</div>
-
-<!-- The Article -->
-
 <div class="textblock" id="Prom">
   <p>
     <em>============================ Promise:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Оборачивание асинхронной операции в один объект.<br />
+      <br />
 
-<code>
-<pre>
-<strong>
-  function post(url, requestuestBody) {
-    return new Promise(function(succeed, fail) {
-      var request = new XMLHttpRequest();
-      request.open("POST", url, true);
-      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      request.addEventListener("load", function(){
-        if (request.status < 400) {
-          succeed(request.responseText);
-        } else {
-          fail(new Error("Request failed:" + request.statusText));
-        }
-      });
-      request.addEventListener("error", function(){
-        fail(new Error("Network error"));
-      });
-    });
-  }
+      <code>
+        <strong>
+          const pr = () => new Promise((resolve, reject) => {<br>
+            &nbsp;if (true) {<br>
+              &nbsp;&nbsp;return resolve(true);<br>
+            &nbsp;} else {<br>
+              &nbsp;&nbsp;return reject(false);<br>
+            &nbsp;}<br>
+          });<br>
+          <br>
 
-  /* Использование */
-
-  object;
-
-  var params = "name=" + object.name + "&age=" + object.age;
-
-  post(".php", params).then(function(text){
-    console.log(text);
-  }, function(error){
-    console.log(error);
-  });
-</strong>
-</pre>
-</code>
+          pr()<br>
+            &nbsp;.then((val) => console.log(val));
+        </strong>
+      </code><br />
+      <br />
 
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Дополнения:<br>
       <span class="v3"><strong>Promise.all()</strong></span> - принимает массив функций и вызывает их (дожидается, пока все не выполнятся).<br />
@@ -488,7 +405,8 @@ $.get('.php', function(data){
             &nbsp;})<br>
             &nbsp;.catch((err) => {<br>
               &nbsp;&nbsp;console.error(err);  &nbsp;&nbsp;// Отлавливание ошибок<br>
-            &nbsp;});<br>
+            &nbsp;})<br>
+            &nbsp;.finaly(() => ...);  &nbsp;&nbsp;// Выполнение любого кода независимо от того, что происходило в методах then / catch<br>
             <br>
 
             // -------------------------------- Асинхронный вариант (обертка)<br>
@@ -523,15 +441,21 @@ $.get('.php', function(data){
   <p>
     <em>============================ Axios:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Получение данных из API.<br />
+      <br>
+
       <code>
         <strong>
-          // Для Vue.js (данные записываются в свойство)<br />
-          <br />
-          mounted () {<br />
-            &nbsp;axios<br />
-              &nbsp;&nbsp;.get('url')<br />
-              &nbsp;&nbsp;.then(response => (this.property = response));<br />
-          }
+          // Установка:<br>
+          npm install axios<br>
+          <br>
+
+          const axios = require('axios') или import axios from 'axios';<br>
+          <br>
+
+          axios.get('api_url')<br>
+            &nbsp;.then((res) => console.log(res))<br>
+            &nbsp;.catch((err) => console.error(err))<br>
+            &nbsp;.finally(() => ...);<br>
         </strong>
       </code>
   </p>

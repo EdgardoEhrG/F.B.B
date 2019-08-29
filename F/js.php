@@ -361,6 +361,11 @@
           let arr1 = [1, 2, 3, 4];<br />
           let arr2 = [5, 6, 7, 8];<br />
           let arrRes = [12, 14, ... arr1, 75, ... arr2];<br />
+          <br>
+
+          // Преобразование строки в массив:<br>
+          let str = 'text';<br>
+          let arr = [...str];<br>
         </strong>
       </code><br />
 
@@ -702,8 +707,41 @@
 <div class="textblock" id="ES8">
   <p>
     <em>============================ ECMAScrip8:</em><br />
+      <span class="v"><strong># Строки</strong></span><br />
+      <span class="v3"><strong>.padStart()</strong></span> - заполняет текущую строку другой строкой, до тех пор, пока итоговая строка не достигнет нужной длины. Заполнение происходит в начале.<br />
+      <span class="v3"><strong>.padEnd()</strong></span> - тоже самое, но заполнение происходит в конце.<br />
+      <br>
+
+      <code>
+        <strong>
+          let str = 'str';<br>
+          const res = str.padStart(10, '*');<br>
+          console.log(res); // *******str<br>
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># Ретроспективная проверка строк</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Позволяет искать в строке некие конструкции, перед которыми есть какие-то другие конструкции:<br>
+      <br>
+
+      <code>
+        <strong>
+          const regExp = /Roger(?=Waters)/<br>
+          const str1 = 'Roger is my dog';<br>
+          const str2 = 'Roger is my dog and Roger Waters...';<br>
+          cosnt res = regExp.test(str1);<br>
+          const res2 = regExp.text(str2);<br>
+          console.log(res + '/' + res2); // false / true<br>
+          <br>
+
+          // Операторы:<br>
+          ?! - совпадение будет найдено только в том случае, если за заданной строкой не идет другая строка.<br>
+        </strong>
+      </code><br>
+
       <span class="v"><strong># Объекты</strong></span><br />
-      <span class="v3"><strong>Object.values(объект)</strong></span> - возвращает все значения свойств объекта.<br />
+      <span class="v3"><strong>Object.values(объект)</strong></span> - возвращает все значения свойств объекта в виде массива.<br />
+      <span class="v3"><strong>Object.entries(объект)</strong></span> - возвращает все значения свойств объекта в виде массива с ключами.<br />
   </p>
 </div>
 
@@ -1674,21 +1712,40 @@
     <br />
 
     <span class="v"><strong># Методы</strong></span><br />
+    <span class="v3"><strong>.join()</strong></span> - строковый аргумент, с помощью которого все элементы массива будут соединены в одну строку и разделены заданным элементом.<br />
+    <span class="v3"><strong>.concat()</strong></span> - добавление новых элементов / слияние массивов.<br />
+    <br>
+
     <span class="v3"><strong>.push()</strong></span> - добавление элемента в конец массива.<br />
     <span class="v3"><strong>.pop()</strong></span> - удаляет последний элемент из массива.<br />
     <span class="v3"><strong>.shift()</strong></span> - удаляет первый элемент массива.<br />
     <span class="v3"><strong>.unshift()</strong></span> - добавляет элемент в начало массива.<br />
-    <span class="v3"><strong>.join()</strong></span> - строковый аргумент, с помощью которого все элементы массива будут соединены в одну строку и разделены заданным элементом.<br />
-    <span class="v3"><strong>.concat()</strong></span> - добавление новых элементов / слияние массивов.<br />
-    <span class="v3"><strong>.reverse()</strong></span> - меняет позиции элементов массива в обратном порядке.<br />
-    <span class="v3"><strong>.sort()</strong></span> - сортирует массив, если не передать функцию сравнения – сортирует элементы как строки.<br />
-    <span class="v3"><strong>.slice()</strong></span> - вырезание элементов массива.<br />
+    <br>
+
     <span class="v3"><strong>.indexOf()</strong></span> - возвращает индекс первого элемента. Не поддерживается IE8.<br />
     <span class="v3"><strong>.lastIndexOf</strong></span> - возвращает индекс последнего элемента. Не поддерживается IE8.<br />
+    <span class="v3"><strong>.slice()</strong></span> - вырезание элементов массива.<br />
+    <span class="v3"><strong>.splice()</strong></span> - удаление элементов массива.
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> 1 аргумент - какой элемент удалить.<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> 2 аргумента - с какого элемента начать удаление и сколько элементов удалить.<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если первый аргумент = 1, а второй = 0, третий - элементы, то произойдет заполнение массива, а не удаление.
+</div>
+
+  <p>
+    <span class="v3"><strong>.reverse()</strong></span> - меняет позиции элементов массива в обратном порядке.<br />
+    <span class="v3"><strong>.sort()</strong></span> - сортирует массив, если не передать функцию сравнения – сортирует элементы как строки.<br />
+    <br>
+
+    <span class="v3"><strong>.map()</strong></span> - то же, что и выше, но возвращает новый массив с результатами операций над элементами массива.<br />
+    <span class="v3"><strong>.reduce()</strong></span> - последовательная обработка каждого элемента массива, с сохранением промежуточного результата.<br />
+    <span class="v3"><strong>.reduceRight()</strong></span> - то же, но с конца.<br />
     <span class="v3"><strong>.every()</strong></span> - проверка элементов на соответствие условию (исп. пользовательская функция с аргументами - <strong>value</strong>, <strong>index</strong>, <strong>array</strong>).<br />
     <span class="v3"><strong>.some()</strong></span> - проверка на соответствие хотя бы одного элемента массива.<br />
     <span class="v3"><strong>.filter()</strong></span> - принимает функцию условия, но при этом возвращает массив тех элементов, которые соответствуют условию.<br />
-    <br />
+    <br>
 
     <code>
       <strong>
@@ -1699,26 +1756,13 @@
             &nbsp;&nbsp;result = true;<br />
             &nbsp;&nbsp;return result;<br />
           &nbsp;}<br />
-        };<br /><br />
+        };<br />
+        <br />
 
         var fit = arr.filter(S);
       </strong>
-    </code><br /><br />
-
-    <span class="v3"><strong>.forEach()</strong></span> - принимает функцию и осуществляет перебор элементов и выполняет над ними определенные операции.<br />
-    <span class="v3"><strong>.map()</strong></span> - то же, что и выше, но возвращает новый массив с результатами операций над элементами массива.<br />
+    </code>
   </p>
-
-  <p>
-    <span class="v3"><strong>.splice()</strong></span> - удаление элементов массива.<br />
-  </p>
-
-<div class="alert alert-info" role="alert">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> 1 аргумент - какой элемент удалить.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> 2 аргумента - с какого элемента начать удаление и сколько элементов удалить.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если первый аргумент = 1, а второй = 0, третий - элементы, то произойдет заполнение массива, а не удаление.
-</div>
-
 </div>
 
 <!-- The Article -->

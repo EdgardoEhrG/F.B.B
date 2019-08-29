@@ -127,11 +127,17 @@
       <div class="modal-body">
         <strong>npm -v</strong> - проверка номеров версий менеджера пакетов.<br />
         <strong>npm install пакет</strong> - установка модулей Node.js и зависимостей, которые указаны в <strong>package.json</strong>.<br />
+        <strong>npm i пакет</strong> - сокращенный вариант.<br>
+        <strong>npm i пакет@1.1.1</strong> - установка пакета определенной версии.<br>
+        <strong>npm update пакет</strong> - обновление пакета.<br>
         <strong>npm uninstall пакет</strong> - удаление модуля / пакета.<br />
+        <strong>npm list</strong> - вывод списка локальных пакетов.<br>
+        <strong>npm cache clean</strong> - очищение кэша от старых версий пакетов.<br>
+        <strong>npm outdated</strong> - показывает версии пакетов.<br>
         <br />
 
-        <span class="v"><strong># Атрибуты</strong></span>
-        <strong>--save-dev</strong> - сохранить в указанную директорию.<br />
+        <span class="v"><strong># Атрибуты</strong></span><br>
+        <strong>--save-dev</strong> - сохранить в директорию devDependencies (директория пакетов для разработки).<br />
         <strong>-g</strong> - глобальная установка.<br />
         <strong>--save</strong> - запись (зависимость) в <strong>package.json</strong>.<br />
         <br />
@@ -142,6 +148,7 @@
 
         <span class="v"><strong># Заметки</strong></span><br />
         - Пакеты расширяют функциональность Web-приложения. Gulp, Grunt, Less тоже являются пакетами.<br />
+        - Версии - <strong>Major.Minor.Patch</strong><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
@@ -176,6 +183,7 @@
               <br />
 
               <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Особенности:<br />
+              - Кроссплатформенность.<br>
               - Недоступна работа с DOM, BOM.<br />
               - Использует модульную систему (RequireJS).<br>
               <br>
@@ -247,14 +255,19 @@
 <code>
 <pre>
 <strong>
+const http = require('http');
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.write('text');
+    res.end();
+  }
+});
 
-var http = require("http");
-http.createServer(function(request, response){
-  response.end("text");
-}).listen(3000, "127.0.0.1", function(){
-  console.log("Port 3000 is using...");
-})
+server.on('connection', (socket) => {
+  console.log('New connection...');
+});
 
+server.listen(3000)
 </strong>
 </pre>
 </code>
@@ -267,37 +280,111 @@ http.createServer(function(request, response){
 <div class="textblock" id="Mod">
   <p>
     <em>============================ Модули:</em><br />
-
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Подключаемые модули кэшируются.<br>
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Блок функционала для структурирования сложных приложений и изоляции приватных функций и переменных, которые явно не помечены для экспорта и выполняющий строго определенную функцию.<br>
       <br>
 
-<code>
-<pre>
-<strong>
+      <code>
+        <strong>
+          // Загрузка модуля:<br>
+          const имя = ('путь_модуля');<br>
+          <br>
 
-1. moduleA.js
+          // -------- Example:<br>
+          // 1. moduleA.js<br>
+          <br>
 
-let s = 10;
+          let s = 10;<br>
+          module.exports = s;<br>
+          <br>
 
-module.exports = s;
+          // 2. moduleB.js<br>
+          <br>
 
-2. moduleB.js
+          const mA = require('./имя_модуля.js');<br>
+          console.log(mA.s); //10<br>
+        </strong>
+      </code><br>
 
-const mA = require('./имя_модуля.js');
+      <span class="v"><strong># Экспорт сущностей</strong></span><br />
 
-console.log(mA.s); //10
+      <code>
+        <strong>
+          1. -------- Именованный экспорт (Экспортируемый функционал доступен в виде свойств загружаемого модуля):<br>
+          // logger.js<br>
+          <br>
 
-</strong>
-</pre>
-</code>
+          module.exports.имя = function(mes) {<br>
+            &nbsp;console.log(mes);<br>
+          }<br>
+          <br>
 
+          // main.js<br>
+          const logger = require('./logger');<br>
+          logger.имя('Text'); // Text<br>
+          <br>
+
+          2. ------- Экспорт модуля как функции (1 точка доступа):<br>
+          // logger.js<br>
+          <br>
+
+          module.exports = function(mes) {<br>
+            &nbsp;console.log(mes);<br>
+          }<br>
+          <br>
+
+          // main.js<br>
+          const logger = require('./logger');<br>
+          logger('Text'); // Text<br>
+          <br>
+
+          3. ------- Экспорт конструктора:<br>
+          // logger.js<br>
+          <br>
+
+          function Logger(name) {<br>
+            &nbsp;this.name = name;<br>
+          }<br>
+          <br>
+
+          Logger.prototype.log = function(mes) {<br>
+            &nbsp;console.log(mes);<br>
+          }<br>
+          <br>
+
+          module.exports = Logger;<br>
+          <br>
+
+          // main.js<br>
+          const Logger = require('./logger');<br>
+          const sLogger = new Logger('s');<br>
+          sLogger.log('Text'); // Text<br>
+          <br>
+
+          <span class="v"><strong># Глобальный объект</strong></span><br />
+
+          <code>
+            <strong>
+              // ModuleA<br>
+              let currentDate = new Date();<br>
+              global.date = currentDate;<br>
+              <br>
+
+              // App.js<br>
+              console.log(date); // smt value
+            </strong>
+          </code>
+        </strong>
+      </code>
   </p>
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> Функции базовых модулей асинхронны - не блокируют поток.<br>
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Любой JS-файл является модулем.<br>
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> При повторном подключении модуля, Node.js проверяет, подключался ли модуль ранее - если да, то возвращается ссылка на уже существующий модуль.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> При повторном подключении модуля, Node.js проверяет, подключался ли модуль ранее - если да, то возвращается ссылка на уже существующий модуль. Если путь модуля не начинается с "/" или "./" - поиск будет осуществлятся среди встроенных модулей Node.js. 
+  Если модуль не будет найден, то консоль отобразить сообщение об ошибке.<br>
   <i class="fa fa-chevron-right" aria-hidden="true"></i> Переменные объявленные внутри модуля - локальны для него.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Каждый модуль должен иметь четко определенную ответственность (назначение).<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Подключаемые модули кэшируются.<br>
 </div>
 
 </div>
@@ -343,7 +430,14 @@ console.log(mA.s); //10
           const fs = require('fs');<br />
           <br />
 
-          fs.readdirSync('./') - имеющиеся файлы в текущей директории.<br />
+          // Синхронное выполнение (блокирование ввода / вывода):<br>
+          <span class="v3"><strong>fs.readdirSync('./')</strong></span> - имеющиеся файлы в текущей директории.<br />
+          <span class="v3"><strong>fs.readFileSync('file.txt', 'utf-8')</strong></span> - чтение данных из файла. Принимает 2 аргумента - путь + сам файл и его кодировка.<br />
+          <span class="v3"><strong>fs.writeFileSync('new_file.txt', data)</strong></span> - создание нового файла с данными. Принимает 2 аргумента - имя файла, который должен быть изменени или создание нового + данные, которые необходимо записать в него.<br />
+          <br>
+
+          // Асинхронный вариант:<br>
+          <span class="v3"><strong>fs.readFile('имя_файла', 'кодировка', (err, data) => { ... })</strong></span> - чтение данных из файла.<br />
         </strong>
       </code>
   </p>
@@ -360,13 +454,13 @@ console.log(mA.s); //10
           const emitter = new EventEmitter();<br>
           <br>
 
-          emitter.emit('имя_события', { arg }); // Поднятие события + передача аргументов (опционально)<br>
+          emitter.emit('имя_события', { property: value }); // Поднятие события + передача аргументов - объект с значениями (опционально)<br>
           <br>
 
           <span class="v"><strong># Регистрация события</strong></span><br />
-          emitter.on('имя_события', function(arg) { ... } );<br>
-          emitter.addListener('имя_события', function(arg) { ... } )<br>
-          emitter.once('имя_события', function(arg) { ... } ) - обработчик сработает только 1 раз и затем будет удален<br>
+          emitter.on('имя_события', function(arg) { ... } ); - добавляет слушателя в конец массива слушателей. Не делает никаких проверок на существование в массиве.<br>
+          emitter.addListener('имя_события', function(arg) { ... } );<br>
+          emitter.once('имя_события', function(arg) { ... } ); - обработчик сработает только 1 раз и затем будет удален<br>
           <br>
 
           <span class="v"><strong># Асинхронный вызов</strong></span><br />

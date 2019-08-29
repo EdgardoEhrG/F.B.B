@@ -787,6 +787,7 @@
 <button class="button2" id="VenB">Вендорные свойства</button>
 <button class="button2" id="FlexB">Flex-box верстка</button>
 <button class="button2" id="AdaB">Адаптивный дизайн</button>
+<button class="button2" id="GriB">Grids</button>
 
 <!-- The Article -->
 
@@ -974,7 +975,7 @@
   </p>
 
 <div class="alert alert-info" role="alert">
-    <i class="fa fa-info-circle" aria-hidden="true"></i> Свойства <strong>float</strong>, <strong>clear</strong>, <strong>vertical-align</strong> не оказывают влияния на fkex-контейнер.<br>
+    <i class="fa fa-info-circle" aria-hidden="true"></i> Свойства <strong>float</strong>, <strong>clear</strong>, <strong>vertical-align</strong> не оказывают влияния на flex-контейнер.<br>
 </div>
 
 <div class="alert alert-danger" role="alert">
@@ -1149,6 +1150,46 @@
     5) У медиа - <span class="v2"><strong>width: 100%</strong></span> и <span class="v2"><strong>height: 100%</strong></span>.
   </p>
 
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Gri">
+  <p>
+    <em>============================ Grids:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Двумерная система компоновки основанная на сетке, цель которой заключается в том чтобы полностью изменить способ проектирования пользовательских интерфейсов основанных на сетке. Браузеры выпуска 2017 года плохо поддерживают эту технологию.<br>
+      <br>
+
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Порядок - создание grid-контейнера (свойство <strong>display: grid</strong> - задание контейнера-сетки). Другие значения - <strong>inline-grid</strong>, <strong>subgrid</strong>.<br>
+      <br>
+
+      <span class="v"><strong># Элементы</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Каждый элемент тесно связан друг с другом и отвечает за определенную часть grid контейнера.<br>
+      <br>
+      <span class="v3"><strong>Grid container</strong></span> - это набор пересекающихся горизонтальных и вертикальных grid линий, которые делят пространство grid контейнера на grid области, в которые могут быть помещены grid элементы. Внутри grid контейнера есть два набора grid линий: один определяет ось столбцов, другой определяет ось строк.<br />
+      <span class="v3"><strong>Grid lines</strong></span> - это горизонтальные и вертикальные разделители grid контейнера. Эти линии находятся по обе стороны от столбца или строки. Автор может задать для данного элемента имя или числовой индекс, которые может использовать дальше в стилях. Нумерация начинается с единицы.<br />
+      <span class="v3"><strong>Grid track</strong></span> - это пространство между двумя смежными grid линиями, вертикальными или горизонтальными.<br />
+      <span class="v3"><strong>Grid cell</strong></span> - это наименьшая неделимая единица grid контейнера на которую можно ссылаться при позиционировании grid элементов. Образуется на пересечении grid строки и grid колонки.<br />
+      <span class="v3"><strong>Grid area</strong></span> - это пространство внутри grid контейнера, в которое может быть помещен один или больше grid элементов. Этот элемент может состоять из одной или более grid ячеек.<br />
+      <br>
+
+      <span class="v"><strong># Параметры</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Настройка сетки. Если столбцов больше чем элементов, то по умолчанию для их вмещения создается новая строка. Могут принимать функцию <strong>repeat(число_повторений, значение)</strong>.<br>
+      <span class="v3"><strong>grid-template-columns</strong></span> - настройка столбцов.<br />
+      <span class="v3"><strong>grid-template-rows</strong></span> - настройка строк.<br />
+      <br>
+
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Отступы между столбцами / строками:<br>
+      <span class="v3"><strong>grid-column-gap</strong></span> - для столбцов.<br />
+      <span class="v3"><strong>grid-row-gap</strong></span> - для строк.<br />
+      <br>
+
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Позиционирование:<br>
+      <span class="v3"><strong>grid-row-start</strong></span> - начальная горизонтальная grid-линия, с которой начинается элемент.<br />
+      <span class="v3"><strong>grid-row-end</strong></span> - конечная горизонтальная grid-линия, до которой нужно растянуть элемент.<br />
+      <span class="v3"><strong>grid-column-start</strong></span> - начальная вертикальная grid-линия, с которой начинается элемент.<br />
+      <span class="v3"><strong>grid-column-end</strong></span> - конечная вертикальная grid-линия, до которой нужно растянуть элемент.<br />
+  </p>
 </div>
 
   </div>

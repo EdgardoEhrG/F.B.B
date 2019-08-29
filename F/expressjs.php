@@ -100,6 +100,9 @@
             <p class="textblock">
               <i class="fa fa-plus-circle" aria-hidden="true"></i> Достоинства:<br />
               - Помогает организовать Web-приложение на стороне сервера (маршрутизация, настройка приложения, связующее ПО, обработка запросов).<br />
+              - Решает задачи - парсинг структур запросов HTTP, управление сессиями, определение правильности заголовков ответов на основе типов данных, обработка ошибок и извлечение URL-параметров.<br>
+              - Упрощение разработки.<br>
+              - Легкая конфигурируемость.<br>
             </p>
           </div>
         <div class="modal-footer">
@@ -116,12 +119,17 @@
 <button class="button5" id="NachB">Начало работы с Express.js</button>
 <button class="button5" id="GenB">Генерация проекта</button>
 <button class="button5" id="EJSB">EJS</button>
+<button class="button5" id="RouB">Роутинг</button>
+<button class="button5" id="MidB">Middleware</button>
 
 <!-- Article -->
 
 <div class="textblock" id="Nach">
   <p>
     <em>============================ Начало работы с Express.js:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> <strong>npm install express</strong><br>
+      <br>
+
       <span class="v"><strong># Создание сервера / каркаса</strong></span>
       <code>
         <strong>
@@ -134,7 +142,7 @@
           // Создание GET-маршрута для главной страницы<br />
           // http://localhost:8080/<br />
           app.get('/', function(req, res) {<br />
-            res.sendfile('Views/Pages/index.html');<br />
+            &nbsp;res.sendfile('Views/Pages/index.html');<br />
           });<br /><br />
 
           // Запуск сервера на порту 8080<br />
@@ -198,6 +206,58 @@
   <p>
     <span class="v3"><strong><% include путь %></strong></span> - вставка данных страницы (как отдельная шаблонная часть).
   </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Rou">
+  <p>
+    <em>============================ Роутинг:</em><br />
+      <code>
+        <strong>
+          // Обработка запроса для конкретного пути:<br>
+          app.route('/путь')<br>
+            &nbsp;.get((req, res) => {<br>
+              &nbsp;&nbsp;res.send('Text');<br>
+            &nbsp;})<br>
+            &nbsp;.post((req, res) => {<br>
+              &nbsp;&nbsp;res.send('Text');<br>
+            &nbsp;})<br>
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Mid">
+  <p>
+    <em>============================ Middleware:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Промежуточное ПО. Функции применения - выполнение любого кода, внесение изменений в request / response, завершение цикла
+      запрос-ответ, вызов следующего middleware в стеке, обработка cookie.<br>
+      <br>
+
+      <code>
+        <strong>
+          function setHeader(res, req, next) {<br>
+            &nbsp;res.setHeader('Content-Type', 'application/json');<br>
+            &nbsp;next();<br>
+          }<br>
+          <br>
+
+          // Регистрация:<br>
+          app.use(setHeader);<br>
+          <br>
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Важен порядок выполнения в стеке. Каждая функция в стеке получает результат выполнения предыдущей.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Каждое middleware может решить прекратить дальнейшую обработку данных не вызывая callback или передавая сообщение об ошибке. Наличие ошибки обычно запускает выполнение другой последовательности middleware, которая
+  специально предназначена для обработки ошибок.<br>
+</div>
+
 </div>
 
   </div>

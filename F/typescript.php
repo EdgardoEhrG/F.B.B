@@ -199,6 +199,10 @@
       <span class="v3"><strong>let info: string = 'text { выражение }'</strong></span> - пример.<br />
       <br />
 
+      <span class="v"><strong># Объекты</strong></span><br />
+      <span class="v3"><strong>const obj: { property: type } = { property: value }</strong></span> - типизация объекта.<br />
+      <br />
+
       <span class="v"><strong># Массивы</strong></span><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Может содержать в себе элементы только одного типа данных, исключение - <strong>any</strong>.<br />
       <span class="v3"><strong>let имя: тип[] = [];</strong></span> - инициализация массива.<br />
@@ -214,11 +218,22 @@
       <code>
         <strong>
           enum переменная {имя1, имя2, имя3};<br />
-          let переменная2: переменная = переменная.имя1;
+          let переменная2: переменная = переменная.имя1;<br>
+          <br>
+
+          // Example<br>
+          enum Color { red, green, blue };<br>
+          let myColor: Color = Color.red;<br>
+          console.log(myColor); // 1<br>
+          <br>
+
+          // Переопределение:<br>
+          enum Color { red = 'red', green = 'green', blue = 'blue' };<br>
+          let myColor: Color = Color.red;<br>
+          console.log(myColor); // red
         </strong>
       </code><br /><br />
       - По умолчанию <strong>имя1 = 0</strong>, <strong>имя2 = 1</strong> - все можно переопределить.<br />
-      <br />
   </p>
 </div>
 

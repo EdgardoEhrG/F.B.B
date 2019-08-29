@@ -137,9 +137,12 @@
 <button class="button" id="FunB">Функции</button>
 <button class="button" id="RasB">Расширения</button>
 <button class="button" id="ZapB">Заполнители</button>
+<button class="button" id="LisB">Списки</button>
 <button class="button" id="CycB">Циклы</button>
 <button class="button" id="EacB">@each</button>
+<button class="button" id="ConB">@content</button>
 <button class="button" id="UslB">Условия</button>
+<button class="button" id="ErrB">Обработка ошибок</button>
 <button class="button" id="ImpB">Импорт</button>
 <button class="button" id="CompB">Компиляция</button>
 
@@ -162,7 +165,7 @@
       <span class="v2"><strong>$y : #fce473;</strong></span> - объявление переменной и присваивание свойства (оттенок цвета).<br /><br />
       <span class="v2"><strong>p { border: 5px solid $y; }</strong></span> - использование переменной.<br /><br />
       <span class="v2"><strong>$y : $z;</strong></span> - присвоение переменной значения другой переменной.<br /><br />
-      <span class="v2"><strong>$n: "Text"; $t: "#{$n} text"</strong></span> - интерполяция.
+      <span class="v2"><strong>$n: "Text"; $t: "#{$n} text"</strong></span> - интерполяция. В интерполяции могут быть выражения.
   </p>
 
 <div class="alert alert-success" role="alert">
@@ -303,24 +306,29 @@
   </p>
 
 <div class="alert alert-info" role="alert">
-  <i class="fa fa-info-circle" aria-hidden="true"></i> Примеси позволяют определить в одном месте свойства.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Предыдущая примесь может быть использована в других правилах.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Список свойств повторяется столько раз, сколько вызывается.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> На примесь можно ссылаться в любом правиле CSS.<br />
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Могут принимать параметры (переменные). Можно создать и дополнительные параметры, со значениями (через ":").<br />
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Могут принимать параметры (переменные).<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если примесь принимает множество аргументов (и все значения определены по умолчанию), но необходимо поменять лишь одно - при вызове миксины можно указывать этот параметр с новым значением (другие указывать не нужно и порядок не имеет значение).<br>
   <i class="fa fa-chevron-right" aria-hidden="true"></i> В имени примести можно использовать "-" и "_".<br />
 </div>
 
  <p>
   <code>
     <strong>
-      @mixin имя функции($a, $b, $c) {<br />
+      @mixin имя_функции($a, $b, $c) {<br />
         &nbsp;<span>свойство: $a $b $c;</span><br />
       }<br />
 
       #element {<br />
-        &nbsp;@include имя функции(2px, solid, black); //использование примесей (ссылка)<br />
-      }
+        &nbsp;@include имя_функции(2px, solid, black); //использование примесей (ссылка)<br />
+      }<br />
+      <br />
+
+      // --------<br />
+      <br />
+
+      ($arg: value) - значение параметра по умолчанию.<br>
+      @include имя_функции; - вызов миксины (параметры не указаны, так как они установлены по умолчанию).<br>
+      @include имя_функции($параметр: новое_значение);<br>
     </strong>
   </code>
   <br />
@@ -344,6 +352,35 @@
       <span class="v2"><strong>invert()</strong></span> - инверсия цветового оттенка.<br />
       <span class="v2"><strong>complement()</strong></span> - поиск комплементарных цветов.<br />
       <span class="v2"><strong>mix()</strong></span> - смешивание цветов.<br />
+      <span class="v2"><strong>adjust-hue($color, $degrees)</strong></span> - увеличение / уменьшение оттенка цвета.<br />
+      <br>
+
+      <span class="v"><strong># Пользовательские функции</strong></span><br />
+      <code>
+        <strong>
+          @function add($a, $b) {<br>
+            &nbsp;@return $a + $b;<br>
+          }<br>
+          <br>
+
+          // Использование:<br>
+          div { width: add(100px, 200px); }<br>
+          <br>
+
+          // Неизвестное число параметров:<br>
+          @function add($nums...) {<br>
+            &nbsp;$total: 0;<br>
+            <br>
+
+            &nbsp;@each $n in $nums {<br>
+              &nbsp;&nbsp;$total: $total + $n;<br>
+            &nbsp;}<br>
+            <br>
+
+            &nbsp;@return $total;<br>
+          }
+        </strong>
+      </code>
   </p>
 </div>
 
@@ -402,6 +439,77 @@
 
 <!-- The Article -->
 
+<div class="textblock" id="Lis">
+  <p>
+    <em>============================ Списки:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Массив значений.<br>
+      <br>
+
+      <code>
+        <strong>
+          $colors: red blue green;<br>
+          <br>
+
+          color: nth($colors, 2); // blue<br>
+          <br>
+
+          lenght(переменная) - количество значений.<br>
+          type-of(переменная) - тип значения.<br>
+        </strong>
+      </code>
+      <br>
+
+      <span class="v"><strong># Maps</strong></span><br />
+      <br>
+
+      <code>
+        <strong>
+          $colors: (<br>
+            &nbsp;primary: red;<br>
+            &nbsp;secondary: blue;<br>
+          );<br>
+          <br>
+
+          div { color: map-get($colors, secondary); }<br>
+          <br>
+
+          // Или:<br>
+          <br>
+
+          @function colour($key) {<br>
+            &nbsp;@return map-get($colors, $key);<br>
+          }<br>
+          <br>
+
+          div { color: colour(secondary); }<br>
+          <br>
+
+          // ---------------------------------------- Вложение:<br>
+          <br>
+
+          $map: (<br>
+            &nbsp;submap: (<br>
+              &nbsp;&nbsp;property: value;<br>
+            &nbsp;),<br>
+            &nbsp;submap2: (<br>
+              &nbsp;&nbsp;property: value<br>
+            &nbsp;)<br>
+          );<br>
+          <br>
+
+          @function get($key, $value) {<br>
+            &nbsp;@return map-get(map-get($map, $key), $value);<br>
+          }<br>
+          <br>
+
+          div { color: get(submap, property); }
+        </strong>
+      </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
 <div class="textblock" id="Cyc">
   <p>
     <em>============================ Циклы:</em><br />
@@ -450,6 +558,20 @@
             &nbsp;.#{$var} {<br />
               &nbsp;&nbsp;background: url(Images/#{$var}.png);<br />
             &nbsp;}<br />
+          }<br>
+          <br>
+
+          // Массив:<br>
+          $items: (text, value, value),<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(text, value, value),<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+          <br>
+
+          @each $item, $a, $b in items {<br>
+            &nbsp;.class-#{$item} {<br>
+              &nbsp;&nbsp;property: $a;<br>
+              &nbsp;&nbsp;property: $b;<br>
+            &nbsp;}<br>
           }
         </strong>
       </code>
@@ -460,6 +582,33 @@
   из списка.<br />
 </div>
 
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Con">
+  <p>
+    <em>============================ @content:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Передача блока стилей и устранение дублирующего кода.<br>
+      <br>
+
+      <code>
+        <strong>
+          @mixin имя {<br>
+            &nbsp;div { @content }<br>
+          }<br><br>
+
+          @include имя {<br>
+            &nbsp;селектор {<br>
+              &nbsp;&nbsp;property: value;<br>
+            &nbsp;}<br>
+          }<br><br>
+
+          // После компиляции:<br>
+          div p { property: value }
+        </strong>
+      </code>
+  </p>
 </div>
 
 <!-- The Article -->
@@ -477,6 +626,26 @@
           }<br />
           @else {<br />
             &nbsp;//команды<br />
+          }<br>
+          <br>
+
+          // ---------------------------------------- Условие + цикл:<br>
+          $links: (normal, purple, 500),<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(important, red, 600),<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(highlight, white, 700);<br>
+          <br>
+
+          @each $link, $color, $weight in $links {<br>
+            &nbsp;.#{$link} {<br>
+              &nbsp;&nbsp;font-weight: weight;<br>
+              &nbsp;&nbsp;color: $color;<br>
+              <br>
+
+              &nbsp;&nbsp;@if ($color == white) {<br>
+                &nbsp;&nbsp;&nbsp;background-color: black;<br>
+                &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
+              &nbsp;&nbsp;}<br>
+            &nbsp;}<br>
           }
         </strong>
       </code>
@@ -484,8 +653,65 @@
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> Можно использовать: >, <, >=, <=, ==, !=, true, false.<br />
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>or</strong> - логическое или, <strong>and</strong> - логическое и.<br>
 </div>
 
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Err">
+  <p>
+    <em>============================ Обработка ошибок:</em><br />
+      <span class="v"><strong># @warn</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Директива предупреждения. Позволяет компилятору завершить работу, а ошибка будет отображена в консоли.<br>
+      <br>
+
+      <code>
+        <strong>
+          @mixin colour($color) {<br>
+            &nbsp;@if type-of($color) != color {<br>
+              &nbsp;&nbsp;@warn "This mixin accept only color value"<br>
+            &nbsp;}<br>
+            <br>
+
+            &nbsp;color: $color;<br>
+          }<br>
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># @error</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Директива ошибки. При обнаружении ошибки работа компилятора будет приостановлена и соответствующий вывод ошибки в консоль.<br>
+      <br>
+
+      <code>
+        <strong>
+          @mixin colour($color) {<br>
+            &nbsp;@if type-of($color) != color {<br>
+              &nbsp;&nbsp;@error "This mixin accept only color value"<br>
+            &nbsp;}<br>
+            <br>
+
+            &nbsp;color: $color;<br>
+          }<br>
+        </strong>
+      </code><br>
+
+      <span class="v"><strong># @debug</strong></span><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Выводит значение любого выражения. Подходит для отладки кода.<br>
+      <br>
+
+      <code>
+        <strong>
+          $variabe: white;<br>
+          @debug $variable; // single-value<br>
+          <br>
+
+          $list: 300px, 200px, 100px;<br>
+          @debug @list; // list<br>
+        </strong>
+      </code>
+  </p>
 </div>
 
 <!-- The Article -->
@@ -496,7 +722,7 @@
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> В CSS импорт влияет на время загрузки страницы, из-за того, что каждый файл требует отдельного
       сетевого запроса. Чем больше таких файлов, тем хуже для производительности сайта. В Sass нет проблем с производительностью, потому что множество
       маленьких файлов в итоге объединяются в один единственный стилевой файл. Сохраняется удобство редактирования файлов и подключение библиотек с высокой
-      скоростью загрузки стилей.<br />
+      скоростью загрузки стилей. Используется каскадная загрузка.<br />
       <br />
 
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Рекомендация:<br />
