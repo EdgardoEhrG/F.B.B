@@ -16,6 +16,7 @@
 
 <link href="CSS/Reset.css" rel="stylesheet">
 <link href="Build/Main.min.css" rel="stylesheet">
+<link href="CSS/Global.css" rel="stylesheet">
 <script src="JS/Animations.js"></script>
 
 <!-- Project "Ariba" -->
@@ -83,6 +84,43 @@
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 8%;">
       8%
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="flex-container">
+
+<div class="col-lg-3">
+  <a href="devops.php" class="thumbnail">
+   <img src="Images/DevOps.png" />
+  </a>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-3">
+  <a href="qa.php" class="thumbnail">
+   <img src="Images/QA.png"  />
+  </a>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+      10%
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-3">
+  <a href="ba.php" class="thumbnail">
+   <img src="Images/BA.png"  />
+  </a>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      1%
     </div>
   </div>
 </div>

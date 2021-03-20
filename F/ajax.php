@@ -382,8 +382,8 @@
       <br />
 
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Дополнения:<br>
-      <span class="v3"><strong>Promise.all()</strong></span> - принимает массив функций и вызывает их (дожидается, пока все не выполнятся).<br />
-      <span class="v3"><strong>.race</strong></span> - кто первый сработает.<br />
+      <span class="v3"><strong>Promise.all([])</strong></span> - принимает массив функций и вызывает их (дожидается, пока все не выполнятся, либо отклонено любое из переданных).<br />
+      <span class="v3"><strong>Promise.race([])</strong></span> - вернет то значение, которое первое выполнится / отклонится. Также принимает массив функций.<br />
 
   </p>
 </div>

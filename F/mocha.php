@@ -114,6 +114,7 @@
 
 <button class="button5" id="NachB">Начало работы с Mocha</button>
 <button class="button5" id="SpeB">Спецификация</button>
+<button class="button5" id="TesB">Тесты</button>
 
 <!-- The Article -->
 
@@ -210,6 +211,81 @@
     <strong>after(function() {...});</strong> - выполнение кода после запуска тестов.<br />
     <strong>beforeEach(function() {...});</strong> - выполнение кода до каждого <strong>it</strong>.<br />
     <strong>afterEach(function() {...});</strong> - выполнение кода после каждого <strong>it</strong>.<br />
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Tes">
+  <p>
+    <em>============================ Тесты:</em><br />
+      <code>
+        <strong>
+          // Установка:<br>
+          npm install mocha<br>
+          <br>
+
+          // Запуск тестов:<br>
+          npm test<br>
+          ~ Будут выполнены все файлы с расширением .test.js<br>
+          <br>
+
+          // Пример теста<br>
+          const multiply = (x, y) => {<br>
+            &nbsp;return x * y;<br>
+          }<br>
+          <br>
+
+          export default multiply;<br>
+          <br>
+
+          // test/operations.test.js<br>
+          const operations = require('./operations.js');<br>
+          <br>
+
+          it('Should multiply two numbers', () => {<br>
+            &nbsp;const testVal = 15;<br>
+            &nbsp;const res = operations.multiply(3, 5);<br>
+            <br>
+
+            &nbsp;if (res !== testVal) {<br>
+              &nbsp;&nbsp;throw new Error(`Expected ${testVal}, but got ${res}`);<br>
+            &nbsp;}<br>
+          });<br>
+          <br>
+
+          <span class="v"><strong># Асинхронный тест</strong></span><br />
+          const m = (x, y, cb) => {<br>
+            &nbsp;setTimeout(() => {<br>
+              &nbsp;&nbsp;cb(x * y);<br>
+            &nbsp;}, 1000);<br>
+          }<br>
+          <br>
+
+          it('text', (done) => {<br>
+            &nbsp;const expVal = 12;<br>
+            &nbsp;operations.m(4, 3, (res) => {<br>
+              &nbsp;&nbsp;if (res !== expVal) {<br>
+                &nbsp;&nbsp;&nbsp;throw new Error('Text');<br>
+              &nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;done();<br>
+            &nbsp;});<br>
+          });<br>
+          <br>
+
+          или...<br>
+          <br>
+
+          it('Text', async () => {<br>
+            &nbsp;const res = await test_func(args);<br>
+            &nbsp;expect(res)<br>
+              &nbsp;&nbsp;.to.be.a('string')<br>
+          });<br>
+          <br>
+
+          ~ Чтобы асинхронные функции завершились до завершения теста, передается done()
+        </strong>
+      </code>
   </p>
 </div>
 

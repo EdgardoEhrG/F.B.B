@@ -109,6 +109,94 @@
   </div>
 </div>
 
+<hr />
+
+<!-- Buttons -->
+
+<button class="button5" id="MonB">mongoose</button>
+
+<!-- The Article -->
+
+<div class="textblock" id="Mon">
+  <p>
+    <em>============================ Пакет Node.js для работы с MongoDB:</em><br />
+      <code>
+        <strong>
+          // Установка:<br>
+          npm install mongoose<br>
+          <br>
+
+          // Создание модели данных models/имя_модели.js:<br>
+          import mongoose from 'mongoose';<br>
+          <br>
+
+          const modelSchema = new mongoose.Schema({<br>
+            &nbsp;property: {<br>
+              &nbsp;type: Тип,<br>
+              &nbsp;required: true<br>
+            &nbsp;}<br>
+          });<br>
+          <br>
+
+          const Model = mongoose.model('Model', modelSchema);<br>
+          export default Model;<br>
+          <br>
+
+          // Подключение к базе:<br>
+          mongoose.Promise = Promise;<br>
+          mongoose.connect('url', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });<br>
+          mongoose.connection.once('open', () => console.log('connected'));<br>
+          <br>
+
+          // Запросы:<br>
+          1) Получение всех данных:<br>
+          const items = await Model.find({})<br>
+          <br>
+
+          2) Получение конкретного эл-та:<br>
+          const id = req.params.id;<br>
+          const item = Model.findOne({ _id: id });<br>
+          <br>
+
+          3) Создание эл-та:<br>
+          Model.create(data);<br>
+          <br>
+
+          4) Обновление:<br>
+          Model.updateOne({ _id: id }, data, { upsert: true });<br>
+          <br>
+
+          5) Удаление:<br>
+          Model.deleteOne({ _id: id });<br>
+          <br>
+
+          <span class="v"><strong># Валидация</strong></span><br />
+          <span class="v3"><strong>required</strong></span> - обязательное ли свойство.<br />
+          <span class="v3"><strong>type</strong></span> - тип данных.<br />
+          <span class="v3"><strong>min / max</strong></span> - минимальное / максимальное значение.<br />
+          <span class="v3"><strong>match</strong></span> - соответствие регулярному выражению.<br />
+          <br />
+
+          <span class="v"><strong># CRUD-операции</strong></span><br />
+          <span class="v3"><strong>find</strong></span> - все объекты, соответствующие критерию.<br />
+          <span class="v3"><strong>findById</strong></span> - 1 объект по id.<br />
+          <span class="v3"><strong>findOne</strong></span> - 1 объект по критерию.<br />
+          <br />
+
+          <span class="v3"><strong>remove</strong></span> - удалить все объекты по критерию.<br />
+          <span class="v3"><strong>findByIdAndDelete</strong></span> - удалить 1 по id.<br />
+          <span class="v3"><strong>findOneAndDelete</strong></span> - удалить 1 по критерию.<br />
+          <br />
+
+          <span class="v3"><strong>updateOne</strong></span> - обновить 1 по критерию.<br />
+          <span class="v3"><strong>updateMany</strong></span> - обновить множество по критерию.<br />
+          <span class="v3"><strong>findByIdAndUpdate</strong></span> - обновить 1 по id.<br />
+          <span class="v3"><strong>findOneAndUpdate</strong></span> - обновить 1 по критерию.
+        </strong>
+      </code>
+  </p>
+</div>
+
   </div>
 </div>
 

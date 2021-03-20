@@ -112,7 +112,27 @@
 
 <!-- Buttons -->
 
+<button class="button5" id="NachB">Начало работы с Chai</button>
 <button class="button5" id="FunB">Функции</button>
+
+<!-- The Article -->
+
+<div class="textblock" id="Nach">
+  <p>
+    <em>============================ Начало работы с Chai:</em><br />
+      <code>
+        <strong>
+          // Установка и подключение:<br>
+          npm install chai<br>
+          <br>
+
+          Утверждение - const assert = require('chai').assert;<br>
+          Ожидание - const expect = require('chai').expect;<br>
+          Долженствование - const should = require('chai').should;<br>
+        </strong>
+      </code>
+  </p>
+</div>
 
 <!-- The Article -->
 
@@ -127,6 +147,18 @@
       <span class="v3"><strong>assert.isTrue(выражение)</strong></span> - проверка на истинность.<br />
       <span class="v3"><strong>assert.isFalse(выражение)</strong></span> - проверка на ложность.<br />
       <span class="v3"><strong>assert.isNaN(выражение)</strong></span> - проверка на NaN.<br />
+      <span class="v3"><strong>assert.include(data, что_должно_содержаться, 'text')</strong></span> - проверка на содержание.<br />
+      <span class="v3"><strong>assert.lengthOf(data, число, 'text')</strong></span> - проверка на длину.<br />
+      <br>
+
+      <span class="v3"><strong>expect(data).to.be.an('тип')</strong></span> - ожидание типа.<br />
+      <span class="v3"><strong>expect(data).that.includes(value)</strong></span> - ожидание, что содержится определенное значение.<br />
+      <span class="v3"><strong>expect(data).to.have.lengthOf(число)</strong></span> - ожидание определенной длины.<br />
+      <br>
+
+      <span class="v3"><strong>data.should.be.an('тип')</strong></span> - должен быть определенного типа.<br />
+      <span class="v3"><strong>data.should.that.includes(value)</strong></span> - должен содержать определенное значение.<br />
+      <span class="v3"><strong>data.should.have.lengthOf(число)</strong></span> - должен иметь определенную длину.<br />
   </p>
 
 <div class="alert alert-success" role="alert">

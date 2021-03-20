@@ -115,6 +115,7 @@
               <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Особенности:<br />
               - Имеет специальный плагин для отладки - React Developer Tools.<br />
               - Используется JSX (JS + разметка). Также необходим babel.<br>
+              - <strong>create-react-app</strong> работает только с Sass. Чтобы использовать less / stylus - нужно дописывать конфигурацию webpack'а.<br>
             </p>
           </div>
         <div class="modal-footer">
@@ -141,7 +142,10 @@
 <button class="button" id="CommB">Комментарии</button>
 <button class="button" id="GenB">Генерация</button>
 <button class="button" id="JsxB">JSX</button>
+<button class="button" id="TsxB">TSX</button>
 <button class="button" id="CompB">Компоненты</button>
+<button class="button" id="RefB">Refs</button>
+<button class="button" id="PreB">Предохранители</button>
 <button class="button" id="PropB">Props</button>
 <button class="button" id="StaB">State</button>
 <button class="button" id="SobB">События</button>
@@ -150,7 +154,10 @@
 <button class="button" id="ReB">Рендеринг</button>
 <button class="button" id="HocB">HOC</button>
 <button class="button" id="ConB">Контекст</button>
+<button class="button" id="PorB">Порталы</button>
 <button class="button" id="RouB">Роутинг</button>
+<button class="button" id="ProfB">Profiler</button>
+<button class="button" id="OptB">Оптимизация</button>
 
 <!-- The Article -->
 
@@ -160,8 +167,6 @@
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> В начале файла указать:<br />
       <code>
         <strong>
-          'use strict';<br /><br />
-
           import React, { Component } from 'react';<br />
           import ReactDOM from 'react-dom';<br />
           <br />
@@ -170,10 +175,21 @@
           <br>
 
           import imgName from './.png'; //импорт изображения<br>
-        </strong>
-      </code><br />
+        </strong><br>
+      </code>
 
-      <a href="https://reactjs.org/docs/add-react-to-an-existing-app.html" class="btn btn-primary" role="button">Подключение</a><br />
+      <span class="v"><strong># Генерация проекта</strong></span><br />
+        <code>
+          <strong>
+            npm install -g create-react-app - установка cli<br>
+            <br>
+
+            create-react-app project - инициализация проекта<br>
+            <br>
+
+            npm run eject - доступ к конфигурационным файлам<br>
+          </strong>
+        </code>
   </p>
 
 </div>
@@ -221,6 +237,11 @@ ReactDOM.render(
 </pre>
 </code>
   </p>
+
+<div class="alert alert-info">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> После отрисовки компонента нельзя изменять его потомков и атрибуты.<br>
+</div>
+
 </div>
 
 <!-- The Article -->
@@ -233,7 +254,8 @@ ReactDOM.render(
 
       <span class="v3"><strong>className={'класс1 ' + 'класс2'}</strong></span> - добавление нескольких классов.<br />
       <span class="v3"><strong>условие ? действие : действие2</strong></span> - в JSX нельзя использовать <strong>if / else</strong>, только тернарный оператор.<br />
-      <span class="v3"><strong>htmlFor</strong></span> - вместо атрибута <strong>for</strong><br>
+      <span class="v3"><strong>htmlFor</strong></span> - вместо атрибута <strong>for.</strong><br>
+      <span class="v3"><strong>{ property && ( разметка ) }</strong></span> - отображение разметки если свойство существует.</strong><br>
   </p>
 
   <p>
@@ -258,9 +280,18 @@ ReactDOM.render(
   <i class="fa fa-info-circle" aria-hidden="true"></i> У родительского элемента есть атрибут "ключ" - для ReactJS
   необходима уникальность, чтобы все механизмы работали корректно. По "ключу" ReactJS будет понимать с каким именно
   дочерним узлом работает и к какому родителю он принадлежит.<br>
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> React использует ключи, чтобы сравнивать элементы при обновлении данных / состояния.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> React использует ключи, чтобы сравнивать элементы при обновлении данных / состояния. Не рекомендуется использовать index как ключ в массиве элементов, так как при изменении порядка элементов будет страдать производительность.<br>
 </div>
 
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="tsx">
+  <p>
+    <em>============================ TypeScript in React:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Расширение файлов - .tsx
+  </p>
 </div>
 
 <!-- The Article -->
@@ -311,14 +342,21 @@ ReactDOM.render(
               &nbsp;render() {<br />
                 &nbsp;&nbsp;return (разметка);<br />
               &nbsp;}<br />
-            }
+            }<br>
+            <br>
+
+            // Оптимизированный компонент (использовать только где поверхностное сравнение)
+            export default class имя extends React.PureComponent {<br />
+              &nbsp;render() {<br />
+                &nbsp;&nbsp;return (разметка);<br />
+              &nbsp;}<br />
           </strong>
         </code><br /><br />
 
         <span class="v"><strong># Arrow function</strong></span><br />
         <code>
           <strong>
-            let имя =() => {<br />
+            const имя = () => {<br />
               &nbsp;return (разметка);<br />
             }<br><br>
 
@@ -330,21 +368,15 @@ ReactDOM.render(
         <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Обертка для нескольких элементов, чтобы не создавать лишний блок и не вносить изменения в DOM.<br>
         <code>
           <strong>
-            &lt;React.Fragment&gt; элементы &lt;/React.Fragment&gt;
+            &lt;React.Fragment&gt; элементы &lt;/React.Fragment&gt;<br>
+            <br>
+
+            Или... Сокращенный вариант (не поддерживает ключи и атрибуты):<br>
+            <br>
+
+            &lt;&gt; элементы &lt;/&gt;<br>
           </strong>
         </code>
-  </p>
-
-  <p>
-    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Генерация компонета:<br />
-    <code>
-      <strong>
-        ReactDOM.render(<br />
-          &nbsp;&lt;имя /&gt;,<br />
-          &nbsp;document.getElementById('id');<br />
-        );
-      </strong>
-    </code>
   </p>
 
 <div class="alert alert-success">
@@ -368,6 +400,48 @@ ReactDOM.render(
 
 <!-- The Article -->
 
+<div class="textblock" id="Ref">
+  <p>
+    <em>============================ Refs:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Императивное изменение потомка вне потока.<br>
+      <br>
+
+      <code>
+        <strong>
+          // Доступ к элементу:<br>
+          const node = this.myRef,current;<br>
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Подходит для: управление фокусом, выделение текста, воспроизведение медиа, вызов анимаций.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если задачу можно решить декларативным методом, то ref'ы лучше не использовать.
+</div>
+
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Pre">
+  <p>
+    <em>============================ Предохранители:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компоненты, которые отлавливают JS-ошибки в любом месте деревьев их дочерних компонентов, сохраняются в журнале ошибок и выводят запасной UI.<br>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Отлавливают ошибки при рендере и в МЖЦ.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Не ловят ошибку в обработчике события, асинхронном коде, SSR и в самом предохранителе.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Ошибка сохраняется в componentDidCatch.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Только классовый компонент может быть предохранителем.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> try / catch - для отлова ошибок в событиях.<br>
+</div>
+
+
+</div>
+
+<!-- The Article -->
+
 <div class="textblock" id="Prop">
   <p>
     <em>============================ Свойства:</em><br />
@@ -385,7 +459,7 @@ ReactDOM.render(
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> В свойство можно передать любой JS-примитив, объект, переменную
-   и даже выражение или массив.<br />
+   и даже выражение, массив или компонент.<br />
    <i class="fa fa-chevron-right" aria-hidden="true"></i> Значение свойства должно быть в <strong>{}</strong>.<br />
    <i class="fa fa-chevron-right" aria-hidden="true"></i> Значения доступны через <strong>this.props.имя_свойства</strong>.<br />
    <i class="fa fa-chevron-right" aria-hidden="true"></i> <strong>this.props</strong> исп. только для чтения и не могут быть динамически изменены.<br />
@@ -547,7 +621,7 @@ state = {
     <span class="v"><strong># Обновление состояния</strong></span><br />
     <code>
       <strong>
-        this.setState({ имя_свойства: "новое_значение"} );
+        this.setState((state, props) => ({ имя_свойства: props.newValue}));
       </strong>
     </code>
 
@@ -594,6 +668,15 @@ state = {
           // -------------------------------- Или (ES6+, без конструктора и без привязки)<br>
           имя_функции = () => {<br />
             &nbsp;...<br />
+          }<br />
+          <br />
+
+          // -------------------------------- Если нужно обрабатывать несколько input<br />
+          const handleInput = (e) => {<br />
+            &nbsp;const name = e.target.name;<br />
+            &nbsp;this.setState({<br />
+              &nbsp;&nbsp;[name]: value<br />
+            &nbsp;});<br />
           }
         </strong>
       </code><br /><br />
@@ -692,6 +775,56 @@ class Clock extends React.Component {
 <div class="textblock" id="Ho">
   <p>
     <em>============================ React-Хуки:</em><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Добавление функциональности классовых компонентов функциональным. Доступны в версии 16.8 и выше.<br>
+    <br>
+
+    <span class="v"><strong># useState</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Состояние.<br>
+    <br>
+    <code>
+      <strong>
+        import React, { useState } from 'react';<br />
+        <br />
+
+        const [value, setValue] = useState(начальное_значение);<br />
+        <br />
+
+        setValue(новое_значение); - изменение состояния.<br />
+      </strong>
+    </code><br />
+
+    <span class="v"><strong># useRef</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Управление элементом.<br>
+    <br>
+    <code>
+      <strong>
+        import .. { useRef } ...<br>
+        <br>
+
+        const myRef = useRef();<br>
+        <br>
+
+        тег ref={myRef}<br>
+      </strong>
+    </code>
+    <br>
+
+    <span class="v"><strong># useContext</strong></span><br />
+    <br>
+
+    <span class="v"><strong># useMemo</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Возвращает мемоизированное значение (результат выполнения функции будет сохранен во избежание повторных вычислений, как оптимизация).
+    Повторное вычисление будет выполнено только при изменении какого-либо значения или зависимости. Запускается во время рендера.<br>
+    <br>
+
+    <span class="v"><strong># useLayoutEffect</strong></span><br />
+    <br>
+
+    <span class="v"><strong># useEffect</strong></span><br />
+    <br>
+
+    <span class="v"><strong># Custom hoocks</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Хранить в специальной папке hoocks.<br>
   </p>
 </div>
 
@@ -738,7 +871,7 @@ class Clock extends React.Component {
 <div class="textblock" id="Hoc">
   <p>
     <em>============================ HOC:</em><br />
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент высшего порядка. Одна функция поверх другой - первая принимает параметры компонента, вторая - сам компонент.<br>
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент высшего порядка. Одна функция поверх другой - первая принимает сам компонент, вторая - параметры компонента.<br>
       <br>
 
       <code>
@@ -748,6 +881,12 @@ class Clock extends React.Component {
         </strong>
       </code>
   </p>
+
+<div class="alert alert-info">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> HOC должна быть чистой, то есть не менять входные данные.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Имя HOC должно начинаться с with.<br>
+</div>
+
 </div>
 
 <!-- The Article -->
@@ -803,6 +942,22 @@ class Clock extends React.Component {
   <i class="fa fa-info-circle" aria-hidden="true"></i> HOC может преобразовывать props перед тем как передавать их компоненту.<br>
 </div>
 
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Por">
+  <p>
+    <em>============================ Порталы:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Рендер дочерних элементов в DOM-узлы, которые находятся вне DOM-иерархии родительского компонента.<br>
+      <br>
+
+      <code>
+        <strong>
+          React.createPortal(Child, Container);
+        </strong>
+      </code>
+  </p>
 </div>
 
 <!-- The Article -->
@@ -887,6 +1042,39 @@ class Clock extends React.Component {
           // Если ни один из роутов не сработает - переадресация на главную / или отображение компонента ошибки
         </strong>
       </code>
+  </p>
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Prof">
+  <p>
+    <em>============================ Profiler:</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Измеряет то, как часто рендерится приложение и какова "стоимость" этого. Его задача - найти медленые части приложения, которые можно оптимизировать.<br>
+
+      <code>
+        <strong>
+          App
+            &nbsp;Profiler id="Navigation" onRender={callback}
+              &nbsp;&nbsp;Navigation {...props}
+            &nbsp;/Profiler
+          /App
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> В Prod-режиме должно быть отключено.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Принимает ID и callback, который React вызывает каждый раз, когда компонент внутри дерева фиксирует обнрвление.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Может быть использован несколько раз и быть вложенным.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Каждое его использование увеличивает нагрузку на CPU и память.<br>
+</div>
+
+</div>
+
+<div class="textblock" id="Opt">
+  <p>
+    <em>============================ Оптимизация:</em><br />
   </p>
 </div>
 

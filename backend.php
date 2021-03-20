@@ -274,26 +274,6 @@
 
 <hr />
 
-<!-- T. Blocks -->
-
-<div class="container" id="D">
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>App Container (Docker)</h5>
-    <p>
-      <a href="B/docker.php" class="thumbnail">
-       <img src="Images/Docker.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-</div>
-
 <footer>
   <div>
     <p>&copy; <?php echo date("Y"); ?> San Antonio, Texas, USA</p>

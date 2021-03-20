@@ -1,12 +1,13 @@
 {
   "name": "fbb",
-  "version": "6.4.2",
+  "version": "6.5.0",
   "description": "front-end & back-end book",
   "main": "index.php",
   "author": "Ehrenberg Edgar",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.2",
     "gulp-babel": "^7.0.1",
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.9.4",
@@ -23,7 +24,5 @@
     "jshint": "^2.9.6",
     "typescript": "^2.9.2"
   },
-  "dependencies": {
-    "gulp": "^3.9.1"
-  }
+  "dependencies": {}
 }

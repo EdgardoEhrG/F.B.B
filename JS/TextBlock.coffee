@@ -719,3 +719,51 @@ $(document).ready ->
   $('#LisB').click ->
     $('div.textblock').css("display", "none")
     $('#Lis').fadeIn(400)
+
+  $('#GatB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Gat').fadeIn(400)
+
+  $('#GrB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Gr').fadeIn(400)
+
+  $('#FraB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Fra').fadeIn(400)
+
+  $('#MuB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Mu').fadeIn(400)
+
+  $('#EnvB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Env').fadeIn(400)
+
+  $('#MonB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Mon').fadeIn(400)
+
+  $('#TesB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Tes').fadeIn(400)
+
+  $('#SeqB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Seq').fadeIn(400)
+
+  $('#TsxB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Tsx').fadeIn(400)
+
+  $('#PorB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Por').fadeIn(400)
+
+  $('#ProfB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Prof').fadeIn(400)
+
+  $('#RefB').click ->
+    $('div.textblock').css("display", "none")
+    $('#Ref').fadeIn(400)

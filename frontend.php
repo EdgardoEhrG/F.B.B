@@ -200,8 +200,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+      30%
     </div>
       </div>
   </div>
@@ -564,8 +564,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
-      55%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+      65%
     </div>
       </div>
   </div>
@@ -578,8 +578,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+      50%
     </div>
       </div>
   </div>
@@ -606,8 +606,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+      10%
     </div>
       </div>
   </div>
@@ -721,98 +721,6 @@
 <div class="container" id="D">
 
   <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Тестирование (JasmineJS)</h5>
-    <p>
-      <a href="F/jasminejs.php" class="thumbnail">
-       <img src="Images/JasmineJS.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Тестирование (MochaJS)</h5>
-    <p>
-      <a href="F/mocha.php" class="thumbnail">
-       <img src="Images/Mocha.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-      10%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Запуск тестов (KarmaJS)</h5>
-    <p>
-      <a href="F/karma.php" class="thumbnail">
-       <img src="Images/Karma.jpg" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Mocha-функции (ChaiJS)</h5>
-    <p>
-      <a href="F/chai.php" class="thumbnail">
-       <img src="Images/ChaiJS.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 8%;">
-      8%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5 class="of">Mocha-заглушки (SinonJS)</h5>
-    <p>
-      <a href="F/sinonjs.php" class="thumbnail">
-       <img src="Images/SinonJS.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-  <div class="col-6 col-sm-6 col-lg-4">
-    <h5>Тестирование (JestJS)</h5>
-    <p>
-      <a href="F/jest.php" class="thumbnail">
-       <img src="Images/Jest.png" width="343px" height="360px" />
-      </a>
-    </p>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-      1%
-    </div>
-      </div>
-  </div>
-
-</div>
-
-<hr />
-
-<!-- T. Blocks -->
-
-<div class="container" id="D">
-
-  <div class="col-6 col-sm-6 col-lg-4">
     <h5>Серверный JS (Node.js)</h5>
     <p>
       <a href="F/nodejs.php" class="thumbnail">
@@ -820,8 +728,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
-      15%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+      25%
     </div>
       </div>
   </div>
@@ -834,8 +742,8 @@
       </a>
     </p>
       <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-      10%
+    <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+      15%
     </div>
       </div>
   </div>

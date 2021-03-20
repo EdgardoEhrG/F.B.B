@@ -119,6 +119,7 @@
 <button class="button5" id="NachB">Начало работы с Express.js</button>
 <button class="button5" id="GenB">Генерация проекта</button>
 <button class="button5" id="EJSB">EJS</button>
+<button class="button5" id="QueB">Запросы</button>
 <button class="button5" id="RouB">Роутинг</button>
 <button class="button5" id="MidB">Middleware</button>
 
@@ -210,6 +211,16 @@
 
 <!-- The Article -->
 
+<div class="textblock" id="Que">
+  <p>
+    <em>============================ Запросы:</em><br />
+    <span class="v3"><strong>app.use(express.json());</strong></span> - для работы с <strong>req.body</strong>.<br />
+    <span class="v3"><strong>if (!req.boby) return res.sendStatus(400)</strong></span> - если нет тела запроса.<br />
+  </p>
+</div>
+
+<!-- The Article -->
+
 <div class="textblock" id="Rou">
   <p>
     <em>============================ Роутинг:</em><br />
@@ -223,6 +234,21 @@
             &nbsp;.post((req, res) => {<br>
               &nbsp;&nbsp;res.send('Text');<br>
             &nbsp;})<br>
+            <br>
+
+          <span class="v"><strong># Параметры</strong></span><br />
+          app.get('/api/items/:id', (req, res) => {<br>
+            &nbsp;const id = req.params.id;<br>
+            &nbsp;...<br>
+          });<br>
+          <br>
+
+          <span class="v"><strong># Редирект</strong></span><br />
+          res.redirect('url');<br />
+          <br />
+
+          <span class="v"><strong># Методы</strong></span><br />
+          <span class="v3"><strong>.setStatus(число)</strong></span> - отправка кода статуса.<br />
         </strong>
       </code>
   </p>

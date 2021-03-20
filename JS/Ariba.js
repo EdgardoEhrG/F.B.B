@@ -1,27 +1,24 @@
-$(document).ready(function(){
+$(document).ready(function () {
+  function Ariba() {
+    annyang.setLanguage("ru");
+    var commands = {
+      /* Текстовые ответы */
 
- function Ariba() {
-	 annyang.setLanguage('ru');
-	 var commands = {
+      Ариба: function () {
+        $("#Result").fadeIn(300).html("Чем могу помочь?");
+        $("#Answer").css("marginBottom", "30px");
+      },
 
-		 /* Текстовые ответы */
+      /* Голосовые ответы */
 
-		 'Ариба' : function() {
-			 $('#Result').fadeIn(300).html("Чем могу помочь?");
-       $('#Answer').css("marginBottom", "30px");
-		 },
+      "Эй, Ариба": function () {
+        speechSynthesis.speak(new SpeechSynthesisUtterance("Да?"));
+      },
+    };
 
-		 /* Голосовые ответы */
+    annyang.addCommands(commands);
+    annyang.start({ autoRestart: true, continuous: false });
+  }
 
-		 'Эй, Ариба' : function() {
-			 speechSynthesis.speak(new SpeechSynthesisUtterance('Да?'));
-		 }
-	 }
-
-	 annyang.addCommands(commands);
-	 annyang.start({ autoRestart: true, continuous: false});
- }
-
-	$('.AribaB').on('click', Ariba);
-
+  $(".AribaB").on("click", Ariba);
 });

@@ -209,8 +209,9 @@
 <button class="button5" id="PathB">Path</button>
 <button class="button5" id="OsB">OS</button>
 <button class="button5" id="FileB">File System</button>
+<button class="button5" id="MuB">Multer</button>
 <button class="button5" id="SobB">События</button>
-
+<button class="button5" id="EnvB">.env</button>
 
 <!-- Article -->
 
@@ -445,6 +446,48 @@ server.listen(3000)
 
 <!-- The Article -->
 
+<div class="textblock" id="Mu">
+  <p>
+    <em>============================ Multer (извлечение файлов из запроса):</em><br />
+      <code>
+        <strong>
+          // Установка:<br>
+          npm i multer<br>
+          <br>
+
+          // Подключение и настройка<br>
+          import multer from 'multer'<br>
+          <br>
+
+          const storageConfig = multer.diskStorage({<br>
+            &nbsp;destination: (req, file, cb) => {<br>
+              &nbsp;&nbsp;cb(null, 'static');<br>
+            &nbsp;},<br>
+            &nbsp;filename: (req, file, cb) => {<br>
+              &nbsp;&nbsp;cb(null, file.originalname);<br>
+            &nbsp;}<br>
+          });<br>
+          <br>
+
+          app.use(multer({storage: storageConfig}).single('fileSrc'))<br>
+          <br>
+
+          // Извлечение:<br>
+          app.post('/', async (req, res) => {<br>
+            &nbsp;const image = req.file;<br>
+          })
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Такое же <strong>name</strong> как у input<br>
+</div>
+
+</div>
+
+<!-- The Article -->
+
 <div class="textblock" id="Sob">
   <p>
     <em>============================ Модуль событий:</em><br />
@@ -486,6 +529,31 @@ server.listen(3000)
   <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> На одно событие можно установить только 10 обработчиков события, иначе - засорение памяти.<br>
 </div>
 
+</div>
+
+<!-- The Article -->
+
+<div class="textblock" id="Env">
+  <p>
+    <em>============================ Переменные окружения:</em><br />
+      <code>
+        <strong>
+          // Установка:<br>
+          npm install dotenv<br>
+          <br>
+
+          // Содержимое файла .env:<br>
+          ИМЯ_ПЕРЕМЕННОЙ = значение<br>
+          <br>
+
+          // Получение значения переменной:<br>
+          require('dotenv').config();<br>
+          <br>
+
+          const val = process.env.ИМЯ_ПЕРЕМЕННОЙ;
+        </strong>
+      </code>
+  </p>
 </div>
 
   </div>

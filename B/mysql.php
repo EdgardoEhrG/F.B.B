@@ -218,5 +218,70 @@
   </div>
 </div>
 
+<!-- Panel -->
+
+<div class="panel panel-primary" id="DS">
+  <div class="panel-heading">
+    <h3 class="panel-title">Пакеты</h3>
+  </div>
+    <div class="panel-body">
+
+<!-- Buttons -->
+
+<button class="button3" id="SeqB">Sequelize</button>
+
+<!-- The Article -->
+
+<div class="textblock" id="Seq">
+  <p>
+    <em>============================ Sequelize (пакет для Node.js):</em><br />
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> ORM-библиотека для Node.js приложений, которая осуществляет сопоставление таблиц в DB и отношений между ними
+      с классами. При использовании этой библиотеки не нужно писать SQL-запросы, только работа с данными как с обычными объектами. Работает с MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server.<br>
+      <br>
+
+      <code>
+        <strong>
+          npm install sequelize<br>
+          <br>
+
+          <span class="v"><strong># Подключение</strong></span><br />
+          const Sequelize = require('Sequelize');<br>
+          const sequelize = new Sequelize("database", "user", "password", { dialect: "mysql", host: "localhost" });<br>
+          <br>
+
+          <span class="v"><strong># Определение модели</strong></span><br />
+          const Model = sequelize.define("model", { property: { type: Sequelize.STRING, autoincrement: false, primaryKey: true, allowNull: false } });<br>
+          <br>
+
+          // Типы данных:<br>
+          STRING, TEXT, INTEGER, FLOAT, DOUBLE, DECIMAL, BOOLEAN.<br>
+          <br>
+
+          <span class="v"><strong># Синхронизация с DB</strong></span><br />
+          sequelize.sync().then(res => console.log(res));<br />
+          <br />
+
+          { forse: true } - добавляется в sync(), удаляет несоответствующие модели таблицы и создает новые с нужной структурой.<br />
+          <br />
+
+          <span class="v"><strong># Запросы</strong></span><br />
+          <span class="v3"><strong>Model.create({ property: value }).then...</strong></span> - добавление.<br />
+          <span class="v3"><strong>Model.findAll({ row: true })</strong></span> - получение всех данных.<br />
+          <span class="v3"><strong>Model.findOne({ where: { property: value } })</strong></span> - получение 1 записи с фильтрацией.<br />
+          <span class="v3"><strong>Model.update({ property: new_value }, { where... })</strong></span> - обновление.<br />
+          <span class="v3"><strong>Model.destroy()</strong></span> - удаление.<br />
+        </strong>
+      </code>
+  </p>
+
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle" aria-hidden="true"></i> Если для модели нет таблицы, то она будет создана автоматически. Имя таблицы задается в множественном числе.
+</div>
+
+</div>
+
+  </div>
+</div>
+
 </body>
 </html>
