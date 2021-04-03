@@ -162,8 +162,8 @@
     <span class="v"><strong># Определение задачи</strong></span><br />
     <code>
       <strong>
-        gulp.task('имя_задачи', function() {<br />
-          &nbsp;...<br />
+        gulp.task('имя_задачи', async () => {<br />
+          &nbsp;await ...<br />
         });<br />
       </strong>
     </code><br />

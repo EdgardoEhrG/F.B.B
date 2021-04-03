@@ -104,7 +104,7 @@
             <p class="textblock">
               <i class="fa fa-plus-circle" aria-hidden="true"></i> Достоинства:<br />
               - React при изменениях DOM-дерева старается использовать минимально возможные воздействия. Использует
-              виртуальный DOM (где меняет, добавляет, удаляет элементы), чтобы в реальный DOM за раз добавить все изменения.<br />
+              виртуальный DOM (где меняет, добавляет, удаляет элементы), чтобы в реальный DOM за раз добавить все изменения. Virtual DOM хранится в памяти и синхронизируется с настоящим DOM.<br />
               - Создает легковесные объекты.<br>
               <br />
 
@@ -287,10 +287,19 @@ ReactDOM.render(
 
 <!-- The Article -->
 
-<div class="textblock" id="tsx">
+<div class="textblock" id="Tsx">
   <p>
     <em>============================ TypeScript in React:</em><br />
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Расширение файлов - .tsx
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Помогает в - 1) Обнаружение небезопасных методов в ЖЦ, 2) Обнаружение неожиданных побочных эффектов. Расширение файлов - .tsx<br>
+      <br>
+
+      <code>
+        <strong>
+          // Генерация tsx проекта:<br>
+          create-react-app name --template typescript<br>
+          npm i --save-dev @types/react<br>
+        </strong>
+      </code>
   </p>
 </div>
 
@@ -416,7 +425,8 @@ ReactDOM.render(
 
 <div class="alert alert-info" role="alert">
   <i class="fa fa-info-circle" aria-hidden="true"></i> Подходит для: управление фокусом, выделение текста, воспроизведение медиа, вызов анимаций.<br>
-  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если задачу можно решить декларативным методом, то ref'ы лучше не использовать.
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Если задачу можно решить декларативным методом, то ref'ы лучше не использовать.<br>
+  <i class="fa fa-chevron-right" aria-hidden="true"></i> Подходит для работы с <strong>input.type="file"</strong>.<br>
 </div>
 
 </div>
@@ -621,7 +631,13 @@ state = {
     <span class="v"><strong># Обновление состояния</strong></span><br />
     <code>
       <strong>
-        this.setState((state, props) => ({ имя_свойства: props.newValue}));
+        this.setState((state, props) => ({ имя_свойства: props.newValue}));<br>
+        <br>
+
+        Или...<br>
+        <br>
+
+        this.setState((state) => { return { property: newValue } });
       </strong>
     </code>
 
@@ -652,7 +668,10 @@ state = {
       <span class="v"><strong># В constructor</strong></span><br />
       <code>
         <strong>
-          this.имя_функции = this.имя_функции.bind(this); //Связывание с компонентом
+          this.имя_функции = this.имя_функции.bind(this); //Связывание с компонентом.<br>
+          <br>
+
+          // onClick={this.func.bind(this)} - вызывает проблемы с производительностью, так как создается новая функция каждый раз при рендере
         </strong>
       </code><br /><br />
 
@@ -775,11 +794,12 @@ class Clock extends React.Component {
 <div class="textblock" id="Ho">
   <p>
     <em>============================ React-Хуки:</em><br />
-    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Добавление функциональности классовых компонентов функциональным. Доступны в версии 16.8 и выше.<br>
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Переиспользование логики. Добавление функциональности классовых компонентов функциональным. Доступны в версии 16.8 и выше. Хуки не должны вызываться внутри условий и циклов, а также в вложенных функциях. Могут вызываться только внутри функциональных компонентов
+    или внутри пользовательских хуков.<br>
     <br>
 
     <span class="v"><strong># useState</strong></span><br />
-    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Состояние.<br>
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Состояние. Значение заменяется, а не сливается.<br>
     <br>
     <code>
       <strong>
@@ -801,10 +821,13 @@ class Clock extends React.Component {
         import .. { useRef } ...<br>
         <br>
 
-        const myRef = useRef();<br>
+        const myRef = useRef(null);<br>
         <br>
 
         тег ref={myRef}<br>
+        <br>
+
+        myRef.current - доступ<br>
       </strong>
     </code>
     <br>
@@ -812,19 +835,64 @@ class Clock extends React.Component {
     <span class="v"><strong># useContext</strong></span><br />
     <br>
 
+    <span class="v"><strong># useCallback</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Мемоизация callback'а.<br />
+    <code>
+      <strong>
+        const memozedCb = useCallback(() => {<br />
+          &nbsp;func(a, b);<br />
+        }, [a, b]);<br />
+      </strong>
+    </code>
+    <br>
+
     <span class="v"><strong># useMemo</strong></span><br />
     <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Возвращает мемоизированное значение (результат выполнения функции будет сохранен во избежание повторных вычислений, как оптимизация).
     Повторное вычисление будет выполнено только при изменении какого-либо значения или зависимости. Запускается во время рендера.<br>
+    <strong>
+      <code>
+        const memozedValue = useMemo(() => {<br />
+          &nbsp;func(a, b);<br />
+        }, [a, b]);<br />
+      </code>
+    </strong>
     <br>
+
+    <span class="v"><strong># useReducer</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Альтернатива useState. Для работы с сложной логикой и глубокими обновлениями.
+    <br>
+
+    <span class="v"><strong># useEffect</strong></span><br />
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> ЖЦ для функционального компонента. Задачи - загрузка данных, подписка, изменение DOM вручную. Запускается после каждого рендера. useEffect откладывается до тех пор, пока браузер не выполнит отрисовку компонента.<br>
+    <br>
+    <code>
+      <strong>
+        // Хук эффекта с подпиской / отпиской. Аналог componentDidMount / componentWillUnmount
+        useEffect(() => {<br>
+          &nbsp;Service.subscribe();<br>
+          &nbsp;return () => {<br>
+            &nbsp;&nbsp;Service.unsubscribe();<br>
+          &nbsp;};<br>
+        }, []);<br>
+        <br>
+
+        // 1) [] - массив зависимостей. Пустой массив - сработает лишь раз после рендера. Без массива - бесконечный рендер. Массив с зависимостью - эффект сработает лишь при изменении зависимости.<br>
+        <br>
+        // 2) Функции, которые нужны useEffect должны быть внутри.
+      </strong>
+    </code>
 
     <span class="v"><strong># useLayoutEffect</strong></span><br />
     <br>
 
-    <span class="v"><strong># useEffect</strong></span><br />
+    <span class="v"><strong># useSelector</strong></span><br />
+    <br>
+
+    <span class="v"><strong># useDispatch</strong></span><br />
     <br>
 
     <span class="v"><strong># Custom hoocks</strong></span><br />
-    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Хранить в специальной папке hoocks.<br>
+    <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Хранить в специальной папке hoocks. Хук должен начинатся с "use".<br>
   </p>
 </div>
 
@@ -834,13 +902,13 @@ class Clock extends React.Component {
   <p>
     <em>============================ Рендеринг:</em><br />
       <span class="v"><strong># Рендер-функция</strong></span><br />
-      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент принимает функцию, которая рендерит часть компонента или весь компонент целиком.<br>
+      <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Компонент принимает функцию, которая рендерит часть компонента или весь компонент целиком (или вместо собственного render'а). Не использовать в Pure-компонентах.<br>
       <br>
 
       <code>
         <strong>
           &lt;Component<br>
-            &nbsp;renderItem={() => разметка} /&gt;<br>
+            &nbsp;render={() => разметка} /&gt;<br>
         </strong>
       </code><br>
 
@@ -861,8 +929,6 @@ class Clock extends React.Component {
 
       <span class="v"><strong># Клонирование</strong></span><br />
       <span class="v3"><strong>React.cloneElement(child, { obj })</strong></span> - создается клон компонента.<br />
-
-
   </p>
 </div>
 

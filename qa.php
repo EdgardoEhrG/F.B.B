@@ -53,7 +53,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5>Testing & Debugging</h5>
     <p>
-      <a href="A/testing.php" class="thumbnail">
+      <a href="QA/testing.php" class="thumbnail">
        <img src="Images/Test.png" class="DSH" />
       </a>
     </p>
@@ -73,7 +73,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5>Тестирование (JasmineJS)</h5>
     <p>
-      <a href="F/jasminejs.php" class="thumbnail">
+      <a href="QA/jasminejs.php" class="thumbnail">
        <img src="Images/JasmineJS.png" width="343px" height="360px" />
       </a>
     </p>
@@ -87,7 +87,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5>Тестирование (MochaJS)</h5>
     <p>
-      <a href="F/mocha.php" class="thumbnail">
+      <a href="QA/mocha.php" class="thumbnail">
        <img src="Images/Mocha.png" width="343px" height="360px" />
       </a>
     </p>
@@ -101,7 +101,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5 class="of">Запуск тестов (KarmaJS)</h5>
     <p>
-      <a href="F/karma.php" class="thumbnail">
+      <a href="QA/karma.php" class="thumbnail">
        <img src="Images/Karma.jpg" width="343px" height="360px" />
       </a>
     </p>
@@ -115,7 +115,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5 class="of">Mocha-функции (ChaiJS)</h5>
     <p>
-      <a href="F/chai.php" class="thumbnail">
+      <a href="QA/chai.php" class="thumbnail">
        <img src="Images/ChaiJS.png" width="343px" height="360px" />
       </a>
     </p>
@@ -129,7 +129,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5 class="of">Mocha-заглушки (SinonJS)</h5>
     <p>
-      <a href="F/sinonjs.php" class="thumbnail">
+      <a href="QA/sinonjs.php" class="thumbnail">
        <img src="Images/SinonJS.png" width="343px" height="360px" />
       </a>
     </p>
@@ -143,7 +143,7 @@
   <div class="col-6 col-sm-6 col-lg-4">
     <h5>Тестирование (JestJS)</h5>
     <p>
-      <a href="F/jest.php" class="thumbnail">
+      <a href="QA/jest.php" class="thumbnail">
        <img src="Images/Jest.png" width="343px" height="360px" />
       </a>
     </p>

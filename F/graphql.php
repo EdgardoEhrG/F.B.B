@@ -263,6 +263,15 @@
           property: Имя!<br>
         </strong>
       </code>
+
+      <span class="v"><strong># Union</strong></span><br />
+      <code>
+        <strong>
+          // Объединение типов:<br>
+          <br>
+          union имя = тип | тип<br>
+        </strong>
+      </code>
   </p>
 </div>
 

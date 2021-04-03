@@ -98,7 +98,9 @@
       </div>
           <div class="modal-body">
             <p class="textblock">
-              ...
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> Достоинства:<br />
+              - Подходит для среды с настоящим браузером.<br />
+              <br />
             </p>
           </div>
         <div class="modal-footer">
@@ -112,62 +114,8 @@
 
 <!-- Buttons -->
 
-<button class="button5" id="NachB">Начало работы с Mocha</button>
 <button class="button5" id="SpeB">Спецификация</button>
 <button class="button5" id="TesB">Тесты</button>
-
-<!-- The Article -->
-
-<div class="textblock" id="Nach">
-  <p>
-    <em>============================ Начало работы с Mocha:</em><br />
-      1. Создание страницы для тестов + добавление Mocha и Chai.<br />
-      2. Подключения в разделе <strong>&lt;head&gt;</strong>:<br />
-      <code>
-        <strong>
-          &lt;!-- Подключение стилей Mocha, для отображения результатов --&gt;<br />
-          &lt;link rel="stylesheet" href="Mocha/mocha.css"&gt;<br /><br />
-
-          &lt;!-- Подключение библиотеки Mocha --&gt;<br />
-          &lt;script src="Mocha/mocha.js"&gt;&lt;/script&gt;<br /><br />
-
-          &lt;!-- Настройка Mocha --&gt;<br />
-          &lt;script&gt;<br />
-          mocha.setup('bdd');<br />
-          &lt;/script&gt;<br /><br />
-
-          &lt;!-- Подключение Сhai --&gt;<br />
-          &lt;script src="Chai/chai.js"&gt;&lt;/script&gt;<br /><br />
-
-          &lt;!-- Вынесение assert в глобальную область (Chai) --&gt;<br />
-          &lt;script&gt;<br />
-          var assert = chai.assert;<br />
-          &lt;/script&gt;
-        </strong>
-      </code><br /><br />
-
-      3. Подключения в разделе <strong>&lt;body&gt;</strong>:<br />
-      <code>
-        <strong>
-          &lt;!-- Тестируемый код --&gt;<br />
-          &lt;script src="Code.js"&gt;&lt;/script&gt;<br /><br />
-
-          &lt;!-- Спецификация --&gt;<br />
-          &lt;script src="Test.js"&gt;&lt;/script&gt;<br /><br />
-
-          &lt;!-- Вывод результатов тестов --&gt;<br />
-          &lt;div id="mocha"&gt;&lt;/div&gt;<br /><br />
-
-          &lt;!-- Запуск тестов --&gt;<br />
-          &lt;script&gt;<br />
-          mocha.run();<br />
-          &lt;/script&gt;
-        </strong>
-      </code><br /><br />
-
-      4. Написание спецификации в <strong>Test.js</strong>.
-  </p>
-</div>
 
 <!-- The Article -->
 
@@ -185,8 +133,8 @@
       <code>
         <strong>
           describe("имя_функции", function() {<br />
-            &nbsp;it("описание_функции", function() {<br />
-              &nbsp;&nbsp;assert...<br />
+            &nbsp;it("описание_функции", async () => {<br />
+              &nbsp;&nbsp;await assert...<br />
             &nbsp;});<br />
           });<br />
         </strong>

@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8" />
 
-<title>DevOps</title>
+<title>Business Analysis</title>
 
-<link rel="shortcut icon" href="Images/I/anchor.png" type="image/x-icon">
+<link rel="shortcut icon" href="Images/I/toolbox.png" type="image/x-icon">
 
 <script src="JS/jquery-3.3.1.min.js"></script>
 <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-          <a class="navbar-brand">DevOps</a>
+          <a class="navbar-brand">Business Analysis</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -49,20 +49,6 @@
 <!-- T. Blocks -->
 
 <div class="container" id="D">
-
-    <div class="col-6 col-sm-6 col-lg-4">
-        <h5>App Container (Docker)</h5>
-        <p>
-            <a href="DevOps/docker.php" class="thumbnail">
-                <img src="Images/Docker.png" width="343px" height="360px" />
-            </a>
-        </p>
-            <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-            1%
-            </div>
-         </div>
-    </div>
 
 </div>
 

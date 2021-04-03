@@ -305,6 +305,14 @@
   <p>
     <em>============================ Middleware:</em><br />
       <i class="fa fa-thumb-tack rojo" aria-hidden="true"></i> Модификация <strong>dispatch</strong>.
+      <code>
+        <strong>
+          // Redux-Thunk. Для асинхронных actions, так как Redux по умолчанию имеет синхронные actions.<br>
+          <br>
+
+          npm i redux-thunk<br>
+        </strong>
+      </code>
   </p>
 </div>
 
